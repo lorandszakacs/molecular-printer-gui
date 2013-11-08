@@ -13,6 +13,8 @@
 @end
 
 @implementation edu_iastateViewController
+@synthesize tempLabel;
+@synthesize humidLabel;
 
 - (void)viewDidLoad
 {
@@ -24,6 +26,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)tempSliderChanged:(id)sender {
+    UISlider *slider = (UISlider *)sender;
+    NSString *newText = [[NSString alloc] initWithFormat:@"%1.1f",
+                         slider.value];
+    tempLabel.text = newText;
+}
+- (IBAction)humidSliderChanged:(id)sender {
+    UISlider *slider = (UISlider *)sender;
+    NSString *newText = [[NSString alloc] initWithFormat:@"%1.1f%%",
+                         slider.value];
+    humidLabel.text = newText;
 }
 
 @end
