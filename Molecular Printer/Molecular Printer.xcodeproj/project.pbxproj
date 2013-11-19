@@ -57,6 +57,7 @@
 		5846E04618087B480003DFFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5846E04818087B480003DFFB /* Molecular_PrinterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Molecular_PrinterTests.m; sourceTree = "<group>"; };
 		5846E05218087BD20003DFFB /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Application.xib; sourceTree = "<group>"; };
+		FFFE0B38183ADCB700063CC7 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +126,7 @@
 				5846E03518087B480003DFFB /* Images.xcassets */,
 				5846E02118087B480003DFFB /* Supporting Files */,
 				5846E05218087BD20003DFFB /* Application.xib */,
+				FFFE0B38183ADCB700063CC7 /* Constant.h */,
 			);
 			path = "Molecular Printer";
 			sourceTree = "<group>";
@@ -481,6 +483,7 @@
 				5846E04E18087B480003DFFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5846E04F18087B480003DFFB /* Build configuration list for PBXNativeTarget "Molecular PrinterTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +492,7 @@
 				5846E05118087B480003DFFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

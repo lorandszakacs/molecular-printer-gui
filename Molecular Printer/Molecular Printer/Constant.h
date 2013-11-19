@@ -8,7 +8,8 @@
 
 #ifndef Molecular_Printer_Constant_h
 #define Molecular_Printer_Constant_h
-
+const double IMAGEWIDTH = 4000;
+const double IMAGEHEIGHT = 4000;
 
 
 #endif

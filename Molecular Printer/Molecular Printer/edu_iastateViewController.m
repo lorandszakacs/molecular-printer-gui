@@ -7,6 +7,7 @@
 //
 
 #import "edu_iastateViewController.h"
+#import "Constant.h"
 
 @interface edu_iastateViewController ()
 -(void) changeValueSlider:(UISlider*)slider :(UILabel*)label :(UIStepper*)stepper;
@@ -34,7 +35,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    int IMAGEWIDTH = 400;
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,20 +56,24 @@
 }
 
 - (IBAction)columnSliderChanged:(id)sender {
-        [self changeValueSlider:columnSlider :columnLabel :columnStepper];
+    [self changeValueSlider:columnSlider :columnLabel :columnStepper];
+    [self updateWidth:columnSlider.value];
 }
 
 - (IBAction) columnStepperChanged:(id)sender {
     [self changeValueStepper:columnSlider :columnLabel :columnStepper];
+    [self updateWidth:columnSlider.value];
 }
 
 
 - (IBAction)rowSliderChanged:(id)sender {
         [self changeValueSlider:rowSlider :rowLabel :rowStepper];
+        [self updateHeight:rowSlider.value];
 }
 
 - (IBAction) rowStepperChanged:(id)sender {
     [self changeValueStepper:rowSlider :rowLabel :rowStepper];
+    [self updateHeight:rowSlider.value];
 }
 
 - (IBAction)widthSliderChanged:(id)sender {
@@ -120,14 +124,12 @@
     [self changeValueSlider:spotSlider :spotLabel :spotStepper];
     NSString *newText = [NSString stringWithFormat: @"%1.1fµm",spotSlider.value];
     spotLabel.text = newText;
-    [self updatePitchSize:spotSlider.value];
 }
 
 - (IBAction) spotStepperChanged:(id)sender {
     [self changeValueStepper:spotSlider :spotLabel :spotStepper];
     NSString *newText = [NSString stringWithFormat: @"%1.1fµm",spotSlider.value];
     spotLabel.text = newText;
-    [self updatePitchSize:spotSlider.value];
 }
 
 -(void) changeValueSlider:(UISlider*)slider :(UILabel*)label :(UIStepper*)stepper{
@@ -144,29 +146,34 @@
     slider.value = stepper.value;
 }
 
--(void) updateSpotSize:(float)value{
-    if(spotSlider.value>value*2){
-        spotSlider.value = value*2;
-        spotStepper.value = value*2;
-        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",spotSlider.value];
-        spotLabel.text =newText;
+-(void) updateWidth:(float)value{
+    if(IMAGEWIDTH/value<widthSlider.value){
+        widthSlider.value = IMAGEWIDTH/value;
+        widthStepper.value = IMAGEWIDTH/value;
+        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",widthSlider.value];
+        widthLabel.text =newText;
     }
-    spotSlider.maximumValue = value*2;
-    spotStepper.maximumValue = value*2;
+    widthSlider.maximumValue = IMAGEWIDTH/value;
+    widthStepper.maximumValue = IMAGEWIDTH/value;
 }
 
--(void) updatePitchSize:(float)value{
-//    if(widthSlider.value*2>value){
-//        widthSlider.value = value/2;
-//        widthStepper.value = value/2;
-//        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",widthSlider.value];
-//        widthLabel.text =newText;
-//    }
-//    if(heightSlider.value*2>value){
-//        heightSlider.value = value/2;
-//        heightStepper.value = value/2;
-//        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",heightSlider.value];
-//        heightLabel.text =newText;
+-(void) updateHeight:(float)value{
+    if(IMAGEHEIGHT/value<heightSlider.value){
+        heightSlider.value = IMAGEHEIGHT/value;
+        heightStepper.value = IMAGEHEIGHT/value;
+        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",heightSlider.value];
+        heightLabel.text =newText;
+    }
+    heightSlider.maximumValue = IMAGEHEIGHT/value;
+    heightStepper.maximumValue = IMAGEHEIGHT/value;
+}
+
+-(void) updateSpotSize:(float)value{
+//    if(spotSlider.value>value*2){
+//        spotSlider.value = value*2;
+//        spotStepper.value = value*2;
+//        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",spotSlider.value];
+//        spotLabel.text =newText;
 //    }
 }
 @end
