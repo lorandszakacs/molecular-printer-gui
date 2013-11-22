@@ -28,14 +28,14 @@ enum LengthUnit:NSInteger {
 
 @interface Humidity : NSObject
 @property (getter = getValue, readonly)double value;
--(id)Humidity:(double)value;
+-(id)initHumidity:(double)value;
 @end
 
 @interface Spot : NSObject
 @property (getter = getRadius, readonly)double value;
 @property (getter = getUnit, readonly)LengthUnit unit;
 -(Spot*)convert:(LengthUnit)toUnit;
--(id)Spot:(double)value :(LengthUnit)unit;
+-(id)initSpot:(double)value :(LengthUnit)unit;
 @end
 
 @interface Pitch : NSObject
@@ -43,5 +43,5 @@ enum LengthUnit:NSInteger {
 @property (getter = getWidth, readonly)double width;
 @property (getter = getUnit, readonly)LengthUnit unit;
 -(Pitch*)convert:(LengthUnit)toUnit;
--(id)Pitch:(double)width :(double)height :(LengthUnit)unit;
+-(id)initPitch:(double)width :(double)height :(LengthUnit)unit;
 @end
