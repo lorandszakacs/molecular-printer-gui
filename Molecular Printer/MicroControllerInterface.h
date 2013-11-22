@@ -20,6 +20,7 @@
 -(NSInteger)pollStatus;
 -(Temperature*)getTemperature;
 -(Humidity*)getHumidity;
+-(NSInteger)print:(NSInteger)x :(NSInteger)y;
 @end
 
 @interface MockInterface : MicroControllerInterface

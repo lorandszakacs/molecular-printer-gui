@@ -26,6 +26,7 @@
 		FFFE0B59183FFF4100063CC7 /* PhysicalUnits.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B58183FFF4100063CC7 /* PhysicalUnits.m */; };
 		FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B5B184005F600063CC7 /* GridMatrix.m */; };
 		FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B5E184008BD00063CC7 /* MicroControllerInterface.m */; };
+		FFFE0B6318400B9300063CC7 /* MPGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B6218400B9300063CC7 /* MPGModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		FFFE0B5B184005F600063CC7 /* GridMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridMatrix.m; sourceTree = "<group>"; };
 		FFFE0B5D184008BD00063CC7 /* MicroControllerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroControllerInterface.h; sourceTree = "<group>"; };
 		FFFE0B5E184008BD00063CC7 /* MicroControllerInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroControllerInterface.m; sourceTree = "<group>"; };
+		FFFE0B6118400B9300063CC7 /* MPGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGModel.h; sourceTree = "<group>"; };
+		FFFE0B6218400B9300063CC7 /* MPGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,7 @@
 		5846E02018087B480003DFFB /* Molecular Printer */ = {
 			isa = PBXGroup;
 			children = (
+				FFFE0B6018400B7E00063CC7 /* MPGModel */,
 				FFFE0B56183FFC0400063CC7 /* MPGController */,
 				FFFE0B43183FF03A00063CC7 /* Data */,
 				FFFE0B42183FF01A00063CC7 /* MicroController */,
@@ -198,6 +202,15 @@
 			children = (
 			);
 			name = MPGController;
+			sourceTree = "<group>";
+		};
+		FFFE0B6018400B7E00063CC7 /* MPGModel */ = {
+			isa = PBXGroup;
+			children = (
+				FFFE0B6118400B9300063CC7 /* MPGModel.h */,
+				FFFE0B6218400B9300063CC7 /* MPGModel.m */,
+			);
+			name = MPGModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +316,7 @@
 				FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */,
 				5846E02718087B480003DFFB /* main.m in Sources */,
 				FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */,
+				FFFE0B6318400B9300063CC7 /* MPGModel.m in Sources */,
 				FFFE0B59183FFF4100063CC7 /* PhysicalUnits.m in Sources */,
 				5846E02B18087B480003DFFB /* edu_iastateAppDelegate.m in Sources */,
 				5846E03418087B480003DFFB /* edu_iastateViewController.m in Sources */,
