@@ -25,6 +25,7 @@
 		5846E05318087BD20003DFFB /* Application.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5846E05218087BD20003DFFB /* Application.xib */; };
 		FFFE0B59183FFF4100063CC7 /* PhysicalUnits.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B58183FFF4100063CC7 /* PhysicalUnits.m */; };
 		FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B5B184005F600063CC7 /* GridMatrix.m */; };
+		FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B5E184008BD00063CC7 /* MicroControllerInterface.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,12 +61,12 @@
 		5846E04818087B480003DFFB /* Molecular_PrinterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Molecular_PrinterTests.m; sourceTree = "<group>"; };
 		5846E05218087BD20003DFFB /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Application.xib; sourceTree = "<group>"; };
 		FFFE0B38183ADCB700063CC7 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
-		FFFE0B3F183FEDB800063CC7 /* MicroControllerInterface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MicroControllerInterface.cpp; sourceTree = "<group>"; };
-		FFFE0B40183FEDB800063CC7 /* MicroControllerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroControllerInterface.h; sourceTree = "<group>"; };
 		FFFE0B57183FFF4100063CC7 /* PhysicalUnits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicalUnits.h; sourceTree = "<group>"; };
 		FFFE0B58183FFF4100063CC7 /* PhysicalUnits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicalUnits.m; sourceTree = "<group>"; };
 		FFFE0B5A184005F600063CC7 /* GridMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridMatrix.h; sourceTree = "<group>"; };
 		FFFE0B5B184005F600063CC7 /* GridMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridMatrix.m; sourceTree = "<group>"; };
+		FFFE0B5D184008BD00063CC7 /* MicroControllerInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroControllerInterface.h; sourceTree = "<group>"; };
+		FFFE0B5E184008BD00063CC7 /* MicroControllerInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroControllerInterface.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,8 +175,8 @@
 		FFFE0B42183FF01A00063CC7 /* MicroController */ = {
 			isa = PBXGroup;
 			children = (
-				FFFE0B3F183FEDB800063CC7 /* MicroControllerInterface.cpp */,
-				FFFE0B40183FEDB800063CC7 /* MicroControllerInterface.h */,
+				FFFE0B5D184008BD00063CC7 /* MicroControllerInterface.h */,
+				FFFE0B5E184008BD00063CC7 /* MicroControllerInterface.m */,
 			);
 			name = MicroController;
 			path = ..;
@@ -299,8 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */,
 				5846E02718087B480003DFFB /* main.m in Sources */,
-				FFFE0B41183FEDB800063CC7 /* MicroControllerInterface.cpp in Sources */,
 				FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */,
 				FFFE0B59183FFF4100063CC7 /* PhysicalUnits.m in Sources */,
 				5846E02B18087B480003DFFB /* edu_iastateAppDelegate.m in Sources */,
