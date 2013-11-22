@@ -13,24 +13,8 @@
 @property (getter = getWidth, readonly)NSInteger width;
 @property (getter = getHeight, readonly)NSInteger height;
 -(BOOL)isMarked:(NSInteger)x :(NSInteger)y;
--(NSInteger)isMarked:(NSInteger)x :(NSInteger)y;
-
+-(BOOL)mark:(NSInteger)x :(NSInteger)y;
+-(BOOL)unmark:(NSInteger)x :(NSInteger)y;
+-(BOOL)flip:(NSInteger)x :(NSInteger)y;
+-(BOOL)initGridMatrix:(NSInteger)width :(NSInteger)height;
 @end
-
-/**
-class GridMatrix{
-public:
-    int isMarked(int x, int y);
-    int mark(int x, int y);
-    int unMark(int x, int y);
-    int flip(int x, int y);
-    int getWidth();
-    int getHeight();
-    GridMatrix(int width, int height);
-    
-private:
-    int* matrix;
-    int width;
-    int height;
-    
-};**/
