@@ -8,8 +8,13 @@
 
 #ifndef Molecular_Printer_Constant_h
 #define Molecular_Printer_Constant_h
-const double IMAGEWIDTH = 4000;
-const double IMAGEHEIGHT = 4000;
-
-
+extern double const MAXIMAGEWIDTH;
+extern double const MAXIMAGEHEIGHT;
+extern double const INITIALTEMP;
+extern const double INITIALHUMIDITY;
+extern const int INITIALCOLUMNS;
+extern const int INITIALROWS;
+extern const double INITIALWIDTH;
+extern const double INITIALHEIGHT;
+extern const double INITIALSPOTRADIUS;
 #endif

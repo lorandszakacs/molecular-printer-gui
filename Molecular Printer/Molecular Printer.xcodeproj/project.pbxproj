@@ -27,6 +27,7 @@
 		FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B5B184005F600063CC7 /* GridMatrix.m */; };
 		FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B5E184008BD00063CC7 /* MicroControllerInterface.m */; };
 		FFFE0B6318400B9300063CC7 /* MPGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B6218400B9300063CC7 /* MPGModel.m */; };
+		FFFE0B651841F22F00063CC7 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B641841F22F00063CC7 /* Constant.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		FFFE0B5E184008BD00063CC7 /* MicroControllerInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroControllerInterface.m; sourceTree = "<group>"; };
 		FFFE0B6118400B9300063CC7 /* MPGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGModel.h; sourceTree = "<group>"; };
 		FFFE0B6218400B9300063CC7 /* MPGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGModel.m; sourceTree = "<group>"; };
+		FFFE0B641841F22F00063CC7 /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +144,6 @@
 				5846E03518087B480003DFFB /* Images.xcassets */,
 				5846E02118087B480003DFFB /* Supporting Files */,
 				5846E05218087BD20003DFFB /* Application.xib */,
-				FFFE0B38183ADCB700063CC7 /* Constant.h */,
 			);
 			path = "Molecular Printer";
 			sourceTree = "<group>";
@@ -150,10 +151,12 @@
 		5846E02118087B480003DFFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FFFE0B38183ADCB700063CC7 /* Constant.h */,
 				5846E02218087B480003DFFB /* Molecular Printer-Info.plist */,
 				5846E02318087B480003DFFB /* InfoPlist.strings */,
 				5846E02618087B480003DFFB /* main.m */,
 				5846E02818087B480003DFFB /* Molecular Printer-Prefix.pch */,
+				FFFE0B641841F22F00063CC7 /* Constant.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				FFFE0B59183FFF4100063CC7 /* PhysicalUnits.m in Sources */,
 				5846E02B18087B480003DFFB /* edu_iastateAppDelegate.m in Sources */,
 				5846E03418087B480003DFFB /* edu_iastateViewController.m in Sources */,
+				FFFE0B651841F22F00063CC7 /* Constant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
