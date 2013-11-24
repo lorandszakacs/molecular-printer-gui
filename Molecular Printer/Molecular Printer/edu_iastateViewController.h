@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MPGModel.h"
 
 @interface edu_iastateViewController : UIViewController<UITextFieldDelegate>{
     UILabel     *tempLabel;
@@ -26,12 +27,17 @@
     UISlider        *spotSlider;
     UILabel         *spotLabel;
     UIStepper       *spotStepper;
+    MPGModel        *model;
 }
+@property(retain)MPGModel* model;
+
 //Desired temperature slider
+@property (retain, nonatomic) IBOutlet UISlider *tempSlider;
 @property (retain, nonatomic) IBOutlet UILabel *tempLabel;
 - (IBAction)tempSliderChanged:(id)sender;
 
 //Desired humidity slider
+@property (weak, nonatomic) IBOutlet UISlider *humidSlider;
 @property (retain, nonatomic) IBOutlet UILabel *humidLabel;
 - (IBAction)humidSliderChanged:(id)sender;
 

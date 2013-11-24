@@ -11,6 +11,9 @@
 #import "GridMatrix.h"
 #import "MicroControllerInterface.h"
 
+#ifndef MPGModel_h
+#define MPGModel_h
+
 @interface MPGModel : NSObject
 @property (retain, getter = getGridMatrix, setter = setGridMatrix:)GridMatrix* gridMatrix;
 @property (retain, getter = getTemperature)Temperature* temperature;
@@ -20,3 +23,5 @@
 @property (getter = getState)NSInteger state;
 @property ()MicroControllerInterface* device;
 @end
+
+#endif

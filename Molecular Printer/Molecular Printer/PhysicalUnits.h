@@ -5,8 +5,9 @@
 //  Created by Eric Lin on 11/22/13.
 //  Copyright (c) 2013 Lorand Szakacs. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
+#ifndef Data_PhysicalUnits_h
+#define Data_PhysicalUnits_h
 typedef enum TempUnit:NSInteger TempUnit;
 enum TempUnit:NSInteger {
     CELSIUS,
@@ -45,3 +46,5 @@ enum LengthUnit:NSInteger {
 -(Pitch*)convert:(LengthUnit)toUnit;
 -(id)initPitch:(double)width :(double)height :(LengthUnit)unit;
 @end
+#endif
+

@@ -7,7 +7,11 @@
 //
 
 #import "edu_iastateViewController.h"
+
+#import "MPGModel.h"
+#import "PhysicalUnits.h"
 #import "Constant.h"
+
 
 @interface edu_iastateViewController ()
 -(void) changeValueSlider:(UISlider*)slider :(UILabel*)label :(UIStepper*)stepper;
@@ -15,6 +19,8 @@
 
 @implementation edu_iastateViewController
 @synthesize tempLabel;
+@synthesize tempSlider;
+@synthesize humidSlider;
 @synthesize humidLabel;
 @synthesize columnLabel;
 @synthesize columnSlider;
@@ -31,10 +37,23 @@
 @synthesize spotSlider;
 @synthesize spotLabel;
 @synthesize spotStepper;
+@synthesize model;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //initialization
+    model = [[MPGModel alloc] init];
+    humidSlider.value = INITIALHUMIDITY;
+    humidLabel.text = [[NSString alloc] initWithFormat:@"%1.1f", INITIALHUMIDITY];
+    tempSlider.value = INITIALTEMP;
+    humidLabel.text = [[NSString alloc] initWithFormat:@"%1.1f%%", INITIALTEMP];
+    widthSlider.value = widthSlider.value = INITIALWIDTH;
+    widthLabel.text = [[NSString alloc] initWithFormat:@"%1.1fµm", INITIALWIDTH];
+    heightSlider.value = heightSlider.value = INITIALHEIGHT;
+    heightLabel.text = [[NSString alloc] initWithFormat:@"%1.1fµm", INITIALHEIGHT];
+    spotSlider.value = spotStepper.value = INITIALSPOTRADIUS;
+    spotLabel.text = [[NSString alloc] initWithFormat:@"%1.1fµm", INITIALSPOTRADIUS];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,16 +61,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)tempSliderChanged:(id)sender {
     UISlider *slider = (UISlider *)sender;
+    [model setTemperature:[[Temperature alloc] initTemperature:slider.value :CELSIUS]];
     NSString *newText = [[NSString alloc] initWithFormat:@"%1.1f",
-                         slider.value];
+                         [[model getTemperature] getValue]];
     tempLabel.text = newText;
 }
 - (IBAction)humidSliderChanged:(id)sender {
     UISlider *slider = (UISlider *)sender;
+    [model setHumidity:[[Humidity alloc] initHumidity:slider.value]];
     NSString *newText = [[NSString alloc] initWithFormat:@"%1.1f%%",
-                         slider.value];
+                         [[model getHumidity] getValue]];
     humidLabel.text = newText;
 }
 
@@ -78,57 +100,69 @@
 
 - (IBAction)widthSliderChanged:(id)sender {
     [self changeValueSlider:widthSlider :widthLabel :widthStepper];
-    NSString *newText = [NSString stringWithFormat: @"%1.1fµm",widthSlider.value];
+    [model setPitch:[[Pitch alloc] initPitch:widthSlider.value :[model.getPitch getHeight] :[model.getPitch getUnit]]];
+    NSString *newText = [NSString stringWithFormat: @"%1.1fµm", [model.getPitch getWidth]];
     widthLabel.text = newText;
     [self updateSpotSize:widthSlider.value];
 }
 
 - (IBAction) widthStepperChanged:(id)sender {
     [self changeValueStepper:widthSlider :widthLabel :widthStepper];
-    NSString *newText = [NSString stringWithFormat: @"%1.1fµm",widthSlider.value];
+    [model setPitch:[[Pitch alloc] initPitch:widthStepper.value :[model.getPitch getHeight] :[model.getPitch getUnit]]];
+    NSString *newText = [NSString stringWithFormat: @"%1.1fµm",[model.getPitch getWidth]];
     widthLabel.text = newText;
     [self updateSpotSize:widthSlider.value];
 }
 
 - (IBAction)heightSyncButtonPressed:(id)sender {
-    widthSlider.value = heightSlider.value;
-    widthStepper.value = heightSlider.value;
+    [model setPitch:[[Pitch alloc] initPitch:[model.getPitch getHeight] :[model.getPitch getHeight] :[model.getPitch getUnit]]];
+    float width = [model.getPitch getWidth];
+    widthSlider.value = width;
+    widthStepper.value = width;
     NSString *newText = [[NSString alloc] initWithFormat:@"%1.1fµm",
-                         heightSlider.value];
+                         width];
     widthLabel.text = newText;
 }
 
 - (IBAction)heightSliderChanged:(id)sender {
     [self changeValueSlider:heightSlider :heightLabel :heightStepper];
-    NSString *newText = [NSString stringWithFormat: @"%1.1fµm",heightSlider.value];
+    [model setPitch:[[Pitch alloc] initPitch:[model.getPitch getWidth] :heightSlider.value :[model.getPitch getUnit]]];
+    NSString *newText = [NSString stringWithFormat: @"%1.1fµm",[model.getPitch getHeight]];
     heightLabel.text = newText;
     [self updateSpotSize:heightSlider.value];
 }
 
 - (IBAction) heightStepperChanged:(id)sender {
     [self changeValueStepper:heightSlider :heightLabel :heightStepper];
-    NSString *newText = [NSString stringWithFormat: @"%1.1fµm",heightSlider.value];
+    [model setPitch:[[Pitch alloc] initPitch:[model.getPitch getWidth] :heightStepper.value :[model.getPitch getUnit]]];
+    NSString *newText = [NSString stringWithFormat: @"%1.1fµm",[model.getPitch getHeight]];
     heightLabel.text = newText;
     [self updateSpotSize:heightSlider.value];
 }
 
+//sync height with width
 - (IBAction)widthSyncButtonPressed:(id)sender {
-    heightSlider.value = widthSlider.value;
-    heightStepper.value = widthSlider.value;
+    [model setPitch:[[Pitch alloc] initPitch:[model.getPitch getWidth] :[model.getPitch getWidth] :[model.getPitch getUnit]]];
+    float height = [model.getPitch getHeight];
+    heightSlider.value = height;
+    heightStepper.value = height;
     NSString *newText = [[NSString alloc] initWithFormat:@"%1.1fµm",
-                         widthSlider.value];
+                         height];
     heightLabel.text = newText;
 }
 
 - (IBAction)spotSliderChanged:(id)sender {
     [self changeValueSlider:spotSlider :spotLabel :spotStepper];
-    NSString *newText = [NSString stringWithFormat: @"%1.1fµm",spotSlider.value];
+    [model setSpot:[[Spot alloc] initSpot:spotSlider.value :[model.spot getUnit]]];
+    NSString *newText = [NSString stringWithFormat: @"%1.1fµm",[model.getSpot getRadius]];
     spotLabel.text = newText;
+    
 }
 
 - (IBAction) spotStepperChanged:(id)sender {
     [self changeValueStepper:spotSlider :spotLabel :spotStepper];
-    NSString *newText = [NSString stringWithFormat: @"%1.1fµm",spotSlider.value];
+    [model setSpot:[[Spot alloc] initSpot:spotStepper.value :[model.spot getUnit]]];
+    NSString *newText = [NSString stringWithFormat: @"%1.1fµm",[model.getSpot getRadius]];
     spotLabel.text = newText;
 }
 
@@ -147,33 +181,29 @@
 }
 
 -(void) updateWidth:(float)value{
-    if(IMAGEWIDTH/value<widthSlider.value){
-        widthSlider.value = IMAGEWIDTH/value;
-        widthStepper.value = IMAGEWIDTH/value;
-        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",widthSlider.value];
-        widthLabel.text =newText;
-    }
-    widthSlider.maximumValue = IMAGEWIDTH/value;
-    widthStepper.maximumValue = IMAGEWIDTH/value;
+//    if(MAXIMAGEWIDTH/value<[model.getPitch getWidth]){
+//        [model setPitch:[[Pitch alloc] initPitch:[] :<#(double)#> :<#(LengthUnit)#>
+//        widthSlider.value = IMAGEWIDTH/value;
+//        widthStepper.value = MAXIMAGEWIDTH/value;
+//        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",widthSlider.value];
+//        widthLabel.text =newText;
+//    }
+//    widthSlider.maximumValue = IMAGEWIDTH/value;
+//    widthStepper.maximumValue = IMAGEWIDTH/value;
 }
 
 -(void) updateHeight:(float)value{
-    if(IMAGEHEIGHT/value<heightSlider.value){
-        heightSlider.value = IMAGEHEIGHT/value;
-        heightStepper.value = IMAGEHEIGHT/value;
-        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",heightSlider.value];
-        heightLabel.text =newText;
-    }
-    heightSlider.maximumValue = IMAGEHEIGHT/value;
-    heightStepper.maximumValue = IMAGEHEIGHT/value;
+//    if(IMAGEHEIGHT/value<heightSlider.value){
+//        heightSlider.value = IMAGEHEIGHT/value;
+//        heightStepper.value = IMAGEHEIGHT/value;
+//        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",heightSlider.value];
+//        heightLabel.text =newText;
+//    }
+//    heightSlider.maximumValue = IMAGEHEIGHT/value;
+//    heightStepper.maximumValue = IMAGEHEIGHT/value;
 }
 
 -(void) updateSpotSize:(float)value{
-//    if(spotSlider.value>value*2){
-//        spotSlider.value = value*2;
-//        spotStepper.value = value*2;
-//        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",spotSlider.value];
-//        spotLabel.text =newText;
-//    }
+    //TODO:adjust spot size accordingly to changes to pitches
 }
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#ifndef Data_GridMatrix_h
+#define Data_GridMatrix_h
 @interface GridMatrix : NSObject
 @property ()NSInteger* matrix;
 @property (getter = getWidth, readonly)NSInteger width;
@@ -16,5 +18,6 @@
 -(BOOL)mark:(NSInteger)x :(NSInteger)y;
 -(BOOL)unmark:(NSInteger)x :(NSInteger)y;
 -(BOOL)flip:(NSInteger)x :(NSInteger)y;
--(BOOL)initGridMatrix:(NSInteger)width :(NSInteger)height;
+-(id)initGridMatrix:(NSInteger)width :(NSInteger)height;
 @end
+#endif

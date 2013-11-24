@@ -9,19 +9,22 @@
 #import <Foundation/Foundation.h>
 #import "PhysicalUnits.h"
 
+#ifndef MicroControllerInterface_h
+#define MicroControllerInterface_h
 @interface MicroControllerInterface : NSObject
--(NSInteger)verifyIdentiy:(NSInteger)id;
--(double)getSurfaceHeight;
--(double)getSurfaceWidth;
--(NSInteger)setPitch:(Pitch*)pitch;
--(NSInteger)setDesiredTemperature:(Temperature*)temp;
--(NSInteger)setDesiredHumidity:(Humidity*)humid;
--(NSInteger)setSpotSize:(Spot*)spot;
--(NSInteger)pollStatus;
--(Temperature*)getTemperature;
--(Humidity*)getHumidity;
--(NSInteger)print:(NSInteger)x :(NSInteger)y;
+//-(NSInteger)verifyIdentity:(NSInteger)id;
+//-(double)getSurfaceHeight;
+//-(double)getSurfaceWidth;
+//-(NSInteger)setPitch:(Pitch*)pitch;
+//-(NSInteger)setDesiredTemperature:(Temperature*)temp;
+//-(NSInteger)setDesiredHumidity:(Humidity*)humid;
+//-(NSInteger)setSpotSize:(Spot*)spot;
+//-(NSInteger)pollStatus;
+//-(Temperature*)getTemperature;
+//-(Humidity*)getHumidity;
+//-(NSInteger)print:(NSInteger)x :(NSInteger)y;
+//@end
+//
+//@interface MockInterface : MicroControllerInterface
 @end
-
-@interface MockInterface : MicroControllerInterface
-@end
+#endif
