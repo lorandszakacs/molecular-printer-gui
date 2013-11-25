@@ -28,6 +28,8 @@
 		FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B5E184008BD00063CC7 /* MicroControllerInterface.m */; };
 		FFFE0B6318400B9300063CC7 /* MPGModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B6218400B9300063CC7 /* MPGModel.m */; };
 		FFFE0B651841F22F00063CC7 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B641841F22F00063CC7 /* Constant.m */; };
+		FFFE0B6B1842EEB600063CC7 /* deviceSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B6A1842EEB600063CC7 /* deviceSelectionViewController.m */; };
+		FFFE0B6D18432D8E00063CC7 /* Arduino.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0B6C18432D8E00063CC7 /* Arduino.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,9 @@
 		FFFE0B6118400B9300063CC7 /* MPGModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPGModel.h; sourceTree = "<group>"; };
 		FFFE0B6218400B9300063CC7 /* MPGModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPGModel.m; sourceTree = "<group>"; };
 		FFFE0B641841F22F00063CC7 /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
+		FFFE0B691842EEB600063CC7 /* deviceSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = deviceSelectionViewController.h; path = ../deviceSelectionViewController.h; sourceTree = "<group>"; };
+		FFFE0B6A1842EEB600063CC7 /* deviceSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = deviceSelectionViewController.m; path = ../deviceSelectionViewController.m; sourceTree = "<group>"; };
+		FFFE0B6C18432D8E00063CC7 /* Arduino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arduino.png; path = ../../../../../Dropbox/Screenshots/Arduino.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,9 +137,17 @@
 			isa = PBXGroup;
 			children = (
 				FFFE0B6018400B7E00063CC7 /* MPGModel */,
+				FFFE0B6118400B9300063CC7 /* MPGModel.h */,
+				FFFE0B6218400B9300063CC7 /* MPGModel.m */,
 				FFFE0B56183FFC0400063CC7 /* MPGController */,
 				FFFE0B43183FF03A00063CC7 /* Data */,
+				FFFE0B57183FFF4100063CC7 /* PhysicalUnits.h */,
+				FFFE0B58183FFF4100063CC7 /* PhysicalUnits.m */,
+				FFFE0B5A184005F600063CC7 /* GridMatrix.h */,
+				FFFE0B5B184005F600063CC7 /* GridMatrix.m */,
 				FFFE0B42183FF01A00063CC7 /* MicroController */,
+				FFFE0B691842EEB600063CC7 /* deviceSelectionViewController.h */,
+				FFFE0B6A1842EEB600063CC7 /* deviceSelectionViewController.m */,
 				5846E02918087B480003DFFB /* edu_iastateAppDelegate.h */,
 				5846E02A18087B480003DFFB /* edu_iastateAppDelegate.m */,
 				5846E02C18087B480003DFFB /* Main_iPhone.storyboard */,
@@ -151,12 +164,13 @@
 		5846E02118087B480003DFFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FFFE0B6C18432D8E00063CC7 /* Arduino.png */,
 				FFFE0B38183ADCB700063CC7 /* Constant.h */,
+				FFFE0B641841F22F00063CC7 /* Constant.m */,
 				5846E02218087B480003DFFB /* Molecular Printer-Info.plist */,
 				5846E02318087B480003DFFB /* InfoPlist.strings */,
 				5846E02618087B480003DFFB /* main.m */,
 				5846E02818087B480003DFFB /* Molecular Printer-Prefix.pch */,
-				FFFE0B641841F22F00063CC7 /* Constant.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -192,10 +206,6 @@
 		FFFE0B43183FF03A00063CC7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				FFFE0B57183FFF4100063CC7 /* PhysicalUnits.h */,
-				FFFE0B58183FFF4100063CC7 /* PhysicalUnits.m */,
-				FFFE0B5A184005F600063CC7 /* GridMatrix.h */,
-				FFFE0B5B184005F600063CC7 /* GridMatrix.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -210,8 +220,6 @@
 		FFFE0B6018400B7E00063CC7 /* MPGModel */ = {
 			isa = PBXGroup;
 			children = (
-				FFFE0B6118400B9300063CC7 /* MPGModel.h */,
-				FFFE0B6218400B9300063CC7 /* MPGModel.m */,
 			);
 			name = MPGModel;
 			sourceTree = "<group>";
@@ -293,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFFE0B6D18432D8E00063CC7 /* Arduino.png in Resources */,
 				5846E03118087B480003DFFB /* Main_iPad.storyboard in Resources */,
 				5846E05318087BD20003DFFB /* Application.xib in Resources */,
 				5846E03618087B480003DFFB /* Images.xcassets in Resources */,
@@ -316,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFFE0B6B1842EEB600063CC7 /* deviceSelectionViewController.m in Sources */,
 				FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */,
 				5846E02718087B480003DFFB /* main.m in Sources */,
 				FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */,
