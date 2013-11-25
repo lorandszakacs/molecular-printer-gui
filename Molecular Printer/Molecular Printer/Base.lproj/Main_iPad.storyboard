@@ -161,9 +161,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dmC-oA-NEm" kind="popover" popoverAnchorView="Z4e-K0-98a" id="lrI-c7-hIh">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <action selector="deviceButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1l-0R-Y1w"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="400" translatesAutoresizingMaskIntoConstraints="NO" id="Nj2-r2-lks">
@@ -343,6 +341,7 @@
                         <outlet property="columnLabel" destination="ewT-en-BpP" id="PRk-Yz-vlK"/>
                         <outlet property="columnSlider" destination="Nj2-r2-lks" id="gFm-ss-gXS"/>
                         <outlet property="columnStepper" destination="847-cy-3In" id="2dt-GV-Cij"/>
+                        <outlet property="deviceConnectedLabel" destination="Uas-ej-LDB" id="Fx4-TP-HRg"/>
                         <outlet property="heightLabel" destination="ivf-KY-stH" id="wHp-iR-uW7"/>
                         <outlet property="heightSlider" destination="dGh-n4-57a" id="HHh-ja-Ryt"/>
                         <outlet property="heightStepper" destination="7Jd-hS-6Jv" id="xSg-BV-12P"/>
@@ -363,6 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="JUh-Vp-9tb"/>
+                <barButtonItem title="Item" id="7JM-YT-9Z1"/>
             </objects>
             <point key="canvasLocation" x="1452" y="-632"/>
         </scene>

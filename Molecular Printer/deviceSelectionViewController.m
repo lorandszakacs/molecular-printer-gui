@@ -9,19 +9,20 @@
 #import "deviceSelectionViewController.h"
 #import "MicroControllerInterface.h"
 
-@interface deviceSelectionViewController ()
+@interface DeviceSelectionViewController ()
 
 @end
 
-@implementation deviceSelectionViewController{
-    NSMutableArray *devices;
+@implementation DeviceSelectionViewController{
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        _devices = [[NSMutableArray alloc] initWithObjects:nil];
+        [self detectDevices];
+        self.clearsSelectionOnViewWillAppear = NO;
     }
     return self;
 }
@@ -29,11 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    devices = [[NSMutableArray alloc] initWithObjects:nil];
-    [self detectDevices];
-    
-    
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -45,7 +41,7 @@
     //Detect nearby devices
     
     //////Mock device
-    [devices addObject:[[MockInterface alloc] init]];
+    [_devices addObject:[[MockInterface alloc] init]];
     
 }
 - (void)didReceiveMemoryWarning
@@ -64,7 +60,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [devices count];
+    return [_devices count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,11 +69,17 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableLabel];
     if(cell ==nil)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableLabel];
-    cell.textLabel.text = [(MicroControllerInterface*)[devices objectAtIndex:indexPath.row] getID];
+    cell.textLabel.text = [(MicroControllerInterface*)[_devices objectAtIndex:indexPath.row] getID];
     cell.imageView.image = [UIImage imageNamed:@"Arduino.png"];
     return cell;
 }
 
+-(void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MicroControllerInterface* device = (MicroControllerInterface*)[_devices objectAtIndex:indexPath.row];
+    
+    if(_delegate !=nil)
+        [_delegate selectedDevice:device];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

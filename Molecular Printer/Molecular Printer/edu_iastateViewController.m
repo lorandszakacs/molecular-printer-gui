@@ -38,6 +38,7 @@
 @synthesize spotLabel;
 @synthesize spotStepper;
 @synthesize model;
+@synthesize deviceConnectedLabel;
 
 - (void)viewDidLoad
 {
@@ -205,5 +206,30 @@
 
 -(void) updateSpotSize:(float)value{
     //TODO:adjust spot size accordingly to changes to pitches
+}
+- (IBAction)deviceButton:(id)sender {
+    if(_deviceSelection == nil){
+        _deviceSelection = [[DeviceSelectionViewController alloc] initWithStyle:UITableViewStylePlain];
+        _deviceSelection.delegate = self;
+    }
+    
+    if(_deviceSelectionPopover ==nil){
+        _deviceSelectionPopover = [[UIPopoverController alloc] initWithContentViewController:_deviceSelection];
+        [_deviceSelectionPopover presentPopoverFromRect:CGRectMake(565, 914, 54, 30) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+    }else{
+        [_deviceSelectionPopover dismissPopoverAnimated:YES];
+        _deviceSelectionPopover = nil;
+    }
+    
+}
+
+-(void)selectedDevice:(MicroControllerInterface *)device{
+    deviceConnectedLabel.text = [device getID];
+    [model setDevice:device];
+    
+    if(_deviceSelectionPopover!=nil){
+        [_deviceSelectionPopover dismissPopoverAnimated:YES];
+        _deviceSelectionPopover = nil;
+    }
 }
 @end

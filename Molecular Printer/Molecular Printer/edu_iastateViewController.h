@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MPGModel.h"
+#import "deviceSelectionViewController.h"
 
-@interface edu_iastateViewController : UIViewController<UITextFieldDelegate>{
+@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected>{
     UILabel     *tempLabel;
     UILabel     *humidLabel;
     UILabel     *columnLabel;
@@ -28,6 +29,7 @@
     UILabel         *spotLabel;
     UIStepper       *spotStepper;
     MPGModel        *model;
+    UILabel         *deviceConnectedLabel;
 }
 @property(retain)MPGModel* model;
 
@@ -71,10 +73,17 @@
 @property (retain, nonatomic) IBOutlet UILabel *heightLabel;
 @property (retain, nonatomic) IBOutlet UIStepper *heightStepper;
 
+
 //Spot size setter
 - (IBAction)spotSliderChanged:(id)sender;
 - (IBAction)spotStepperChanged:(id)sender;
 @property (retain, nonatomic) IBOutlet UILabel *spotLabel;
 @property (retain, nonatomic) IBOutlet UISlider *spotSlider;
 @property (retain, nonatomic) IBOutlet UIStepper *spotStepper;
+
+//device selection button
+@property (retain, nonatomic) IBOutlet UILabel *deviceConnectedLabel;
+@property (strong) DeviceSelectionViewController* deviceSelection;
+@property (strong) UIPopoverController* deviceSelectionPopover;
+- (IBAction)deviceButton:(id)sender;
 @end

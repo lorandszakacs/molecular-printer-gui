@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MicroControllerInterface.h"
 
-@interface deviceSelectionViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
+@protocol DeviceSelected <NSObject>
+-(void)selectedDevice:(MicroControllerInterface*)device;
+@end
 
+@interface DeviceSelectionViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
+@property (strong) NSMutableArray* devices;
+@property (weak) id<DeviceSelected> delegate;
 @end
