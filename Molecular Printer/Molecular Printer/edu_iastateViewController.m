@@ -20,6 +20,7 @@
 @implementation edu_iastateViewController
 @synthesize tempLabel;
 @synthesize tempSlider;
+@synthesize deviceTempLabel;
 @synthesize humidSlider;
 @synthesize humidLabel;
 @synthesize columnLabel;
@@ -39,6 +40,7 @@
 @synthesize spotStepper;
 @synthesize model;
 @synthesize deviceConnectedLabel;
+NSTimer* tempTimer;
 
 - (void)viewDidLoad
 {
@@ -55,6 +57,12 @@
     heightLabel.text = [[NSString alloc] initWithFormat:@"%1.1fµm", INITIALHEIGHT];
     spotSlider.value = spotStepper.value = INITIALSPOTRADIUS;
     spotLabel.text = [[NSString alloc] initWithFormat:@"%1.1fµm", INITIALSPOTRADIUS];
+    
+    //update from device
+    tempTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateTemp) userInfo:nil repeats:YES];
+}
+-(void)updateTemp{
+    deviceTempLabel.text = [[NSString alloc] initWithFormat:@"%1.1f", [model.device.getTemperature getValue]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,6 +77,7 @@
     NSString *newText = [[NSString alloc] initWithFormat:@"%1.1f",
                          [[model getTemperature] getValue]];
     tempLabel.text = newText;
+    [model.device setDesiredTemperature:model.getTemperature];
 }
 - (IBAction)humidSliderChanged:(id)sender {
     UISlider *slider = (UISlider *)sender;

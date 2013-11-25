@@ -9,9 +9,7 @@
 #import "MicroControllerInterface.h"
 
 @implementation MicroControllerInterface
-
 @end
-
 @implementation MockInterface : MicroControllerInterface
 double surfaceWidth;
 double surfaceHeight;

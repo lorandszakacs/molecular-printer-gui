@@ -12,6 +12,7 @@
 
 @interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected>{
     UILabel     *tempLabel;
+    UILabel     *deviceTempLabel;
     UILabel     *humidLabel;
     UILabel     *columnLabel;
     UISlider        *columnSlider;
@@ -36,6 +37,7 @@
 //Desired temperature slider
 @property (retain, nonatomic) IBOutlet UISlider *tempSlider;
 @property (retain, nonatomic) IBOutlet UILabel *tempLabel;
+@property (strong, nonatomic) IBOutlet UILabel *deviceTempLabel;
 - (IBAction)tempSliderChanged:(id)sender;
 
 //Desired humidity slider
