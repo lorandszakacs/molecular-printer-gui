@@ -30,6 +30,107 @@
 		FFFE0B651841F22F00063CC7 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B641841F22F00063CC7 /* Constant.m */; };
 		FFFE0B6B1842EEB600063CC7 /* deviceSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B6A1842EEB600063CC7 /* deviceSelectionViewController.m */; };
 		FFFE0B6D18432D8E00063CC7 /* Arduino.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0B6C18432D8E00063CC7 /* Arduino.png */; };
+		FFFE0D6918448F2300063CC7 /* humidity0.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0418448F2300063CC7 /* humidity0.png */; };
+		FFFE0D6A18448F2300063CC7 /* humidity1.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0518448F2300063CC7 /* humidity1.png */; };
+		FFFE0D6B18448F2300063CC7 /* humidity2.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0618448F2300063CC7 /* humidity2.png */; };
+		FFFE0D6C18448F2300063CC7 /* humidity3.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0718448F2300063CC7 /* humidity3.png */; };
+		FFFE0D6D18448F2300063CC7 /* humidity4.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0818448F2300063CC7 /* humidity4.png */; };
+		FFFE0D6E18448F2300063CC7 /* humidity5.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0918448F2300063CC7 /* humidity5.png */; };
+		FFFE0D6F18448F2300063CC7 /* humidity6.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0A18448F2300063CC7 /* humidity6.png */; };
+		FFFE0D7018448F2300063CC7 /* humidity7.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0B18448F2300063CC7 /* humidity7.png */; };
+		FFFE0D7118448F2300063CC7 /* humidity8.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0C18448F2300063CC7 /* humidity8.png */; };
+		FFFE0D7218448F2300063CC7 /* humidity9.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0D18448F2300063CC7 /* humidity9.png */; };
+		FFFE0D7318448F2300063CC7 /* humidity10.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0E18448F2300063CC7 /* humidity10.png */; };
+		FFFE0D7418448F2300063CC7 /* humidity11.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D0F18448F2300063CC7 /* humidity11.png */; };
+		FFFE0D7518448F2300063CC7 /* humidity12.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1018448F2300063CC7 /* humidity12.png */; };
+		FFFE0D7618448F2300063CC7 /* humidity13.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1118448F2300063CC7 /* humidity13.png */; };
+		FFFE0D7718448F2300063CC7 /* humidity14.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1218448F2300063CC7 /* humidity14.png */; };
+		FFFE0D7818448F2300063CC7 /* humidity15.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1318448F2300063CC7 /* humidity15.png */; };
+		FFFE0D7918448F2300063CC7 /* humidity16.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1418448F2300063CC7 /* humidity16.png */; };
+		FFFE0D7A18448F2300063CC7 /* humidity17.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1518448F2300063CC7 /* humidity17.png */; };
+		FFFE0D7B18448F2300063CC7 /* humidity18.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1618448F2300063CC7 /* humidity18.png */; };
+		FFFE0D7C18448F2300063CC7 /* humidity19.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1718448F2300063CC7 /* humidity19.png */; };
+		FFFE0D7D18448F2300063CC7 /* humidity20.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1818448F2300063CC7 /* humidity20.png */; };
+		FFFE0D7E18448F2300063CC7 /* humidity21.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1918448F2300063CC7 /* humidity21.png */; };
+		FFFE0D7F18448F2300063CC7 /* humidity22.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1A18448F2300063CC7 /* humidity22.png */; };
+		FFFE0D8018448F2300063CC7 /* humidity23.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1B18448F2300063CC7 /* humidity23.png */; };
+		FFFE0D8118448F2300063CC7 /* humidity24.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1C18448F2300063CC7 /* humidity24.png */; };
+		FFFE0D8218448F2300063CC7 /* humidity25.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1D18448F2300063CC7 /* humidity25.png */; };
+		FFFE0D8318448F2300063CC7 /* humidity26.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1E18448F2300063CC7 /* humidity26.png */; };
+		FFFE0D8418448F2300063CC7 /* humidity27.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D1F18448F2300063CC7 /* humidity27.png */; };
+		FFFE0D8518448F2300063CC7 /* humidity28.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2018448F2300063CC7 /* humidity28.png */; };
+		FFFE0D8618448F2300063CC7 /* humidity29.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2118448F2300063CC7 /* humidity29.png */; };
+		FFFE0D8718448F2300063CC7 /* humidity30.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2218448F2300063CC7 /* humidity30.png */; };
+		FFFE0D8818448F2300063CC7 /* humidity31.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2318448F2300063CC7 /* humidity31.png */; };
+		FFFE0D8918448F2300063CC7 /* humidity32.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2418448F2300063CC7 /* humidity32.png */; };
+		FFFE0D8A18448F2300063CC7 /* humidity33.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2518448F2300063CC7 /* humidity33.png */; };
+		FFFE0D8B18448F2300063CC7 /* humidity34.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2618448F2300063CC7 /* humidity34.png */; };
+		FFFE0D8C18448F2300063CC7 /* humidity35.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2718448F2300063CC7 /* humidity35.png */; };
+		FFFE0D8D18448F2300063CC7 /* humidity36.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2818448F2300063CC7 /* humidity36.png */; };
+		FFFE0D8E18448F2300063CC7 /* humidity37.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2918448F2300063CC7 /* humidity37.png */; };
+		FFFE0D8F18448F2300063CC7 /* humidity38.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2A18448F2300063CC7 /* humidity38.png */; };
+		FFFE0D9018448F2300063CC7 /* humidity39.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2B18448F2300063CC7 /* humidity39.png */; };
+		FFFE0D9118448F2300063CC7 /* humidity40.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2C18448F2300063CC7 /* humidity40.png */; };
+		FFFE0D9218448F2300063CC7 /* humidity41.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2D18448F2300063CC7 /* humidity41.png */; };
+		FFFE0D9318448F2300063CC7 /* humidity42.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2E18448F2300063CC7 /* humidity42.png */; };
+		FFFE0D9418448F2300063CC7 /* humidity43.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D2F18448F2300063CC7 /* humidity43.png */; };
+		FFFE0D9518448F2300063CC7 /* humidity44.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3018448F2300063CC7 /* humidity44.png */; };
+		FFFE0D9618448F2300063CC7 /* humidity45.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3118448F2300063CC7 /* humidity45.png */; };
+		FFFE0D9718448F2300063CC7 /* humidity46.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3218448F2300063CC7 /* humidity46.png */; };
+		FFFE0D9818448F2300063CC7 /* humidity47.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3318448F2300063CC7 /* humidity47.png */; };
+		FFFE0D9918448F2300063CC7 /* humidity48.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3418448F2300063CC7 /* humidity48.png */; };
+		FFFE0D9A18448F2300063CC7 /* humidity49.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3518448F2300063CC7 /* humidity49.png */; };
+		FFFE0D9B18448F2300063CC7 /* humidity50.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3618448F2300063CC7 /* humidity50.png */; };
+		FFFE0D9C18448F2300063CC7 /* humidity51.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3718448F2300063CC7 /* humidity51.png */; };
+		FFFE0D9D18448F2300063CC7 /* humidity52.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3818448F2300063CC7 /* humidity52.png */; };
+		FFFE0D9E18448F2300063CC7 /* humidity53.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3918448F2300063CC7 /* humidity53.png */; };
+		FFFE0D9F18448F2300063CC7 /* humidity54.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3A18448F2300063CC7 /* humidity54.png */; };
+		FFFE0DA018448F2300063CC7 /* humidity55.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3B18448F2300063CC7 /* humidity55.png */; };
+		FFFE0DA118448F2300063CC7 /* humidity56.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3C18448F2300063CC7 /* humidity56.png */; };
+		FFFE0DA218448F2300063CC7 /* humidity57.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3D18448F2300063CC7 /* humidity57.png */; };
+		FFFE0DA318448F2300063CC7 /* humidity58.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3E18448F2300063CC7 /* humidity58.png */; };
+		FFFE0DA418448F2300063CC7 /* humidity59.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D3F18448F2300063CC7 /* humidity59.png */; };
+		FFFE0DA518448F2300063CC7 /* humidity60.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4018448F2300063CC7 /* humidity60.png */; };
+		FFFE0DA618448F2300063CC7 /* humidity61.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4118448F2300063CC7 /* humidity61.png */; };
+		FFFE0DA718448F2300063CC7 /* humidity62.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4218448F2300063CC7 /* humidity62.png */; };
+		FFFE0DA818448F2300063CC7 /* humidity63.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4318448F2300063CC7 /* humidity63.png */; };
+		FFFE0DA918448F2300063CC7 /* humidity64.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4418448F2300063CC7 /* humidity64.png */; };
+		FFFE0DAA18448F2300063CC7 /* humidity65.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4518448F2300063CC7 /* humidity65.png */; };
+		FFFE0DAB18448F2300063CC7 /* humidity66.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4618448F2300063CC7 /* humidity66.png */; };
+		FFFE0DAC18448F2300063CC7 /* humidity67.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4718448F2300063CC7 /* humidity67.png */; };
+		FFFE0DAD18448F2300063CC7 /* humidity68.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4818448F2300063CC7 /* humidity68.png */; };
+		FFFE0DAE18448F2300063CC7 /* humidity69.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4918448F2300063CC7 /* humidity69.png */; };
+		FFFE0DAF18448F2300063CC7 /* humidity70.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4A18448F2300063CC7 /* humidity70.png */; };
+		FFFE0DB018448F2300063CC7 /* humidity71.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4B18448F2300063CC7 /* humidity71.png */; };
+		FFFE0DB118448F2300063CC7 /* humidity72.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4C18448F2300063CC7 /* humidity72.png */; };
+		FFFE0DB218448F2300063CC7 /* humidity73.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4D18448F2300063CC7 /* humidity73.png */; };
+		FFFE0DB318448F2300063CC7 /* humidity74.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4E18448F2300063CC7 /* humidity74.png */; };
+		FFFE0DB418448F2300063CC7 /* humidity75.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D4F18448F2300063CC7 /* humidity75.png */; };
+		FFFE0DB518448F2300063CC7 /* humidity76.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5018448F2300063CC7 /* humidity76.png */; };
+		FFFE0DB618448F2300063CC7 /* humidity77.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5118448F2300063CC7 /* humidity77.png */; };
+		FFFE0DB718448F2300063CC7 /* humidity78.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5218448F2300063CC7 /* humidity78.png */; };
+		FFFE0DB818448F2300063CC7 /* humidity79.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5318448F2300063CC7 /* humidity79.png */; };
+		FFFE0DB918448F2300063CC7 /* humidity80.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5418448F2300063CC7 /* humidity80.png */; };
+		FFFE0DBA18448F2300063CC7 /* humidity81.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5518448F2300063CC7 /* humidity81.png */; };
+		FFFE0DBB18448F2300063CC7 /* humidity82.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5618448F2300063CC7 /* humidity82.png */; };
+		FFFE0DBC18448F2300063CC7 /* humidity83.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5718448F2300063CC7 /* humidity83.png */; };
+		FFFE0DBD18448F2300063CC7 /* humidity84.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5818448F2300063CC7 /* humidity84.png */; };
+		FFFE0DBE18448F2400063CC7 /* humidity85.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5918448F2300063CC7 /* humidity85.png */; };
+		FFFE0DBF18448F2400063CC7 /* humidity86.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5A18448F2300063CC7 /* humidity86.png */; };
+		FFFE0DC018448F2400063CC7 /* humidity87.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5B18448F2300063CC7 /* humidity87.png */; };
+		FFFE0DC118448F2400063CC7 /* humidity88.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5C18448F2300063CC7 /* humidity88.png */; };
+		FFFE0DC218448F2400063CC7 /* humidity89.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5D18448F2300063CC7 /* humidity89.png */; };
+		FFFE0DC318448F2400063CC7 /* humidity90.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5E18448F2300063CC7 /* humidity90.png */; };
+		FFFE0DC418448F2400063CC7 /* humidity91.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D5F18448F2300063CC7 /* humidity91.png */; };
+		FFFE0DC518448F2400063CC7 /* humidity92.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D6018448F2300063CC7 /* humidity92.png */; };
+		FFFE0DC618448F2400063CC7 /* humidity93.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D6118448F2300063CC7 /* humidity93.png */; };
+		FFFE0DC718448F2400063CC7 /* humidity94.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D6218448F2300063CC7 /* humidity94.png */; };
+		FFFE0DC818448F2400063CC7 /* humidity95.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D6318448F2300063CC7 /* humidity95.png */; };
+		FFFE0DC918448F2400063CC7 /* humidity96.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D6418448F2300063CC7 /* humidity96.png */; };
+		FFFE0DCA18448F2400063CC7 /* humidity97.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D6518448F2300063CC7 /* humidity97.png */; };
+		FFFE0DCB18448F2400063CC7 /* humidity98.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D6618448F2300063CC7 /* humidity98.png */; };
+		FFFE0DCC18448F2400063CC7 /* humidity99.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D6718448F2300063CC7 /* humidity99.png */; };
+		FFFE0DCD18448F2400063CC7 /* humidity100.png in Resources */ = {isa = PBXBuildFile; fileRef = FFFE0D6818448F2300063CC7 /* humidity100.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +178,107 @@
 		FFFE0B691842EEB600063CC7 /* deviceSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = deviceSelectionViewController.h; path = ../deviceSelectionViewController.h; sourceTree = "<group>"; };
 		FFFE0B6A1842EEB600063CC7 /* deviceSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = deviceSelectionViewController.m; path = ../deviceSelectionViewController.m; sourceTree = "<group>"; };
 		FFFE0B6C18432D8E00063CC7 /* Arduino.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arduino.png; path = ../../../../../Dropbox/Screenshots/Arduino.png; sourceTree = "<group>"; };
+		FFFE0D0418448F2300063CC7 /* humidity0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity0.png; path = HumidityImages/humidity0.png; sourceTree = "<group>"; };
+		FFFE0D0518448F2300063CC7 /* humidity1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity1.png; path = HumidityImages/humidity1.png; sourceTree = "<group>"; };
+		FFFE0D0618448F2300063CC7 /* humidity2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity2.png; path = HumidityImages/humidity2.png; sourceTree = "<group>"; };
+		FFFE0D0718448F2300063CC7 /* humidity3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity3.png; path = HumidityImages/humidity3.png; sourceTree = "<group>"; };
+		FFFE0D0818448F2300063CC7 /* humidity4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity4.png; path = HumidityImages/humidity4.png; sourceTree = "<group>"; };
+		FFFE0D0918448F2300063CC7 /* humidity5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity5.png; path = HumidityImages/humidity5.png; sourceTree = "<group>"; };
+		FFFE0D0A18448F2300063CC7 /* humidity6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity6.png; path = HumidityImages/humidity6.png; sourceTree = "<group>"; };
+		FFFE0D0B18448F2300063CC7 /* humidity7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity7.png; path = HumidityImages/humidity7.png; sourceTree = "<group>"; };
+		FFFE0D0C18448F2300063CC7 /* humidity8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity8.png; path = HumidityImages/humidity8.png; sourceTree = "<group>"; };
+		FFFE0D0D18448F2300063CC7 /* humidity9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity9.png; path = HumidityImages/humidity9.png; sourceTree = "<group>"; };
+		FFFE0D0E18448F2300063CC7 /* humidity10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity10.png; path = HumidityImages/humidity10.png; sourceTree = "<group>"; };
+		FFFE0D0F18448F2300063CC7 /* humidity11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity11.png; path = HumidityImages/humidity11.png; sourceTree = "<group>"; };
+		FFFE0D1018448F2300063CC7 /* humidity12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity12.png; path = HumidityImages/humidity12.png; sourceTree = "<group>"; };
+		FFFE0D1118448F2300063CC7 /* humidity13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity13.png; path = HumidityImages/humidity13.png; sourceTree = "<group>"; };
+		FFFE0D1218448F2300063CC7 /* humidity14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity14.png; path = HumidityImages/humidity14.png; sourceTree = "<group>"; };
+		FFFE0D1318448F2300063CC7 /* humidity15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity15.png; path = HumidityImages/humidity15.png; sourceTree = "<group>"; };
+		FFFE0D1418448F2300063CC7 /* humidity16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity16.png; path = HumidityImages/humidity16.png; sourceTree = "<group>"; };
+		FFFE0D1518448F2300063CC7 /* humidity17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity17.png; path = HumidityImages/humidity17.png; sourceTree = "<group>"; };
+		FFFE0D1618448F2300063CC7 /* humidity18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity18.png; path = HumidityImages/humidity18.png; sourceTree = "<group>"; };
+		FFFE0D1718448F2300063CC7 /* humidity19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity19.png; path = HumidityImages/humidity19.png; sourceTree = "<group>"; };
+		FFFE0D1818448F2300063CC7 /* humidity20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity20.png; path = HumidityImages/humidity20.png; sourceTree = "<group>"; };
+		FFFE0D1918448F2300063CC7 /* humidity21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity21.png; path = HumidityImages/humidity21.png; sourceTree = "<group>"; };
+		FFFE0D1A18448F2300063CC7 /* humidity22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity22.png; path = HumidityImages/humidity22.png; sourceTree = "<group>"; };
+		FFFE0D1B18448F2300063CC7 /* humidity23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity23.png; path = HumidityImages/humidity23.png; sourceTree = "<group>"; };
+		FFFE0D1C18448F2300063CC7 /* humidity24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity24.png; path = HumidityImages/humidity24.png; sourceTree = "<group>"; };
+		FFFE0D1D18448F2300063CC7 /* humidity25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity25.png; path = HumidityImages/humidity25.png; sourceTree = "<group>"; };
+		FFFE0D1E18448F2300063CC7 /* humidity26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity26.png; path = HumidityImages/humidity26.png; sourceTree = "<group>"; };
+		FFFE0D1F18448F2300063CC7 /* humidity27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity27.png; path = HumidityImages/humidity27.png; sourceTree = "<group>"; };
+		FFFE0D2018448F2300063CC7 /* humidity28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity28.png; path = HumidityImages/humidity28.png; sourceTree = "<group>"; };
+		FFFE0D2118448F2300063CC7 /* humidity29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity29.png; path = HumidityImages/humidity29.png; sourceTree = "<group>"; };
+		FFFE0D2218448F2300063CC7 /* humidity30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity30.png; path = HumidityImages/humidity30.png; sourceTree = "<group>"; };
+		FFFE0D2318448F2300063CC7 /* humidity31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity31.png; path = HumidityImages/humidity31.png; sourceTree = "<group>"; };
+		FFFE0D2418448F2300063CC7 /* humidity32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity32.png; path = HumidityImages/humidity32.png; sourceTree = "<group>"; };
+		FFFE0D2518448F2300063CC7 /* humidity33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity33.png; path = HumidityImages/humidity33.png; sourceTree = "<group>"; };
+		FFFE0D2618448F2300063CC7 /* humidity34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity34.png; path = HumidityImages/humidity34.png; sourceTree = "<group>"; };
+		FFFE0D2718448F2300063CC7 /* humidity35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity35.png; path = HumidityImages/humidity35.png; sourceTree = "<group>"; };
+		FFFE0D2818448F2300063CC7 /* humidity36.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity36.png; path = HumidityImages/humidity36.png; sourceTree = "<group>"; };
+		FFFE0D2918448F2300063CC7 /* humidity37.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity37.png; path = HumidityImages/humidity37.png; sourceTree = "<group>"; };
+		FFFE0D2A18448F2300063CC7 /* humidity38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity38.png; path = HumidityImages/humidity38.png; sourceTree = "<group>"; };
+		FFFE0D2B18448F2300063CC7 /* humidity39.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity39.png; path = HumidityImages/humidity39.png; sourceTree = "<group>"; };
+		FFFE0D2C18448F2300063CC7 /* humidity40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity40.png; path = HumidityImages/humidity40.png; sourceTree = "<group>"; };
+		FFFE0D2D18448F2300063CC7 /* humidity41.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity41.png; path = HumidityImages/humidity41.png; sourceTree = "<group>"; };
+		FFFE0D2E18448F2300063CC7 /* humidity42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity42.png; path = HumidityImages/humidity42.png; sourceTree = "<group>"; };
+		FFFE0D2F18448F2300063CC7 /* humidity43.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity43.png; path = HumidityImages/humidity43.png; sourceTree = "<group>"; };
+		FFFE0D3018448F2300063CC7 /* humidity44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity44.png; path = HumidityImages/humidity44.png; sourceTree = "<group>"; };
+		FFFE0D3118448F2300063CC7 /* humidity45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity45.png; path = HumidityImages/humidity45.png; sourceTree = "<group>"; };
+		FFFE0D3218448F2300063CC7 /* humidity46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity46.png; path = HumidityImages/humidity46.png; sourceTree = "<group>"; };
+		FFFE0D3318448F2300063CC7 /* humidity47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity47.png; path = HumidityImages/humidity47.png; sourceTree = "<group>"; };
+		FFFE0D3418448F2300063CC7 /* humidity48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity48.png; path = HumidityImages/humidity48.png; sourceTree = "<group>"; };
+		FFFE0D3518448F2300063CC7 /* humidity49.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity49.png; path = HumidityImages/humidity49.png; sourceTree = "<group>"; };
+		FFFE0D3618448F2300063CC7 /* humidity50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity50.png; path = HumidityImages/humidity50.png; sourceTree = "<group>"; };
+		FFFE0D3718448F2300063CC7 /* humidity51.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity51.png; path = HumidityImages/humidity51.png; sourceTree = "<group>"; };
+		FFFE0D3818448F2300063CC7 /* humidity52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity52.png; path = HumidityImages/humidity52.png; sourceTree = "<group>"; };
+		FFFE0D3918448F2300063CC7 /* humidity53.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity53.png; path = HumidityImages/humidity53.png; sourceTree = "<group>"; };
+		FFFE0D3A18448F2300063CC7 /* humidity54.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity54.png; path = HumidityImages/humidity54.png; sourceTree = "<group>"; };
+		FFFE0D3B18448F2300063CC7 /* humidity55.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity55.png; path = HumidityImages/humidity55.png; sourceTree = "<group>"; };
+		FFFE0D3C18448F2300063CC7 /* humidity56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity56.png; path = HumidityImages/humidity56.png; sourceTree = "<group>"; };
+		FFFE0D3D18448F2300063CC7 /* humidity57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity57.png; path = HumidityImages/humidity57.png; sourceTree = "<group>"; };
+		FFFE0D3E18448F2300063CC7 /* humidity58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity58.png; path = HumidityImages/humidity58.png; sourceTree = "<group>"; };
+		FFFE0D3F18448F2300063CC7 /* humidity59.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity59.png; path = HumidityImages/humidity59.png; sourceTree = "<group>"; };
+		FFFE0D4018448F2300063CC7 /* humidity60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity60.png; path = HumidityImages/humidity60.png; sourceTree = "<group>"; };
+		FFFE0D4118448F2300063CC7 /* humidity61.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity61.png; path = HumidityImages/humidity61.png; sourceTree = "<group>"; };
+		FFFE0D4218448F2300063CC7 /* humidity62.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity62.png; path = HumidityImages/humidity62.png; sourceTree = "<group>"; };
+		FFFE0D4318448F2300063CC7 /* humidity63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity63.png; path = HumidityImages/humidity63.png; sourceTree = "<group>"; };
+		FFFE0D4418448F2300063CC7 /* humidity64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity64.png; path = HumidityImages/humidity64.png; sourceTree = "<group>"; };
+		FFFE0D4518448F2300063CC7 /* humidity65.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity65.png; path = HumidityImages/humidity65.png; sourceTree = "<group>"; };
+		FFFE0D4618448F2300063CC7 /* humidity66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity66.png; path = HumidityImages/humidity66.png; sourceTree = "<group>"; };
+		FFFE0D4718448F2300063CC7 /* humidity67.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity67.png; path = HumidityImages/humidity67.png; sourceTree = "<group>"; };
+		FFFE0D4818448F2300063CC7 /* humidity68.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity68.png; path = HumidityImages/humidity68.png; sourceTree = "<group>"; };
+		FFFE0D4918448F2300063CC7 /* humidity69.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity69.png; path = HumidityImages/humidity69.png; sourceTree = "<group>"; };
+		FFFE0D4A18448F2300063CC7 /* humidity70.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity70.png; path = HumidityImages/humidity70.png; sourceTree = "<group>"; };
+		FFFE0D4B18448F2300063CC7 /* humidity71.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity71.png; path = HumidityImages/humidity71.png; sourceTree = "<group>"; };
+		FFFE0D4C18448F2300063CC7 /* humidity72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity72.png; path = HumidityImages/humidity72.png; sourceTree = "<group>"; };
+		FFFE0D4D18448F2300063CC7 /* humidity73.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity73.png; path = HumidityImages/humidity73.png; sourceTree = "<group>"; };
+		FFFE0D4E18448F2300063CC7 /* humidity74.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity74.png; path = HumidityImages/humidity74.png; sourceTree = "<group>"; };
+		FFFE0D4F18448F2300063CC7 /* humidity75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity75.png; path = HumidityImages/humidity75.png; sourceTree = "<group>"; };
+		FFFE0D5018448F2300063CC7 /* humidity76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity76.png; path = HumidityImages/humidity76.png; sourceTree = "<group>"; };
+		FFFE0D5118448F2300063CC7 /* humidity77.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity77.png; path = HumidityImages/humidity77.png; sourceTree = "<group>"; };
+		FFFE0D5218448F2300063CC7 /* humidity78.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity78.png; path = HumidityImages/humidity78.png; sourceTree = "<group>"; };
+		FFFE0D5318448F2300063CC7 /* humidity79.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity79.png; path = HumidityImages/humidity79.png; sourceTree = "<group>"; };
+		FFFE0D5418448F2300063CC7 /* humidity80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity80.png; path = HumidityImages/humidity80.png; sourceTree = "<group>"; };
+		FFFE0D5518448F2300063CC7 /* humidity81.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity81.png; path = HumidityImages/humidity81.png; sourceTree = "<group>"; };
+		FFFE0D5618448F2300063CC7 /* humidity82.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity82.png; path = HumidityImages/humidity82.png; sourceTree = "<group>"; };
+		FFFE0D5718448F2300063CC7 /* humidity83.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity83.png; path = HumidityImages/humidity83.png; sourceTree = "<group>"; };
+		FFFE0D5818448F2300063CC7 /* humidity84.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity84.png; path = HumidityImages/humidity84.png; sourceTree = "<group>"; };
+		FFFE0D5918448F2300063CC7 /* humidity85.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity85.png; path = HumidityImages/humidity85.png; sourceTree = "<group>"; };
+		FFFE0D5A18448F2300063CC7 /* humidity86.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity86.png; path = HumidityImages/humidity86.png; sourceTree = "<group>"; };
+		FFFE0D5B18448F2300063CC7 /* humidity87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity87.png; path = HumidityImages/humidity87.png; sourceTree = "<group>"; };
+		FFFE0D5C18448F2300063CC7 /* humidity88.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity88.png; path = HumidityImages/humidity88.png; sourceTree = "<group>"; };
+		FFFE0D5D18448F2300063CC7 /* humidity89.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity89.png; path = HumidityImages/humidity89.png; sourceTree = "<group>"; };
+		FFFE0D5E18448F2300063CC7 /* humidity90.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity90.png; path = HumidityImages/humidity90.png; sourceTree = "<group>"; };
+		FFFE0D5F18448F2300063CC7 /* humidity91.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity91.png; path = HumidityImages/humidity91.png; sourceTree = "<group>"; };
+		FFFE0D6018448F2300063CC7 /* humidity92.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity92.png; path = HumidityImages/humidity92.png; sourceTree = "<group>"; };
+		FFFE0D6118448F2300063CC7 /* humidity93.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity93.png; path = HumidityImages/humidity93.png; sourceTree = "<group>"; };
+		FFFE0D6218448F2300063CC7 /* humidity94.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity94.png; path = HumidityImages/humidity94.png; sourceTree = "<group>"; };
+		FFFE0D6318448F2300063CC7 /* humidity95.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity95.png; path = HumidityImages/humidity95.png; sourceTree = "<group>"; };
+		FFFE0D6418448F2300063CC7 /* humidity96.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity96.png; path = HumidityImages/humidity96.png; sourceTree = "<group>"; };
+		FFFE0D6518448F2300063CC7 /* humidity97.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity97.png; path = HumidityImages/humidity97.png; sourceTree = "<group>"; };
+		FFFE0D6618448F2300063CC7 /* humidity98.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity98.png; path = HumidityImages/humidity98.png; sourceTree = "<group>"; };
+		FFFE0D6718448F2300063CC7 /* humidity99.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity99.png; path = HumidityImages/humidity99.png; sourceTree = "<group>"; };
+		FFFE0D6818448F2300063CC7 /* humidity100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = humidity100.png; path = HumidityImages/humidity100.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +366,7 @@
 		5846E02118087B480003DFFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FFFE0C3918448B2C00063CC7 /* HumidityImages */,
 				FFFE0B6C18432D8E00063CC7 /* Arduino.png */,
 				FFFE0B38183ADCB700063CC7 /* Constant.h */,
 				FFFE0B641841F22F00063CC7 /* Constant.m */,
@@ -222,6 +425,114 @@
 			children = (
 			);
 			name = MPGModel;
+			sourceTree = "<group>";
+		};
+		FFFE0C3918448B2C00063CC7 /* HumidityImages */ = {
+			isa = PBXGroup;
+			children = (
+				FFFE0D0418448F2300063CC7 /* humidity0.png */,
+				FFFE0D0518448F2300063CC7 /* humidity1.png */,
+				FFFE0D0618448F2300063CC7 /* humidity2.png */,
+				FFFE0D0718448F2300063CC7 /* humidity3.png */,
+				FFFE0D0818448F2300063CC7 /* humidity4.png */,
+				FFFE0D0918448F2300063CC7 /* humidity5.png */,
+				FFFE0D0A18448F2300063CC7 /* humidity6.png */,
+				FFFE0D0B18448F2300063CC7 /* humidity7.png */,
+				FFFE0D0C18448F2300063CC7 /* humidity8.png */,
+				FFFE0D0D18448F2300063CC7 /* humidity9.png */,
+				FFFE0D0E18448F2300063CC7 /* humidity10.png */,
+				FFFE0D0F18448F2300063CC7 /* humidity11.png */,
+				FFFE0D1018448F2300063CC7 /* humidity12.png */,
+				FFFE0D1118448F2300063CC7 /* humidity13.png */,
+				FFFE0D1218448F2300063CC7 /* humidity14.png */,
+				FFFE0D1318448F2300063CC7 /* humidity15.png */,
+				FFFE0D1418448F2300063CC7 /* humidity16.png */,
+				FFFE0D1518448F2300063CC7 /* humidity17.png */,
+				FFFE0D1618448F2300063CC7 /* humidity18.png */,
+				FFFE0D1718448F2300063CC7 /* humidity19.png */,
+				FFFE0D1818448F2300063CC7 /* humidity20.png */,
+				FFFE0D1918448F2300063CC7 /* humidity21.png */,
+				FFFE0D1A18448F2300063CC7 /* humidity22.png */,
+				FFFE0D1B18448F2300063CC7 /* humidity23.png */,
+				FFFE0D1C18448F2300063CC7 /* humidity24.png */,
+				FFFE0D1D18448F2300063CC7 /* humidity25.png */,
+				FFFE0D1E18448F2300063CC7 /* humidity26.png */,
+				FFFE0D1F18448F2300063CC7 /* humidity27.png */,
+				FFFE0D2018448F2300063CC7 /* humidity28.png */,
+				FFFE0D2118448F2300063CC7 /* humidity29.png */,
+				FFFE0D2218448F2300063CC7 /* humidity30.png */,
+				FFFE0D2318448F2300063CC7 /* humidity31.png */,
+				FFFE0D2418448F2300063CC7 /* humidity32.png */,
+				FFFE0D2518448F2300063CC7 /* humidity33.png */,
+				FFFE0D2618448F2300063CC7 /* humidity34.png */,
+				FFFE0D2718448F2300063CC7 /* humidity35.png */,
+				FFFE0D2818448F2300063CC7 /* humidity36.png */,
+				FFFE0D2918448F2300063CC7 /* humidity37.png */,
+				FFFE0D2A18448F2300063CC7 /* humidity38.png */,
+				FFFE0D2B18448F2300063CC7 /* humidity39.png */,
+				FFFE0D2C18448F2300063CC7 /* humidity40.png */,
+				FFFE0D2D18448F2300063CC7 /* humidity41.png */,
+				FFFE0D2E18448F2300063CC7 /* humidity42.png */,
+				FFFE0D2F18448F2300063CC7 /* humidity43.png */,
+				FFFE0D3018448F2300063CC7 /* humidity44.png */,
+				FFFE0D3118448F2300063CC7 /* humidity45.png */,
+				FFFE0D3218448F2300063CC7 /* humidity46.png */,
+				FFFE0D3318448F2300063CC7 /* humidity47.png */,
+				FFFE0D3418448F2300063CC7 /* humidity48.png */,
+				FFFE0D3518448F2300063CC7 /* humidity49.png */,
+				FFFE0D3618448F2300063CC7 /* humidity50.png */,
+				FFFE0D3718448F2300063CC7 /* humidity51.png */,
+				FFFE0D3818448F2300063CC7 /* humidity52.png */,
+				FFFE0D3918448F2300063CC7 /* humidity53.png */,
+				FFFE0D3A18448F2300063CC7 /* humidity54.png */,
+				FFFE0D3B18448F2300063CC7 /* humidity55.png */,
+				FFFE0D3C18448F2300063CC7 /* humidity56.png */,
+				FFFE0D3D18448F2300063CC7 /* humidity57.png */,
+				FFFE0D3E18448F2300063CC7 /* humidity58.png */,
+				FFFE0D3F18448F2300063CC7 /* humidity59.png */,
+				FFFE0D4018448F2300063CC7 /* humidity60.png */,
+				FFFE0D4118448F2300063CC7 /* humidity61.png */,
+				FFFE0D4218448F2300063CC7 /* humidity62.png */,
+				FFFE0D4318448F2300063CC7 /* humidity63.png */,
+				FFFE0D4418448F2300063CC7 /* humidity64.png */,
+				FFFE0D4518448F2300063CC7 /* humidity65.png */,
+				FFFE0D4618448F2300063CC7 /* humidity66.png */,
+				FFFE0D4718448F2300063CC7 /* humidity67.png */,
+				FFFE0D4818448F2300063CC7 /* humidity68.png */,
+				FFFE0D4918448F2300063CC7 /* humidity69.png */,
+				FFFE0D4A18448F2300063CC7 /* humidity70.png */,
+				FFFE0D4B18448F2300063CC7 /* humidity71.png */,
+				FFFE0D4C18448F2300063CC7 /* humidity72.png */,
+				FFFE0D4D18448F2300063CC7 /* humidity73.png */,
+				FFFE0D4E18448F2300063CC7 /* humidity74.png */,
+				FFFE0D4F18448F2300063CC7 /* humidity75.png */,
+				FFFE0D5018448F2300063CC7 /* humidity76.png */,
+				FFFE0D5118448F2300063CC7 /* humidity77.png */,
+				FFFE0D5218448F2300063CC7 /* humidity78.png */,
+				FFFE0D5318448F2300063CC7 /* humidity79.png */,
+				FFFE0D5418448F2300063CC7 /* humidity80.png */,
+				FFFE0D5518448F2300063CC7 /* humidity81.png */,
+				FFFE0D5618448F2300063CC7 /* humidity82.png */,
+				FFFE0D5718448F2300063CC7 /* humidity83.png */,
+				FFFE0D5818448F2300063CC7 /* humidity84.png */,
+				FFFE0D5918448F2300063CC7 /* humidity85.png */,
+				FFFE0D5A18448F2300063CC7 /* humidity86.png */,
+				FFFE0D5B18448F2300063CC7 /* humidity87.png */,
+				FFFE0D5C18448F2300063CC7 /* humidity88.png */,
+				FFFE0D5D18448F2300063CC7 /* humidity89.png */,
+				FFFE0D5E18448F2300063CC7 /* humidity90.png */,
+				FFFE0D5F18448F2300063CC7 /* humidity91.png */,
+				FFFE0D6018448F2300063CC7 /* humidity92.png */,
+				FFFE0D6118448F2300063CC7 /* humidity93.png */,
+				FFFE0D6218448F2300063CC7 /* humidity94.png */,
+				FFFE0D6318448F2300063CC7 /* humidity95.png */,
+				FFFE0D6418448F2300063CC7 /* humidity96.png */,
+				FFFE0D6518448F2300063CC7 /* humidity97.png */,
+				FFFE0D6618448F2300063CC7 /* humidity98.png */,
+				FFFE0D6718448F2300063CC7 /* humidity99.png */,
+				FFFE0D6818448F2300063CC7 /* humidity100.png */,
+			);
+			name = HumidityImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,12 +612,113 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFFE0D9C18448F2300063CC7 /* humidity51.png in Resources */,
+				FFFE0DAC18448F2300063CC7 /* humidity67.png in Resources */,
+				FFFE0D7F18448F2300063CC7 /* humidity22.png in Resources */,
+				FFFE0D7418448F2300063CC7 /* humidity11.png in Resources */,
+				FFFE0DC418448F2400063CC7 /* humidity91.png in Resources */,
 				FFFE0B6D18432D8E00063CC7 /* Arduino.png in Resources */,
+				FFFE0DB718448F2300063CC7 /* humidity78.png in Resources */,
+				FFFE0D9218448F2300063CC7 /* humidity41.png in Resources */,
+				FFFE0D6D18448F2300063CC7 /* humidity4.png in Resources */,
+				FFFE0D6E18448F2300063CC7 /* humidity5.png in Resources */,
+				FFFE0D9F18448F2300063CC7 /* humidity54.png in Resources */,
+				FFFE0DBB18448F2300063CC7 /* humidity82.png in Resources */,
+				FFFE0D9D18448F2300063CC7 /* humidity52.png in Resources */,
+				FFFE0D8018448F2300063CC7 /* humidity23.png in Resources */,
+				FFFE0D9018448F2300063CC7 /* humidity39.png in Resources */,
+				FFFE0DB418448F2300063CC7 /* humidity75.png in Resources */,
+				FFFE0D8B18448F2300063CC7 /* humidity34.png in Resources */,
+				FFFE0DAE18448F2300063CC7 /* humidity69.png in Resources */,
+				FFFE0D9518448F2300063CC7 /* humidity44.png in Resources */,
+				FFFE0D9318448F2300063CC7 /* humidity42.png in Resources */,
+				FFFE0DA418448F2300063CC7 /* humidity59.png in Resources */,
+				FFFE0DA918448F2300063CC7 /* humidity64.png in Resources */,
+				FFFE0D9618448F2300063CC7 /* humidity45.png in Resources */,
+				FFFE0D6F18448F2300063CC7 /* humidity6.png in Resources */,
+				FFFE0D7B18448F2300063CC7 /* humidity18.png in Resources */,
+				FFFE0DCD18448F2400063CC7 /* humidity100.png in Resources */,
+				FFFE0DCB18448F2400063CC7 /* humidity98.png in Resources */,
+				FFFE0D8318448F2300063CC7 /* humidity26.png in Resources */,
+				FFFE0DC918448F2400063CC7 /* humidity96.png in Resources */,
+				FFFE0D8C18448F2300063CC7 /* humidity35.png in Resources */,
+				FFFE0D6918448F2300063CC7 /* humidity0.png in Resources */,
+				FFFE0DB818448F2300063CC7 /* humidity79.png in Resources */,
+				FFFE0DB018448F2300063CC7 /* humidity71.png in Resources */,
+				FFFE0D9418448F2300063CC7 /* humidity43.png in Resources */,
+				FFFE0DB918448F2300063CC7 /* humidity80.png in Resources */,
+				FFFE0D7A18448F2300063CC7 /* humidity17.png in Resources */,
+				FFFE0DBA18448F2300063CC7 /* humidity81.png in Resources */,
+				FFFE0D9718448F2300063CC7 /* humidity46.png in Resources */,
+				FFFE0D8118448F2300063CC7 /* humidity24.png in Resources */,
+				FFFE0D7818448F2300063CC7 /* humidity15.png in Resources */,
+				FFFE0D6B18448F2300063CC7 /* humidity2.png in Resources */,
+				FFFE0DA218448F2300063CC7 /* humidity57.png in Resources */,
+				FFFE0D7918448F2300063CC7 /* humidity16.png in Resources */,
+				FFFE0DA618448F2300063CC7 /* humidity61.png in Resources */,
+				FFFE0D7218448F2300063CC7 /* humidity9.png in Resources */,
+				FFFE0D9118448F2300063CC7 /* humidity40.png in Resources */,
 				5846E03118087B480003DFFB /* Main_iPad.storyboard in Resources */,
+				FFFE0D8618448F2300063CC7 /* humidity29.png in Resources */,
 				5846E05318087BD20003DFFB /* Application.xib in Resources */,
+				FFFE0DA818448F2300063CC7 /* humidity63.png in Resources */,
+				FFFE0DB218448F2300063CC7 /* humidity73.png in Resources */,
+				FFFE0DBF18448F2400063CC7 /* humidity86.png in Resources */,
+				FFFE0DBE18448F2400063CC7 /* humidity85.png in Resources */,
+				FFFE0D7618448F2300063CC7 /* humidity13.png in Resources */,
+				FFFE0D8A18448F2300063CC7 /* humidity33.png in Resources */,
+				FFFE0D7118448F2300063CC7 /* humidity8.png in Resources */,
+				FFFE0D9B18448F2300063CC7 /* humidity50.png in Resources */,
+				FFFE0D7718448F2300063CC7 /* humidity14.png in Resources */,
+				FFFE0DC518448F2400063CC7 /* humidity92.png in Resources */,
+				FFFE0D8F18448F2300063CC7 /* humidity38.png in Resources */,
+				FFFE0DB618448F2300063CC7 /* humidity77.png in Resources */,
+				FFFE0D7018448F2300063CC7 /* humidity7.png in Resources */,
+				FFFE0D8718448F2300063CC7 /* humidity30.png in Resources */,
+				FFFE0D8218448F2300063CC7 /* humidity25.png in Resources */,
+				FFFE0D8D18448F2300063CC7 /* humidity36.png in Resources */,
+				FFFE0D8418448F2300063CC7 /* humidity27.png in Resources */,
 				5846E03618087B480003DFFB /* Images.xcassets in Resources */,
+				FFFE0DAA18448F2300063CC7 /* humidity65.png in Resources */,
+				FFFE0DC018448F2400063CC7 /* humidity87.png in Resources */,
+				FFFE0DA018448F2300063CC7 /* humidity55.png in Resources */,
+				FFFE0D8518448F2300063CC7 /* humidity28.png in Resources */,
+				FFFE0DA718448F2300063CC7 /* humidity62.png in Resources */,
+				FFFE0D8E18448F2300063CC7 /* humidity37.png in Resources */,
+				FFFE0DBC18448F2300063CC7 /* humidity83.png in Resources */,
+				FFFE0DAD18448F2300063CC7 /* humidity68.png in Resources */,
+				FFFE0DC118448F2400063CC7 /* humidity88.png in Resources */,
+				FFFE0D7518448F2300063CC7 /* humidity12.png in Resources */,
+				FFFE0DA518448F2300063CC7 /* humidity60.png in Resources */,
 				5846E02E18087B480003DFFB /* Main_iPhone.storyboard in Resources */,
+				FFFE0DC818448F2400063CC7 /* humidity95.png in Resources */,
+				FFFE0DC318448F2400063CC7 /* humidity90.png in Resources */,
+				FFFE0DB518448F2300063CC7 /* humidity76.png in Resources */,
+				FFFE0DA318448F2300063CC7 /* humidity58.png in Resources */,
+				FFFE0D7318448F2300063CC7 /* humidity10.png in Resources */,
+				FFFE0DAF18448F2300063CC7 /* humidity70.png in Resources */,
+				FFFE0DCC18448F2400063CC7 /* humidity99.png in Resources */,
+				FFFE0DA118448F2300063CC7 /* humidity56.png in Resources */,
+				FFFE0D9918448F2300063CC7 /* humidity48.png in Resources */,
+				FFFE0D6A18448F2300063CC7 /* humidity1.png in Resources */,
+				FFFE0D9E18448F2300063CC7 /* humidity53.png in Resources */,
+				FFFE0D8818448F2300063CC7 /* humidity31.png in Resources */,
+				FFFE0DB118448F2300063CC7 /* humidity72.png in Resources */,
+				FFFE0D6C18448F2300063CC7 /* humidity3.png in Resources */,
+				FFFE0D7C18448F2300063CC7 /* humidity19.png in Resources */,
+				FFFE0D7E18448F2300063CC7 /* humidity21.png in Resources */,
+				FFFE0DC618448F2400063CC7 /* humidity93.png in Resources */,
+				FFFE0DAB18448F2300063CC7 /* humidity66.png in Resources */,
+				FFFE0DB318448F2300063CC7 /* humidity74.png in Resources */,
+				FFFE0D9A18448F2300063CC7 /* humidity49.png in Resources */,
 				5846E02518087B480003DFFB /* InfoPlist.strings in Resources */,
+				FFFE0D9818448F2300063CC7 /* humidity47.png in Resources */,
+				FFFE0DC718448F2400063CC7 /* humidity94.png in Resources */,
+				FFFE0D8918448F2300063CC7 /* humidity32.png in Resources */,
+				FFFE0DBD18448F2300063CC7 /* humidity84.png in Resources */,
+				FFFE0D7D18448F2300063CC7 /* humidity20.png in Resources */,
+				FFFE0DCA18448F2400063CC7 /* humidity97.png in Resources */,
+				FFFE0DC218448F2400063CC7 /* humidity89.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

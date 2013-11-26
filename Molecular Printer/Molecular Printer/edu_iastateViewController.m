@@ -40,7 +40,9 @@
 @synthesize spotStepper;
 @synthesize model;
 @synthesize deviceConnectedLabel;
+@synthesize humidImageView;
 NSTimer* tempTimer;
+NSTimer* humidTimer;
 
 - (void)viewDidLoad
 {
@@ -48,9 +50,9 @@ NSTimer* tempTimer;
     //initialization
     model = [[MPGModel alloc] init];
     humidSlider.value = INITIALHUMIDITY;
-    humidLabel.text = [[NSString alloc] initWithFormat:@"%1.1f", INITIALHUMIDITY];
+    humidLabel.text = [[NSString alloc] initWithFormat:@"%1.1f%%", INITIALHUMIDITY];
     tempSlider.value = INITIALTEMP;
-    humidLabel.text = [[NSString alloc] initWithFormat:@"%1.1f%%", INITIALTEMP];
+    tempLabel.text = [[NSString alloc] initWithFormat:@"%1.1f", INITIALTEMP];
     widthSlider.value = widthSlider.value = INITIALWIDTH;
     widthLabel.text = [[NSString alloc] initWithFormat:@"%1.1fµm", INITIALWIDTH];
     heightSlider.value = heightSlider.value = INITIALHEIGHT;
@@ -60,9 +62,14 @@ NSTimer* tempTimer;
     
     //update from device
     tempTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateTemp) userInfo:nil repeats:YES];
+    humidTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateHumidity) userInfo:nil repeats:YES];
 }
 -(void)updateTemp{
     deviceTempLabel.text = [[NSString alloc] initWithFormat:@"%1.1f", [model.device.getTemperature getValue]];
+}
+
+-(void)updateHumidity{
+    humidImageView.image = [UIImage imageNamed:[[NSString alloc] initWithFormat:@"humidity%d.png",(int)model.device.getHumidity.getValue]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,6 +92,7 @@ NSTimer* tempTimer;
     NSString *newText = [[NSString alloc] initWithFormat:@"%1.1f%%",
                          [[model getHumidity] getValue]];
     humidLabel.text = newText;
+    [model.device setDesiredHumidity:model.getHumidity];
 }
 
 - (IBAction)columnSliderChanged:(id)sender {
@@ -216,6 +224,9 @@ NSTimer* tempTimer;
 -(void) updateSpotSize:(float)value{
     //TODO:adjust spot size accordingly to changes to pitches
 }
+
+
+//Device selection
 - (IBAction)deviceButton:(id)sender {
     if(_deviceSelection == nil){
         _deviceSelection = [[DeviceSelectionViewController alloc] initWithStyle:UITableViewStylePlain];
@@ -231,7 +242,6 @@ NSTimer* tempTimer;
     }
     
 }
-
 -(void)selectedDevice:(MicroControllerInterface *)device{
     deviceConnectedLabel.text = [device getID];
     [model setDevice:device];

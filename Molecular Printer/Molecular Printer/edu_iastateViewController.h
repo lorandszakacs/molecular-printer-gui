@@ -14,6 +14,7 @@
     UILabel     *tempLabel;
     UILabel     *deviceTempLabel;
     UILabel     *humidLabel;
+    UIImageView *humidImageView;
     UILabel     *columnLabel;
     UISlider        *columnSlider;
     UIStepper       *columnStepper;
@@ -43,6 +44,7 @@
 //Desired humidity slider
 @property (weak, nonatomic) IBOutlet UISlider *humidSlider;
 @property (retain, nonatomic) IBOutlet UILabel *humidLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *humidImageView;
 - (IBAction)humidSliderChanged:(id)sender;
 
 //Columns setter

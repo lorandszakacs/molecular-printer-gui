@@ -20,6 +20,7 @@ Humidity* humidity;
 Humidity* desiredHumidity;
 Spot* s;
 NSTimer* tempTimer;
+NSTimer* humidTimer;
 -(id)init{
     self = [super init];
     pitch = [[Pitch alloc] initPitch:0 :0 :MICROMETER];
@@ -50,11 +51,21 @@ NSTimer* tempTimer;
 -(void)changeTemp{
     if([temp getValue]-[desiredTemp getValue]>0.1)
         temp = [[Temperature alloc] initTemperature:[temp getValue]-0.1 :CELSIUS];
-    else if([temp getValue]-[desiredTemp getValue]<0.1)
+    else if([temp getValue]-[desiredTemp getValue]<-0.1)
         temp = [[Temperature alloc] initTemperature:[temp getValue]+0.1 :CELSIUS];
     else{
         [tempTimer invalidate];
         tempTimer = nil;
+    }
+}
+-(void)changeHumid{
+    if([humidity getValue]-[desiredHumidity getValue]>0.1)
+        humidity = [[Humidity alloc] initHumidity:[humidity getValue]-0.1];
+    else if([humidity getValue]-[desiredHumidity getValue]<-0.1)
+        humidity = [[Humidity alloc] initHumidity:[humidity getValue]+0.1];
+    else{
+        [humidTimer invalidate];
+        humidTimer = nil;
     }
 }
 -(NSInteger)setDesiredTemperature:(Temperature*)temp{
@@ -64,6 +75,7 @@ NSTimer* tempTimer;
 }
 -(NSInteger)setDesiredHumidity:(Humidity*)humid{
     desiredHumidity = humid;
+    humidTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(changeHumid) userInfo:nil repeats:YES];
     return (NSInteger)[NSNumber numberWithInt:1];
 }
 -(NSInteger)setSpotSize:(Spot*)spot{

@@ -112,8 +112,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w1M-uG-1Yv">
-                                <rect key="frame" x="445" y="698" width="308" height="127"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="humidity0.png" translatesAutoresizingMaskIntoConstraints="NO" id="w1M-uG-1Yv">
+                                <rect key="frame" x="532" y="688" width="149" height="149"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spot size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaX-mA-4dW">
@@ -353,6 +353,7 @@
                         <outlet property="heightLabel" destination="ivf-KY-stH" id="wHp-iR-uW7"/>
                         <outlet property="heightSlider" destination="dGh-n4-57a" id="HHh-ja-Ryt"/>
                         <outlet property="heightStepper" destination="7Jd-hS-6Jv" id="xSg-BV-12P"/>
+                        <outlet property="humidImageView" destination="w1M-uG-1Yv" id="iOo-ve-6V3"/>
                         <outlet property="humidLabel" destination="VLY-rX-Sx7" id="KWA-IA-JKj"/>
                         <outlet property="humidSlider" destination="VFi-05-wpu" id="lfp-au-Z0C"/>
                         <outlet property="rowLabel" destination="job-UM-vNj" id="EyK-uz-Zzl"/>
@@ -447,6 +448,9 @@
             <point key="canvasLocation" x="478" y="-632"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="humidity0.png" width="256" height="256"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
         <simulatedOrientationMetrics key="orientation"/>
