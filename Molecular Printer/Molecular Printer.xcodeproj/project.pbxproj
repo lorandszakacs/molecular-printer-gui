@@ -23,6 +23,9 @@
 		5846E04718087B480003DFFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5846E04518087B480003DFFB /* InfoPlist.strings */; };
 		5846E04918087B480003DFFB /* Molecular_PrinterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5846E04818087B480003DFFB /* Molecular_PrinterTests.m */; };
 		5846E05318087BD20003DFFB /* Application.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5846E05218087BD20003DFFB /* Application.xib */; };
+		FF2F4BCB184B55BF00D2D9EA /* SaveConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4BC9184B55BF00D2D9EA /* SaveConfigViewController.m */; };
+		FF2F4BCC184B55BF00D2D9EA /* SaveConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2F4BCA184B55BF00D2D9EA /* SaveConfigViewController.xib */; };
+		FF2F4BCF184B770D00D2D9EA /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4BCE184B770D00D2D9EA /* Configuration.m */; };
 		FFFE0B59183FFF4100063CC7 /* PhysicalUnits.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B58183FFF4100063CC7 /* PhysicalUnits.m */; };
 		FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B5B184005F600063CC7 /* GridMatrix.m */; };
 		FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B5E184008BD00063CC7 /* MicroControllerInterface.m */; };
@@ -165,6 +168,11 @@
 		5846E04618087B480003DFFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5846E04818087B480003DFFB /* Molecular_PrinterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Molecular_PrinterTests.m; sourceTree = "<group>"; };
 		5846E05218087BD20003DFFB /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Application.xib; sourceTree = "<group>"; };
+		FF2F4BC8184B55BF00D2D9EA /* SaveConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SaveConfigViewController.h; path = ../SaveConfigViewController.h; sourceTree = "<group>"; };
+		FF2F4BC9184B55BF00D2D9EA /* SaveConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SaveConfigViewController.m; path = ../SaveConfigViewController.m; sourceTree = "<group>"; };
+		FF2F4BCA184B55BF00D2D9EA /* SaveConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SaveConfigViewController.xib; path = ../SaveConfigViewController.xib; sourceTree = "<group>"; };
+		FF2F4BCD184B770D00D2D9EA /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		FF2F4BCE184B770D00D2D9EA /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		FFFE0B38183ADCB700063CC7 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		FFFE0B57183FFF4100063CC7 /* PhysicalUnits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicalUnits.h; sourceTree = "<group>"; };
 		FFFE0B58183FFF4100063CC7 /* PhysicalUnits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicalUnits.m; sourceTree = "<group>"; };
@@ -343,10 +351,6 @@
 				FFFE0B6218400B9300063CC7 /* MPGModel.m */,
 				FFFE0B56183FFC0400063CC7 /* MPGController */,
 				FFFE0B43183FF03A00063CC7 /* Data */,
-				FFFE0B57183FFF4100063CC7 /* PhysicalUnits.h */,
-				FFFE0B58183FFF4100063CC7 /* PhysicalUnits.m */,
-				FFFE0B5A184005F600063CC7 /* GridMatrix.h */,
-				FFFE0B5B184005F600063CC7 /* GridMatrix.m */,
 				FFFE0B42183FF01A00063CC7 /* MicroController */,
 				FFFE0B691842EEB600063CC7 /* deviceSelectionViewController.h */,
 				FFFE0B6A1842EEB600063CC7 /* deviceSelectionViewController.m */,
@@ -357,6 +361,9 @@
 				5846E03218087B480003DFFB /* edu_iastateViewController.h */,
 				5846E03318087B480003DFFB /* edu_iastateViewController.m */,
 				5846E03518087B480003DFFB /* Images.xcassets */,
+				FF2F4BC8184B55BF00D2D9EA /* SaveConfigViewController.h */,
+				FF2F4BC9184B55BF00D2D9EA /* SaveConfigViewController.m */,
+				FF2F4BCA184B55BF00D2D9EA /* SaveConfigViewController.xib */,
 				5846E02118087B480003DFFB /* Supporting Files */,
 				5846E05218087BD20003DFFB /* Application.xib */,
 			);
@@ -409,6 +416,12 @@
 		FFFE0B43183FF03A00063CC7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FFFE0B57183FFF4100063CC7 /* PhysicalUnits.h */,
+				FFFE0B58183FFF4100063CC7 /* PhysicalUnits.m */,
+				FFFE0B5A184005F600063CC7 /* GridMatrix.h */,
+				FFFE0B5B184005F600063CC7 /* GridMatrix.m */,
+				FF2F4BCD184B770D00D2D9EA /* Configuration.h */,
+				FF2F4BCE184B770D00D2D9EA /* Configuration.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -673,6 +686,7 @@
 				FFFE0DC518448F2400063CC7 /* humidity92.png in Resources */,
 				FFFE0D8F18448F2300063CC7 /* humidity38.png in Resources */,
 				FFFE0DB618448F2300063CC7 /* humidity77.png in Resources */,
+				FF2F4BCC184B55BF00D2D9EA /* SaveConfigViewController.xib in Resources */,
 				FFFE0D7018448F2300063CC7 /* humidity7.png in Resources */,
 				FFFE0D8718448F2300063CC7 /* humidity30.png in Resources */,
 				FFFE0D8218448F2300063CC7 /* humidity25.png in Resources */,
@@ -738,6 +752,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFFE0B6B1842EEB600063CC7 /* deviceSelectionViewController.m in Sources */,
+				FF2F4BCB184B55BF00D2D9EA /* SaveConfigViewController.m in Sources */,
 				FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */,
 				5846E02718087B480003DFFB /* main.m in Sources */,
 				FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */,
@@ -746,6 +761,7 @@
 				5846E02B18087B480003DFFB /* edu_iastateAppDelegate.m in Sources */,
 				5846E03418087B480003DFFB /* edu_iastateViewController.m in Sources */,
 				FFFE0B651841F22F00063CC7 /* Constant.m in Sources */,
+				FF2F4BCF184B770D00D2D9EA /* Configuration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -51,6 +51,9 @@
                                 <state key="normal" title="Config">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="configSaveButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gzK-Hm-Ipk"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X0D-hM-hFZ">
                                 <rect key="frame" x="20" y="0.0" width="702" height="473"/>
@@ -345,10 +348,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="sfa-w0-wqt"/>
                     <connections>
+                        <outlet property="ConfigSaveButton" destination="Na3-U6-gvr" id="UzG-LH-csJ"/>
                         <outlet property="columnLabel" destination="ewT-en-BpP" id="PRk-Yz-vlK"/>
                         <outlet property="columnSlider" destination="Nj2-r2-lks" id="gFm-ss-gXS"/>
                         <outlet property="columnStepper" destination="847-cy-3In" id="2dt-GV-Cij"/>
                         <outlet property="deviceConnectedLabel" destination="Uas-ej-LDB" id="Fx4-TP-HRg"/>
+                        <outlet property="deviceSelectButton" destination="Z4e-K0-98a" id="mcr-gT-wVm"/>
                         <outlet property="deviceTempLabel" destination="tog-9E-DVo" id="esP-98-III"/>
                         <outlet property="heightLabel" destination="ivf-KY-stH" id="wHp-iR-uW7"/>
                         <outlet property="heightSlider" destination="dGh-n4-57a" id="HHh-ja-Ryt"/>

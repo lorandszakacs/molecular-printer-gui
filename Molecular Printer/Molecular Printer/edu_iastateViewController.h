@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "MPGModel.h"
 #import "deviceSelectionViewController.h"
+#import "SaveConfigViewController.h"
 
 @interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected>{
-    UILabel     *tempLabel;
-    UILabel     *deviceTempLabel;
-    UILabel     *humidLabel;
-    UIImageView *humidImageView;
-    UILabel     *columnLabel;
+    UILabel         *tempLabel;
+    UILabel         *deviceTempLabel;
+    UILabel         *humidLabel;
+    UIImageView     *humidImageView;
+    UILabel         *columnLabel;
     UISlider        *columnSlider;
     UIStepper       *columnStepper;
     UILabel         *rowLabel;
@@ -88,6 +89,13 @@
 //device selection button
 @property (retain, nonatomic) IBOutlet UILabel *deviceConnectedLabel;
 @property (strong) DeviceSelectionViewController* deviceSelection;
+@property (strong, nonatomic) IBOutlet UIButton *deviceSelectButton;
 @property (strong) UIPopoverController* deviceSelectionPopover;
 - (IBAction)deviceButton:(id)sender;
+
+//Config save/load
+- (IBAction)configSaveButtonPushed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *ConfigSaveButton;
+@property (strong) SaveConfigViewController* saveConfigController;
+@property (strong) UIPopoverController* saveConfigPopover;
 @end

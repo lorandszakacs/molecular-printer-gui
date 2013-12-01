@@ -43,6 +43,7 @@
 @synthesize humidImageView;
 NSTimer* tempTimer;
 NSTimer* humidTimer;
+@synthesize ConfigSaveButton;
 
 - (void)viewDidLoad
 {
@@ -235,7 +236,7 @@ NSTimer* humidTimer;
     
     if(_deviceSelectionPopover ==nil){
         _deviceSelectionPopover = [[UIPopoverController alloc] initWithContentViewController:_deviceSelection];
-        [_deviceSelectionPopover presentPopoverFromRect:CGRectMake(565, 914, 54, 30) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+        [_deviceSelectionPopover presentPopoverFromRect:_deviceSelectButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
     }else{
         [_deviceSelectionPopover dismissPopoverAnimated:YES];
         _deviceSelectionPopover = nil;
@@ -249,6 +250,23 @@ NSTimer* humidTimer;
     if(_deviceSelectionPopover!=nil){
         [_deviceSelectionPopover dismissPopoverAnimated:YES];
         _deviceSelectionPopover = nil;
+    }
+}
+
+//Config S/L
+- (IBAction)configSaveButtonPushed:(id)sender {
+    if(_saveConfigController == nil){
+        _saveConfigController = [[SaveConfigViewController alloc] init];
+        _saveConfigController.contentSizeForViewInPopover = CGSizeMake(187, 196);//hard coded:calculated from position of views.
+//        _saveConfigController.delegate = self;
+    }
+    
+    if(_saveConfigPopover ==nil){
+        _saveConfigPopover = [[UIPopoverController alloc] initWithContentViewController:_saveConfigController];
+        [_saveConfigPopover presentPopoverFromRect:ConfigSaveButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+    }else{
+        [_saveConfigPopover dismissPopoverAnimated:YES];
+        _saveConfigPopover = nil;
     }
 }
 @end
