@@ -11,7 +11,8 @@
 #import "deviceSelectionViewController.h"
 #import "SaveConfigViewController.h"
 
-@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected>{
+@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected,
+                                                        UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
     UILabel         *tempLabel;
     UILabel         *deviceTempLabel;
     UILabel         *humidLabel;
@@ -98,4 +99,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *ConfigSaveButton;
 @property (strong) SaveConfigViewController* saveConfigController;
 @property (strong) UIPopoverController* saveConfigPopover;
+
+
 @end
