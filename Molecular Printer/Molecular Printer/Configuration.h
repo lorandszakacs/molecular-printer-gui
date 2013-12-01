@@ -13,7 +13,7 @@
 #define Configuration_h
 @interface Configuration : NSObject<NSCoding>
 
-@property (strong) NSString *title;//title of configuration save
+@property (strong, getter = getTitle) NSString *title;//title of configuration save
 @property (strong) Temperature *temp;
 @property (strong) Humidity *humid;
 @property (strong) Pitch *pitch;

@@ -26,6 +26,8 @@
 		FF2F4BCB184B55BF00D2D9EA /* SaveConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4BC9184B55BF00D2D9EA /* SaveConfigViewController.m */; };
 		FF2F4BCC184B55BF00D2D9EA /* SaveConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2F4BCA184B55BF00D2D9EA /* SaveConfigViewController.xib */; };
 		FF2F4BCF184B770D00D2D9EA /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4BCE184B770D00D2D9EA /* Configuration.m */; };
+		FF2F4BDB184B9A9100D2D9EA /* LoadConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4BD9184B9A9100D2D9EA /* LoadConfigViewController.m */; };
+		FF2F4BDC184B9A9100D2D9EA /* LoadConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2F4BDA184B9A9100D2D9EA /* LoadConfigViewController.xib */; };
 		FFFE0B59183FFF4100063CC7 /* PhysicalUnits.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B58183FFF4100063CC7 /* PhysicalUnits.m */; };
 		FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B5B184005F600063CC7 /* GridMatrix.m */; };
 		FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFE0B5E184008BD00063CC7 /* MicroControllerInterface.m */; };
@@ -173,6 +175,9 @@
 		FF2F4BCA184B55BF00D2D9EA /* SaveConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SaveConfigViewController.xib; path = ../SaveConfigViewController.xib; sourceTree = "<group>"; };
 		FF2F4BCD184B770D00D2D9EA /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
 		FF2F4BCE184B770D00D2D9EA /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
+		FF2F4BD8184B9A9100D2D9EA /* LoadConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadConfigViewController.h; sourceTree = "<group>"; };
+		FF2F4BD9184B9A9100D2D9EA /* LoadConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadConfigViewController.m; sourceTree = "<group>"; };
+		FF2F4BDA184B9A9100D2D9EA /* LoadConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadConfigViewController.xib; sourceTree = "<group>"; };
 		FFFE0B38183ADCB700063CC7 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		FFFE0B57183FFF4100063CC7 /* PhysicalUnits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhysicalUnits.h; sourceTree = "<group>"; };
 		FFFE0B58183FFF4100063CC7 /* PhysicalUnits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhysicalUnits.m; sourceTree = "<group>"; };
@@ -352,8 +357,6 @@
 				FFFE0B56183FFC0400063CC7 /* MPGController */,
 				FFFE0B43183FF03A00063CC7 /* Data */,
 				FFFE0B42183FF01A00063CC7 /* MicroController */,
-				FFFE0B691842EEB600063CC7 /* deviceSelectionViewController.h */,
-				FFFE0B6A1842EEB600063CC7 /* deviceSelectionViewController.m */,
 				5846E02918087B480003DFFB /* edu_iastateAppDelegate.h */,
 				5846E02A18087B480003DFFB /* edu_iastateAppDelegate.m */,
 				5846E02C18087B480003DFFB /* Main_iPhone.storyboard */,
@@ -361,9 +364,6 @@
 				5846E03218087B480003DFFB /* edu_iastateViewController.h */,
 				5846E03318087B480003DFFB /* edu_iastateViewController.m */,
 				5846E03518087B480003DFFB /* Images.xcassets */,
-				FF2F4BC8184B55BF00D2D9EA /* SaveConfigViewController.h */,
-				FF2F4BC9184B55BF00D2D9EA /* SaveConfigViewController.m */,
-				FF2F4BCA184B55BF00D2D9EA /* SaveConfigViewController.xib */,
 				5846E02118087B480003DFFB /* Supporting Files */,
 				5846E05218087BD20003DFFB /* Application.xib */,
 			);
@@ -429,6 +429,14 @@
 		FFFE0B56183FFC0400063CC7 /* MPGController */ = {
 			isa = PBXGroup;
 			children = (
+				FFFE0B691842EEB600063CC7 /* deviceSelectionViewController.h */,
+				FFFE0B6A1842EEB600063CC7 /* deviceSelectionViewController.m */,
+				FF2F4BC8184B55BF00D2D9EA /* SaveConfigViewController.h */,
+				FF2F4BC9184B55BF00D2D9EA /* SaveConfigViewController.m */,
+				FF2F4BCA184B55BF00D2D9EA /* SaveConfigViewController.xib */,
+				FF2F4BD8184B9A9100D2D9EA /* LoadConfigViewController.h */,
+				FF2F4BD9184B9A9100D2D9EA /* LoadConfigViewController.m */,
+				FF2F4BDA184B9A9100D2D9EA /* LoadConfigViewController.xib */,
 			);
 			name = MPGController;
 			sourceTree = "<group>";
@@ -626,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFFE0D9C18448F2300063CC7 /* humidity51.png in Resources */,
+				FF2F4BDC184B9A9100D2D9EA /* LoadConfigViewController.xib in Resources */,
 				FFFE0DAC18448F2300063CC7 /* humidity67.png in Resources */,
 				FFFE0D7F18448F2300063CC7 /* humidity22.png in Resources */,
 				FFFE0D7418448F2300063CC7 /* humidity11.png in Resources */,
@@ -757,6 +766,7 @@
 				5846E02718087B480003DFFB /* main.m in Sources */,
 				FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */,
 				FFFE0B6318400B9300063CC7 /* MPGModel.m in Sources */,
+				FF2F4BDB184B9A9100D2D9EA /* LoadConfigViewController.m in Sources */,
 				FFFE0B59183FFF4100063CC7 /* PhysicalUnits.m in Sources */,
 				5846E02B18087B480003DFFB /* edu_iastateAppDelegate.m in Sources */,
 				5846E03418087B480003DFFB /* edu_iastateViewController.m in Sources */,

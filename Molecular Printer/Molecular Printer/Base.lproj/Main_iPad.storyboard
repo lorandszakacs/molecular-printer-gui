@@ -46,9 +46,9 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Na3-U6-gvr">
-                                <rect key="frame" x="46" y="949" width="45" height="30"/>
+                                <rect key="frame" x="34" y="885" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Config">
+                                <state key="normal" title="Save config">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -339,6 +339,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRr-VC-khj">
+                                <rect key="frame" x="34" y="949" width="81" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Load config">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="configLoadButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HCn-yP-oDT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -348,6 +358,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="sfa-w0-wqt"/>
                     <connections>
+                        <outlet property="ConfigLoadButton" destination="hRr-VC-khj" id="hbX-xv-F28"/>
                         <outlet property="ConfigSaveButton" destination="Na3-U6-gvr" id="UzG-LH-csJ"/>
                         <outlet property="columnLabel" destination="ewT-en-BpP" id="PRk-Yz-vlK"/>
                         <outlet property="columnSlider" destination="Nj2-r2-lks" id="gFm-ss-gXS"/>

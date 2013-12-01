@@ -81,7 +81,8 @@
     
     NSError *error;
     [[NSFileManager defaultManager]createDirectoryAtPath:documentsDirectory withIntermediateDirectories:YES attributes:nil error:&error];
-    NSString* dataPath = [documentsDirectory stringByAppendingPathComponent:dataFile];
+
+    NSString* dataPath = [documentsDirectory stringByAppendingPathComponent:title];
     NSMutableData *data = [[NSMutableData alloc] init];
     NSKeyedArchiver* archiver =[[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
     Configuration *config = [[Configuration alloc] initConfig:title :_temp :_humid :_pitch :_spot];
