@@ -259,7 +259,7 @@ NSTimer* humidTimer;
     if(_saveConfigController == nil){
         _saveConfigController = [[SaveConfigViewController alloc] initWithData:[model getTemperature] :[model getHumidity] :[model getPitch] :[model getSpot]];
         _saveConfigController.contentSizeForViewInPopover = CGSizeMake(187, 196);//hard coded:calculated from position of views.
-//        _saveConfigController.delegate = self;
+        _saveConfigController.delegate = self;
     }
     
     if(_saveConfigPopover ==nil){
@@ -283,9 +283,12 @@ NSTimer* humidTimer;
     }else{
         [_loadConfigPopover dismissPopoverAnimated:YES];
         _loadConfigPopover = nil;
+        _loadConfigController = nil;
     }
 
 }
+
+//delegate methods
 -(void)selectedConfigurations:(Configuration *)config{
     [self loadTemp:config];
     [self loadHumid:config];
@@ -295,9 +298,17 @@ NSTimer* humidTimer;
     if(_loadConfigPopover!=nil){
         [_loadConfigPopover dismissPopoverAnimated:YES];
         _loadConfigPopover = nil;
+        _loadConfigController = nil;
     }
-    
 }
+-(void)configSaveSelected{
+    if(_saveConfigPopover != nil){
+        [_saveConfigPopover dismissPopoverAnimated:YES];
+        _saveConfigPopover = nil;
+        _saveConfigController =nil;
+    }
+}
+
 -(void)loadTemp:(Configuration*) config{
     [model setTemperature:[[Temperature alloc]initTemperature:config.temp :CELSIUS]];
     tempSlider.value = config.temp;
@@ -309,7 +320,7 @@ NSTimer* humidTimer;
     [model setHumidity:[[Humidity alloc]initHumidity:config.humid]];
     humidSlider.value = config.humid;
     NSString *newText = [[NSString alloc] initWithFormat:@"%1.1f%%",
-                         [[model.device getHumidity] getValue]];
+                         [[model getHumidity] getValue]];
     humidLabel.text = newText;
 }
 -(void)loadPitch:(Configuration*) config{

@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Configuration.h"
 
+
+@protocol ConfigSaveSelected <NSObject>
+-(void)configSaveSelected;
+@end
 @interface SaveConfigViewController : UIViewController<UITextFieldDelegate>{
 
 }
@@ -21,5 +25,6 @@
 - (IBAction)inputEnd:(id)sender;
 - (IBAction)saveButtonPushed:(id)sender;
 -(id) initWithData:(Temperature*)temp :(Humidity*)humid :(Pitch*)pitch :(Spot*)spot;
+@property (weak) id<ConfigSaveSelected> delegate;
 
 @end

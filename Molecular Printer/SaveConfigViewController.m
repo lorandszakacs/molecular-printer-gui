@@ -69,7 +69,10 @@
 }
 
 - (IBAction)saveButtonPushed:(id)sender {
-    [self saveData:saveFilePath];
+    if(InputTextField.text.length!=0)
+        [self saveData:saveFilePath];
+    if(_delegate !=nil)
+        [_delegate configSaveSelected];
 }
 
 //encode and create Configuration object

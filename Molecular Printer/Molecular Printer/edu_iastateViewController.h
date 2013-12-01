@@ -12,7 +12,7 @@
 #import "SaveConfigViewController.h"
 #import "LoadConfigViewController.h"
 
-@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected, ConfigSelected>{
+@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected, ConfigSelected, ConfigSaveSelected>{
     UILabel         *tempLabel;
     UILabel         *deviceTempLabel;
     UILabel         *humidLabel;
