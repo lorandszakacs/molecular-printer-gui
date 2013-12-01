@@ -8,6 +8,7 @@
 
 #import "MPGModel.h"
 #import "Constant.h"
+#import "MicroControllerInterface.h"
 
 @implementation MPGModel
 -(id)init{
@@ -19,5 +20,9 @@
     [self setGridMatrix:[[GridMatrix alloc]initGridMatrix:INITIALROWS :INITIALCOLUMNS]];
     [self setState:0];
     return self;
+}
+
+-(void)updateMatrix:(NSInteger)newRows :(NSInteger)newColumns{
+
 }
 @end

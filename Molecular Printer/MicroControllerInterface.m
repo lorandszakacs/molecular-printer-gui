@@ -95,4 +95,14 @@ NSTimer* humidTimer;
     //change status, let this consume time
     return 0;
 }
+
+-(NSInteger)getNumberOfPrintableColumns {
+    //this should be computed as a function of spot-size, pitch and other things.
+    return 10;
+}
+
+-(NSInteger)getNumberOfPrintableRows {
+    //this should be computed as a function of spot-size, pitch and other things.
+    return 10;
+}
 @end

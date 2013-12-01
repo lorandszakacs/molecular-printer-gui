@@ -61,4 +61,9 @@
     return YES;
 }
 
+-(GridMatrix *)newMatrix:(NSInteger)newHeight :(NSInteger)newWidth{
+    //TODO:implement this
+    return self;
+}
+
 @end

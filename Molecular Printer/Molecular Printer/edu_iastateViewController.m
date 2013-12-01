@@ -47,6 +47,11 @@ NSTimer* tempTimer;
 NSTimer* humidTimer;
 @synthesize ConfigSaveButton;
 
+NSInteger cellHeight;
+NSInteger cellWidth;
+
+NSInteger cellsPerRow;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -62,6 +67,10 @@ NSTimer* humidTimer;
     heightLabel.text = [[NSString alloc] initWithFormat:@"%1.1fµm", INITIALHEIGHT];
     spotSlider.value = spotStepper.value = INITIALSPOTRADIUS;
     spotLabel.text = [[NSString alloc] initWithFormat:@"%1.1fµm", INITIALSPOTRADIUS];
+    
+    rowSlider.value = INITIALROWS;
+    columnSlider.value = INITIALHEIGHT;
+    
     
     //update from device
     tempTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateTemp) userInfo:nil repeats:YES];
@@ -102,24 +111,39 @@ NSTimer* humidTimer;
 }
 
 - (IBAction)columnSliderChanged:(id)sender {
-    [self changeValueSlider:columnSlider :columnLabel :columnStepper];
-    [self updateWidth:columnSlider.value];
+    NSInteger newNrOfCols = rowSlider.value;
+    NSInteger maxNumOfCols = model.device.getNumberOfPrintableColumns;
+    if(newNrOfCols > maxNumOfCols) {
+        //TODO: display error;
+        return;
+    } else {
+        [self changeValueSlider:columnSlider :columnLabel :columnStepper];
+        [self updateCellDimensions];
+    }
 }
 
 - (IBAction) columnStepperChanged:(id)sender {
     [self changeValueStepper:columnSlider :columnLabel :columnStepper];
-    [self updateWidth:columnSlider.value];
+    [self updateCellDimensions];
 }
 
 
 - (IBAction)rowSliderChanged:(id)sender {
+    NSInteger newNrOfRows = rowSlider.value;
+    NSInteger maxNumOfRows = model.device.getNumberOfPrintableRows;
+    if(newNrOfRows > maxNumOfRows) {
+        //TODO: display error;
+        return;
+    } else {
         [self changeValueSlider:rowSlider :rowLabel :rowStepper];
-        [self updateHeight:rowSlider.value];
+        [self updateCellDimensions];
+    }
+    
 }
 
 - (IBAction) rowStepperChanged:(id)sender {
     [self changeValueStepper:rowSlider :rowLabel :rowStepper];
-    [self updateHeight:rowSlider.value];
+        [self updateCellDimensions];
 }
 
 - (IBAction)widthSliderChanged:(id)sender {
@@ -204,7 +228,11 @@ NSTimer* humidTimer;
     slider.value = stepper.value;
 }
 
--(void) updateWidth:(float)value{
+/*
+ *  updating cell height/width when the rows/columns sliders change.
+ */
+-(void) updateCellDimensions {
+    
 //    if(MAXIMAGEWIDTH/value<[model.getPitch getWidth]){
 //        [model setPitch:[[Pitch alloc] initPitch:[] :<#(double)#> :<#(LengthUnit)#>
 //        widthSlider.value = IMAGEWIDTH/value;
@@ -214,17 +242,6 @@ NSTimer* humidTimer;
 //    }
 //    widthSlider.maximumValue = IMAGEWIDTH/value;
 //    widthStepper.maximumValue = IMAGEWIDTH/value;
-}
-
--(void) updateHeight:(float)value{
-//    if(IMAGEHEIGHT/value<heightSlider.value){
-//        heightSlider.value = IMAGEHEIGHT/value;
-//        heightStepper.value = IMAGEHEIGHT/value;
-//        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",heightSlider.value];
-//        heightLabel.text =newText;
-//    }
-//    heightSlider.maximumValue = IMAGEHEIGHT/value;
-//    heightStepper.maximumValue = IMAGEHEIGHT/value;
 }
 
 -(void) updateSpotSize:(float)value{
@@ -281,11 +298,23 @@ NSTimer* humidTimer;
 #pragma mark - UICollectionView Datasource
 // 1
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return 42;
+    GridMatrix *mat = model.gridMatrix;
+    if(mat != nil){
+        NSInteger total = mat.getHeight * mat.getWidth;
+        return total;
+    } else {
+    
+    }
+    return 1;
 }
 // 2
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
-    return 1;
+    GridMatrix *mat = model.gridMatrix;
+    if(mat != nil){
+        return mat.getHeight;
+    } else {
+        return rowSlider.value;
+    }
 }
 // 3
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -303,6 +332,9 @@ NSTimer* humidTimer;
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSInteger row = indexPath.row;
+    NSInteger column = indexPath.section;
+    [self.gridView deselectItemAtIndexPath:indexPath animated:NO];
     // TODO: Select Item
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
