@@ -194,10 +194,16 @@ NSTimer* humidTimer;
 
 //Printing actions
 - (IBAction)PrintButtonPushed:(id)sender {
-//    for(int i=0;i<_model.getGridMatrix.getWidth)
-////    PrintWaitViewController* pView = [[PrintWaitViewController alloc] init];
-////    [self presentViewController:pView animated:YES completion:NO];
-////    [pView print];
+    GridMatrix* grid = model.getGridMatrix;
+    for(int i=0;i<model.getGridMatrix.getHeight;i++){
+        for(int j=0;j<model.getGridMatrix.getWidth;j++){
+                if([grid isMarked:i :j])
+                    [model.device print:i :j];
+        }
+    }///////DATA race issue???
+//    PrintWaitViewController* pView = [[PrintWaitViewController alloc] init];
+//    [self presentViewController:pView animated:YES completion:NO];
+//    [pView print];
 }
 
 //Device selection
