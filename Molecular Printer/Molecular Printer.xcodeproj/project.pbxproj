@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58130C19184BBAB7009AA04A /* GridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58130C18184BBAB7009AA04A /* GridCell.m */; };
 		5846E01B18087B480003DFFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5846E01A18087B480003DFFB /* Foundation.framework */; };
 		5846E01D18087B480003DFFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5846E01C18087B480003DFFB /* CoreGraphics.framework */; };
 		5846E01F18087B480003DFFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5846E01E18087B480003DFFB /* UIKit.framework */; };
@@ -147,6 +148,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58130C17184BBAB7009AA04A /* GridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridCell.h; sourceTree = "<group>"; };
+		58130C18184BBAB7009AA04A /* GridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridCell.m; sourceTree = "<group>"; };
 		5846E01718087B480003DFFB /* Molecular Printer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Molecular Printer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5846E01A18087B480003DFFB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5846E01C18087B480003DFFB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -366,6 +369,8 @@
 				FF2F4BCA184B55BF00D2D9EA /* SaveConfigViewController.xib */,
 				5846E02118087B480003DFFB /* Supporting Files */,
 				5846E05218087BD20003DFFB /* Application.xib */,
+				58130C17184BBAB7009AA04A /* GridCell.h */,
+				58130C18184BBAB7009AA04A /* GridCell.m */,
 			);
 			path = "Molecular Printer";
 			sourceTree = "<group>";
@@ -758,6 +763,7 @@
 				FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */,
 				FFFE0B6318400B9300063CC7 /* MPGModel.m in Sources */,
 				FFFE0B59183FFF4100063CC7 /* PhysicalUnits.m in Sources */,
+				58130C19184BBAB7009AA04A /* GridCell.m in Sources */,
 				5846E02B18087B480003DFFB /* edu_iastateAppDelegate.m in Sources */,
 				5846E03418087B480003DFFB /* edu_iastateViewController.m in Sources */,
 				FFFE0B651841F22F00063CC7 /* Constant.m in Sources */,

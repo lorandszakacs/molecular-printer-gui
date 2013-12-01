@@ -11,6 +11,7 @@
 #import "MPGModel.h"
 #import "PhysicalUnits.h"
 #import "Constant.h"
+#import "GridCell.h"
 
 
 @interface edu_iastateViewController ()
@@ -65,6 +66,9 @@ NSTimer* humidTimer;
     //update from device
     tempTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateTemp) userInfo:nil repeats:YES];
     humidTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateHumidity) userInfo:nil repeats:YES];
+    
+    //grid view
+    [self.gridView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"GridCell"];
 }
 -(void)updateTemp{
     deviceTempLabel.text = [[NSString alloc] initWithFormat:@"%1.1f", [model.device.getTemperature getValue]];
@@ -285,7 +289,7 @@ NSTimer* humidTimer;
 }
 // 3
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
+    GridCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
