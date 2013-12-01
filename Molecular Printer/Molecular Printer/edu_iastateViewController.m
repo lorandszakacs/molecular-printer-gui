@@ -47,10 +47,13 @@ NSTimer* tempTimer;
 NSTimer* humidTimer;
 @synthesize ConfigSaveButton;
 
-NSInteger cellHeight;
-NSInteger cellWidth;
+NSInteger cellDimension;
+NSInteger cellSpacing;
 
 NSInteger cellsPerRow;
+NSInteger cellsPerColumn;
+
+
 
 - (void)viewDidLoad
 {
@@ -69,8 +72,15 @@ NSInteger cellsPerRow;
     spotLabel.text = [[NSString alloc] initWithFormat:@"%1.1fµm", INITIALSPOTRADIUS];
     
     rowSlider.value = INITIALROWS;
-    columnSlider.value = INITIALHEIGHT;
+    rowLabel.text = [[NSString alloc] initWithFormat:@"%d", INITIALROWS];
+    columnSlider.value = INITIALCOLUMNS;
+    columnLabel.text = [[NSString alloc] initWithFormat:@"%d", INITIALCOLUMNS];
     
+    //display constants
+    cellsPerRow = INITIALROWS;
+    cellsPerColumn = INITIALCOLUMNS;
+    cellSpacing = GRID_DISPLAY_SPACE;
+    cellDimension = [self computeCellDimensions];
     
     //update from device
     tempTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateTemp) userInfo:nil repeats:YES];
@@ -79,6 +89,15 @@ NSInteger cellsPerRow;
     //grid view
     [self.gridView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"GridCell"];
 }
+-(NSInteger)computeCellDimensions{
+    NSInteger maxVertical = GRID_DISPLAY_HEIGHT/(cellsPerRow + cellSpacing);
+    NSInteger maxHorizontal = GRID_DISPLAY_WIDTH/(cellsPerColumn + cellSpacing);
+    if(maxVertical > maxHorizontal)
+        return maxVertical;
+    else
+        return maxHorizontal;
+}
+
 -(void)updateTemp{
     deviceTempLabel.text = [[NSString alloc] initWithFormat:@"%1.1f", [model.device.getTemperature getValue]];
 }
@@ -111,37 +130,43 @@ NSInteger cellsPerRow;
 }
 
 - (IBAction)columnSliderChanged:(id)sender {
-    NSInteger newNrOfCols = rowSlider.value;
-    NSInteger maxNumOfCols = model.device.getNumberOfPrintableColumns;
-    if(newNrOfCols > maxNumOfCols) {
-        //TODO: display error;
-        return;
-    } else {
-        [self changeValueSlider:columnSlider :columnLabel :columnStepper];
-        [self updateCellDimensions];
-    }
+    [self changeValueSlider:columnSlider :columnLabel :columnStepper];
+    [self updateCellDimensions];
+
+//    NSInteger newNrOfCols = rowSlider.value;
+//    NSInteger maxNumOfCols = model.device.getNumberOfPrintableColumns;
+//    if(newNrOfCols > maxNumOfCols) {
+//        //TODO: display error;
+//        return;
+//    } else {
+//
+//    }
 }
 
 - (IBAction) columnStepperChanged:(id)sender {
+    //TODO: update like the slider counterpart
     [self changeValueStepper:columnSlider :columnLabel :columnStepper];
     [self updateCellDimensions];
 }
 
 
 - (IBAction)rowSliderChanged:(id)sender {
-    NSInteger newNrOfRows = rowSlider.value;
-    NSInteger maxNumOfRows = model.device.getNumberOfPrintableRows;
-    if(newNrOfRows > maxNumOfRows) {
-        //TODO: display error;
-        return;
-    } else {
-        [self changeValueSlider:rowSlider :rowLabel :rowStepper];
-        [self updateCellDimensions];
-    }
+    [self changeValueSlider:rowSlider :rowLabel :rowStepper];
+    [self updateCellDimensions];
+
+//    NSInteger newNrOfRows = rowSlider.value;
+//    NSInteger maxNumOfRows = model.device.getNumberOfPrintableRows;
+//    if(newNrOfRows > maxNumOfRows) {
+//        //TODO: display error;
+//        return;
+//    } else {
+//
+//    }
     
 }
 
 - (IBAction) rowStepperChanged:(id)sender {
+    //TODO: update like the slider counterpart
     [self changeValueStepper:rowSlider :rowLabel :rowStepper];
         [self updateCellDimensions];
 }
@@ -303,18 +328,19 @@ NSInteger cellsPerRow;
         NSInteger total = mat.getHeight * mat.getWidth;
         return total;
     } else {
-    
+        [NSException raise:@"Model not initialized properly" format:@"Model grid matrix not initialized properly when trying to display grid"];
     }
     return 1;
 }
 // 2
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
-    GridMatrix *mat = model.gridMatrix;
-    if(mat != nil){
-        return mat.getHeight;
-    } else {
-        return rowSlider.value;
-    }
+//    GridMatrix *mat = model.gridMatrix;
+//    if(mat != nil){
+//        return mat.getHeight;
+//    } else {
+//        return rowSlider.value;
+//    }
+    return 1;
 }
 // 3
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -348,7 +374,7 @@ NSInteger cellsPerRow;
 //    NSString *searchTerm = self.searches[indexPath.section]; FlickrPhoto *photo =
 //    self.searchResults[searchTerm][indexPath.row];
     // 2
-    CGSize retval = CGSizeMake(100, 100);
+    CGSize retval = CGSizeMake(cellDimension, cellDimension);
 //    retval.height += 35; retval.width += 35; return retval;
     return retval;
 }
@@ -356,6 +382,6 @@ NSInteger cellsPerRow;
 // 3
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(50, 20, 50, 20);
+    return UIEdgeInsetsMake(cellSpacing, cellSpacing, cellSpacing, cellSpacing);
 }
 @end
