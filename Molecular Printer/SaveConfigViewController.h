@@ -20,5 +20,6 @@
 @property (strong) Spot *spot;
 - (IBAction)inputEnd:(id)sender;
 - (IBAction)saveButtonPushed:(id)sender;
+-(id) initWithData:(Temperature*)temp :(Humidity*)humid :(Pitch*)pitch :(Spot*)spot;
 
 @end

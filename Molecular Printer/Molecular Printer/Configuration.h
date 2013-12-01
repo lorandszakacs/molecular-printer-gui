@@ -14,12 +14,13 @@
 @interface Configuration : NSObject<NSCoding>
 
 @property (strong, getter = getTitle) NSString *title;//title of configuration save
-@property (strong) Temperature *temp;
-@property (strong) Humidity *humid;
-@property (strong) Pitch *pitch;
-@property (strong) Spot *spot;
+@property (assign) float temp;
+@property (assign) float humid;
+@property (assign) float width;
+@property (assign) float height;
+@property (assign) float spot;
 
--(id)initConfig:(NSString*)title :(Temperature*) temp :(Humidity*) humid :(Pitch*)pitch :(Spot*)spot;
+-(id)initConfig:(NSString*)title :(float) temp :(float) humid :(float)width :(float)height :(float)spot;
 @end
 
 #endif

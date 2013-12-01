@@ -257,7 +257,7 @@ NSTimer* humidTimer;
 //Config S/L
 - (IBAction)configSaveButtonPushed:(id)sender {
     if(_saveConfigController == nil){
-        _saveConfigController = [[SaveConfigViewController alloc] init];
+        _saveConfigController = [[SaveConfigViewController alloc] initWithData:[model getTemperature] :[model getHumidity] :[model getPitch] :[model getSpot]];
         _saveConfigController.contentSizeForViewInPopover = CGSizeMake(187, 196);//hard coded:calculated from position of views.
 //        _saveConfigController.delegate = self;
     }
@@ -299,31 +299,31 @@ NSTimer* humidTimer;
     
 }
 -(void)loadTemp:(Configuration*) config{
-    [model.device setDesiredTemperature:config.temp];
-    tempSlider.value = [config.temp getValue];
+    [model setTemperature:[[Temperature alloc]initTemperature:config.temp :CELSIUS]];
+    tempSlider.value = config.temp;
     NSString *newText = [[NSString alloc] initWithFormat:@"%1.1f",
                          [[model getTemperature] getValue]];
     tempLabel.text = newText;
 }
 -(void)loadHumid:(Configuration*) config{
-    [model.device setDesiredHumidity:config.humid];
-    humidSlider.value = [config.humid getValue];
+    [model setHumidity:[[Humidity alloc]initHumidity:config.humid]];
+    humidSlider.value = config.humid;
     NSString *newText = [[NSString alloc] initWithFormat:@"%1.1f%%",
-                         [[model getHumidity] getValue]];
+                         [[model.device getHumidity] getValue]];
     humidLabel.text = newText;
 }
 -(void)loadPitch:(Configuration*) config{
-    [model.device setPitch:config.pitch];
-    widthSlider.value = widthStepper.value = [config.pitch getWidth];
+    [model setPitch:[[Pitch alloc]initPitch :config.width :config.height :MICROMETER]];
+    widthSlider.value = widthStepper.value = config.width;
     NSString *newText = [NSString stringWithFormat: @"%1.1fµm", [model.getPitch getWidth]];
     widthLabel.text = newText;
-    heightSlider.value = heightStepper.value = [config.pitch getHeight];
+    heightSlider.value = heightStepper.value = config.height;
     newText = [NSString stringWithFormat: @"%1.1fµm", [model.getPitch getHeight]];
     heightLabel.text = newText;
 }
 -(void)loadSpot:(Configuration*) config{
-    [model.device setSpotSize:config.spot];
-    spotSlider.value = spotStepper.value = [config.spot getRadius];
+    [model setSpot:[[Spot alloc]initSpot:config.spot :MICROMETER]];
+    spotSlider.value = spotStepper.value = config.spot;
     NSString *newText = [NSString stringWithFormat: @"%1.1fµm", [model.getSpot getRadius]];
     spotLabel.text = newText;
 }

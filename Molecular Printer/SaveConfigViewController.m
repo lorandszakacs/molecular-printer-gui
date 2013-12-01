@@ -85,7 +85,7 @@
     NSString* dataPath = [documentsDirectory stringByAppendingPathComponent:title];
     NSMutableData *data = [[NSMutableData alloc] init];
     NSKeyedArchiver* archiver =[[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
-    Configuration *config = [[Configuration alloc] initConfig:title :_temp :_humid :_pitch :_spot];
+    Configuration *config = [[Configuration alloc] initConfig:title :_temp.value :_humid.value :_pitch.getWidth :_pitch.getHeight :_spot.getRadius];
     [archiver encodeObject:config forKey:title];
     [archiver finishEncoding];
     [data writeToFile:dataPath atomically:YES];
