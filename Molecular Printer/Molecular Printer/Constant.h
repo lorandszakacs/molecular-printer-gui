@@ -17,4 +17,9 @@ extern const int INITIALROWS;
 extern const double INITIALWIDTH;
 extern const double INITIALHEIGHT;
 extern const double INITIALSPOTRADIUS;
+
+extern const int STATUSIDLE;
+extern const int STATUSPRINTING;
+extern const int STATUSPAUSED;
+extern const int STATUSERROR;
 #endif

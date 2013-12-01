@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PhysicalUnits.h"
+#import "Constant.h"
 
 #ifndef MicroControllerInterface_h
 #define MicroControllerInterface_h

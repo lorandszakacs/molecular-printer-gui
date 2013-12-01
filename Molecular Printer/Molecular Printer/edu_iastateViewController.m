@@ -99,23 +99,19 @@ NSTimer* humidTimer;
 
 - (IBAction)columnSliderChanged:(id)sender {
     [self changeValueSlider:columnSlider :columnLabel :columnStepper];
-    [self updateWidth:columnSlider.value];
 }
 
 - (IBAction) columnStepperChanged:(id)sender {
     [self changeValueStepper:columnSlider :columnLabel :columnStepper];
-    [self updateWidth:columnSlider.value];
 }
 
 
 - (IBAction)rowSliderChanged:(id)sender {
         [self changeValueSlider:rowSlider :rowLabel :rowStepper];
-        [self updateHeight:rowSlider.value];
 }
 
 - (IBAction) rowStepperChanged:(id)sender {
     [self changeValueStepper:rowSlider :rowLabel :rowStepper];
-    [self updateHeight:rowSlider.value];
 }
 
 - (IBAction)widthSliderChanged:(id)sender {
@@ -123,7 +119,6 @@ NSTimer* humidTimer;
     [model setPitch:[[Pitch alloc] initPitch:widthSlider.value :[model.getPitch getHeight] :[model.getPitch getUnit]]];
     NSString *newText = [NSString stringWithFormat: @"%1.1fµm", [model.getPitch getWidth]];
     widthLabel.text = newText;
-    [self updateSpotSize:widthSlider.value];
 }
 
 - (IBAction) widthStepperChanged:(id)sender {
@@ -131,7 +126,6 @@ NSTimer* humidTimer;
     [model setPitch:[[Pitch alloc] initPitch:widthStepper.value :[model.getPitch getHeight] :[model.getPitch getUnit]]];
     NSString *newText = [NSString stringWithFormat: @"%1.1fµm",[model.getPitch getWidth]];
     widthLabel.text = newText;
-    [self updateSpotSize:widthSlider.value];
 }
 
 - (IBAction)heightSyncButtonPressed:(id)sender {
@@ -149,7 +143,6 @@ NSTimer* humidTimer;
     [model setPitch:[[Pitch alloc] initPitch:[model.getPitch getWidth] :heightSlider.value :[model.getPitch getUnit]]];
     NSString *newText = [NSString stringWithFormat: @"%1.1fµm",[model.getPitch getHeight]];
     heightLabel.text = newText;
-    [self updateSpotSize:heightSlider.value];
 }
 
 - (IBAction) heightStepperChanged:(id)sender {
@@ -157,7 +150,6 @@ NSTimer* humidTimer;
     [model setPitch:[[Pitch alloc] initPitch:[model.getPitch getWidth] :heightStepper.value :[model.getPitch getUnit]]];
     NSString *newText = [NSString stringWithFormat: @"%1.1fµm",[model.getPitch getHeight]];
     heightLabel.text = newText;
-    [self updateSpotSize:heightSlider.value];
 }
 
 //sync height with width
@@ -200,33 +192,13 @@ NSTimer* humidTimer;
     slider.value = stepper.value;
 }
 
--(void) updateWidth:(float)value{
-//    if(MAXIMAGEWIDTH/value<[model.getPitch getWidth]){
-//        [model setPitch:[[Pitch alloc] initPitch:[] :<#(double)#> :<#(LengthUnit)#>
-//        widthSlider.value = IMAGEWIDTH/value;
-//        widthStepper.value = MAXIMAGEWIDTH/value;
-//        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",widthSlider.value];
-//        widthLabel.text =newText;
-//    }
-//    widthSlider.maximumValue = IMAGEWIDTH/value;
-//    widthStepper.maximumValue = IMAGEWIDTH/value;
+//Printing actions
+- (IBAction)PrintButtonPushed:(id)sender {
+//    for(int i=0;i<_model.getGridMatrix.getWidth)
+////    PrintWaitViewController* pView = [[PrintWaitViewController alloc] init];
+////    [self presentViewController:pView animated:YES completion:NO];
+////    [pView print];
 }
-
--(void) updateHeight:(float)value{
-//    if(IMAGEHEIGHT/value<heightSlider.value){
-//        heightSlider.value = IMAGEHEIGHT/value;
-//        heightStepper.value = IMAGEHEIGHT/value;
-//        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",heightSlider.value];
-//        heightLabel.text =newText;
-//    }
-//    heightSlider.maximumValue = IMAGEHEIGHT/value;
-//    heightStepper.maximumValue = IMAGEHEIGHT/value;
-}
-
--(void) updateSpotSize:(float)value{
-    //TODO:adjust spot size accordingly to changes to pitches
-}
-
 
 //Device selection
 - (IBAction)deviceButton:(id)sender {
@@ -338,4 +310,5 @@ NSTimer* humidTimer;
     NSString *newText = [NSString stringWithFormat: @"%1.1fµm", [model.getSpot getRadius]];
     spotLabel.text = newText;
 }
+
 @end

@@ -18,5 +18,10 @@ double const INITIALWIDTH = 4000.0;
 double const INITIALHEIGHT = 3000.0;
 double const INITIALSPOTRADIUS = 15.0;
 
+int const STATUSIDLE = 0;
+int const STATUSPRINTING = 1;
+int const STATUSPAUSED = 2;
+int const STATUSERROR = -1;
+
 
 
