@@ -414,6 +414,15 @@ NSTimer* humidTimer;
 -(NSInteger)computeCellDimensions{
 //    NSInteger maxVertical = GRID_DISPLAY_HEIGHT/(self.cellsPerRow);
     NSInteger maxHorizontal = (GRID_DISPLAY_WIDTH/self.cellsPerColumn) - self.cellSpacing;
+    if(self.cellsPerColumn == 2)
+        return 170;
+    
+    if(self.cellsPerColumn == 3)
+        return 120;
+    
+    if(self.cellsPerColumn == 4)
+        return 90;
+    
     if(self.cellsPerColumn == 5)
         return 65;
     
@@ -564,11 +573,17 @@ NSTimer* humidTimer;
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)cv didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor blackColor];
-    NSLog(@"DEBUG: TOUCH!");
+//    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+//    cell.backgroundColor = [UIColor blackColor];
+    NSUInteger array[[indexPath length]];
+    [indexPath getIndexes: array];
+    //array[0] will always be 0 since we have only one section.
+    NSInteger linearIndex = array[1];
+
+    NSLog(@"DEBUG: TOUCH index=%d!", linearIndex);
+    [model.gridMatrix flip:linearIndex];
     [cv reloadData];
-    // TODO: Select Item
+
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item
