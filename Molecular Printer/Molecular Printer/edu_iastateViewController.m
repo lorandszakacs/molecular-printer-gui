@@ -282,6 +282,12 @@ NSTimer* humidTimer;
                 [grid mark:i :j];
         }
     }
+    [grid mark:1 :0];
+    [grid mark:0 :1];
+    [grid mark:0 :4];
+    [grid mark:0 :5];
+    [grid mark:0 :8];
+    [grid mark:1 :9];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         rowSlider.value = rowStepper.value = grid.getRows;
