@@ -14,11 +14,17 @@
 @property (retain)NSMutableArray* matrix;
 @property (getter = getWidth, readonly)NSInteger width;
 @property (getter = getHeight, readonly)NSInteger height;
--(BOOL)isMarked:(NSInteger)x :(NSInteger)y;
--(BOOL)mark:(NSInteger)x :(NSInteger)y;
--(BOOL)unmark:(NSInteger)x :(NSInteger)y;
--(BOOL)flip:(NSInteger)x :(NSInteger)y;
+-(BOOL)isMarked:(NSInteger)row :(NSInteger)column;
+-(BOOL)mark:(NSInteger)row :(NSInteger)column;
+-(BOOL)unmark:(NSInteger)row :(NSInteger)column;
+-(BOOL)flip:(NSInteger)row :(NSInteger)column;
 -(id)initGridMatrix:(NSInteger)width :(NSInteger)height;
+
+//methods that use linear index
+-(BOOL)isMarked:(NSInteger)x;
+-(BOOL)mark:(NSInteger)x;
+-(BOOL)unmark:(NSInteger)x;
+-(BOOL)flip:(NSInteger)x;
 
 -(GridMatrix*)newMatrix: (NSInteger)newHeight :(NSInteger)newWidth;
 @end
