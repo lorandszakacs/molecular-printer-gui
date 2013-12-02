@@ -284,13 +284,13 @@ NSTimer* humidTimer;
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        rowSlider.value = rowStepper.value = model.getGridMatrix.getRows;
-        columnSlider.value = columnStepper.value = model.getGridMatrix.getColumns;
+        rowSlider.value = rowStepper.value = grid.getRows;
+        columnSlider.value = columnStepper.value = grid.getColumns;
         NSString *newText = [[NSString alloc] initWithFormat:@"%d",
-                             model.getGridMatrix.getColumns];
+                             grid.getColumns];
         columnLabel.text = newText;
         newText = [[NSString alloc] initWithFormat:@"%d",
-                   model.getGridMatrix.getRows];
+                   grid.getRows];
         rowLabel.text = newText;
 
         [model setGridMatrix:grid];
@@ -351,13 +351,13 @@ NSTimer* humidTimer;
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        rowSlider.value = rowStepper.value = model.getGridMatrix.getRows;
-        columnSlider.value = columnStepper.value = model.getGridMatrix.getColumns;
+        rowSlider.value = rowStepper.value = grid.getRows;
+        columnSlider.value = columnStepper.value = grid.getColumns;
         NSString *newText = [[NSString alloc] initWithFormat:@"%d",
-                             model.getGridMatrix.getColumns];
+                             grid.getColumns];
         columnLabel.text = newText;
         newText = [[NSString alloc] initWithFormat:@"%d",
-                   model.getGridMatrix.getRows];
+                   grid.getRows];
         rowLabel.text = newText;
 
         [model setGridMatrix:grid];
@@ -495,9 +495,6 @@ NSTimer* humidTimer;
 }
 
 - (IBAction)columnSliderChanged:(id)sender {
-    
-    [self updateCellDimensions];
-    
     NSInteger newNrOfCols = floor(columnSlider.value);
     NSInteger oldNrOfCols = [model.gridMatrix getColumns];
     NSInteger oldNrOfRows = [model.gridMatrix getRows];
@@ -507,7 +504,31 @@ NSTimer* humidTimer;
 
 - (IBAction) columnStepperChanged:(id)sender {
     //TODO: update like the slider counterpart
+
+    NSInteger newNrOfCols = floor(columnStepper.value);
+    NSInteger oldNrOfCols = [model.gridMatrix getColumns];
+    NSInteger oldNrOfRows = [model.gridMatrix getRows];
+    
+    if(newNrOfCols == oldNrOfCols) {
+        return;
+    }
     [self changeValueStepper:columnSlider :columnLabel :columnStepper];
+    
+    NSInteger maxNumOfCols = model.device.getNumberOfPrintableColumns;
+    if((model.device != nil) && (newNrOfCols > maxNumOfCols)) {
+        NSLog(@"GRIDLOG: maxnumber of cols exceeded: newRows=%d / maxrows=%d", newNrOfCols, maxNumOfCols);
+        //TODO: display error;
+        return;
+    } else {
+        //Create new matrix;
+        //        NSLog(@"GRIDLOG: ROWS=%d->%d ;;;;  COL=%d->%d", oldNrOfRows, oldNrOfRows, oldNrOfCols, newNrOfCols);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            GridMatrix *newMat = [model.gridMatrix newMatrix:oldNrOfRows :newNrOfCols];
+            [model setGridMatrix:newMat];
+            [self updateCellDimensions];
+            [self.gridView reloadData];
+        });
+    }
     [self updateCellDimensions];
 }
 
@@ -545,8 +566,32 @@ NSTimer* humidTimer;
 
 - (IBAction) rowStepperChanged:(id)sender {
     //TODO: update like the slider counterpart
+    NSInteger newNrOfRows = floor(rowStepper.value);
+    NSInteger oldNrOfCols = [model.gridMatrix getColumns];
+    NSInteger oldNrOfRows = [model.gridMatrix getRows];
+    
+    //this is necessary because the slider changes by float values.
+    if(newNrOfRows == oldNrOfRows) {
+        return;
+    }
     [self changeValueStepper:rowSlider :rowLabel :rowStepper];
-    [self updateCellDimensions];
+    
+    NSInteger maxNumOfRows = model.device.getNumberOfPrintableRows;
+    if((model.device != nil) && (newNrOfRows > maxNumOfRows)) {
+        NSLog(@"GRIDLOG: maxnumber of rows exceeded: newRows=%d / maxrows=%d", newNrOfRows, maxNumOfRows);
+        //TODO: display error;
+        return;
+    } else {
+        //Create new matrix;
+        //        NSLog(@"GRIDLOG: ROWS=%d->%d ;;;;  COL=%d->%d", oldNrOfRows, newNrOfRows, oldNrOfCols, oldNrOfCols);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            GridMatrix *newMat = [model.gridMatrix newMatrix:newNrOfRows :oldNrOfCols];
+            [model setGridMatrix:newMat];
+            [self updateCellDimensions];
+            [self.gridView reloadData];
+        });
+    }
+
 }
 
 
