@@ -14,8 +14,7 @@
 #import "PrintWaitViewController.h"
 #import "ImageLoaderViewController.h"
 
-@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected,ConfigSelected, ConfigSaveSelected,
-                                                        UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
+@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected,ConfigSelected, ConfigSaveSelected, ImageLoad, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
     UILabel         *tempLabel;
     UILabel         *deviceTempLabel;
     UILabel         *humidLabel;

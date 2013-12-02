@@ -326,6 +326,40 @@ NSInteger cellsPerColumn;
         _imageLoaderPopover = nil;
     }
 }
+//imageLoadDelegate
+- (void)ImageLoaderButtonPushed{
+    GridMatrix* grid = [[GridMatrix alloc] initGridMatrix:10 :10];
+    for(int i=0;i<10;i++){
+        for(int j=0;j<10;j++){
+            if(i==j)
+                [grid mark:i :j];
+            if(i+j==9)
+                [grid mark:i :j];
+        }
+    }
+    
+    
+    [self updateCellDimensions];//use this when implemented
+    
+    [model setGridMatrix:grid];
+    
+    rowSlider.value = rowStepper.value = model.getGridMatrix.getHeight;
+    columnSlider.value = columnStepper.value = model.getGridMatrix.getWidth;
+    NSString *newText = [[NSString alloc] initWithFormat:@"%d",
+                         model.getGridMatrix.getWidth];
+    columnLabel.text = newText;
+    newText = [[NSString alloc] initWithFormat:@"%d",
+                         model.getGridMatrix.getHeight];
+    rowLabel.text = newText;
+    
+    
+    
+
+    if(_imageLoaderPopover!=nil){
+        [_imageLoaderPopover dismissPopoverAnimated:YES];
+        _imageLoaderPopover = nil;
+    }
+}
 
 //Config S/L
 - (IBAction)configSaveButtonPushed:(id)sender {
