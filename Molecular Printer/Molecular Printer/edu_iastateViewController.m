@@ -95,14 +95,6 @@ NSTimer* humidTimer;
     //grid view
     [self.gridView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"GridCell"];
 }
--(NSInteger)computeCellDimensions{
-    NSInteger maxVertical = GRID_DISPLAY_HEIGHT/(self.cellsPerRow + self.cellSpacing);
-    NSInteger maxHorizontal = GRID_DISPLAY_WIDTH/(self.cellsPerColumn + self.cellSpacing);
-    if(maxVertical > maxHorizontal)
-        return maxVertical;
-    else
-        return maxHorizontal;
-}
 
 -(void)updateTemp{
     deviceTempLabel.text = [[NSString alloc] initWithFormat:@"%1.1f", [model.device.getTemperature getValue]];
@@ -211,16 +203,6 @@ NSTimer* humidTimer;
                          (int)stepper.value];
     label.text = newText;
     slider.value = stepper.value;
-}
-
-/*
- *  updating cell height/width when the rows/columns sliders change.
- */
--(void) updateCellDimensions {
-    self.cellsPerColumn = model.gridMatrix.getColumns;
-    self.cellsPerRow =  model.gridMatrix.getRows;
-    
-    self.cellDimension = [self computeCellDimensions];
 }
 
 -(void) updateSpotSize:(float)value{
@@ -428,6 +410,43 @@ NSTimer* humidTimer;
 //=============================================================================================
 //=============================================================================================
 //=============================================================================================
+
+-(NSInteger)computeCellDimensions{
+//    NSInteger maxVertical = GRID_DISPLAY_HEIGHT/(self.cellsPerRow);
+    NSInteger maxHorizontal = (GRID_DISPLAY_WIDTH/self.cellsPerColumn) - self.cellSpacing;
+    if(self.cellsPerColumn == 5)
+        return 65;
+    
+    if(self.cellsPerColumn == 6)
+        return 55;
+    
+    if(self.cellsPerColumn == 7)
+        return 45;
+    
+    if(self.cellsPerColumn == 8)
+        return 40;
+    
+    if(self.cellsPerColumn == 9)
+        return 35;
+
+    if(self.cellsPerColumn == 10)
+        return 33;
+    
+    return maxHorizontal;
+}
+/*
+ *  updating cell height/width when the rows/columns sliders change.
+ */
+-(void) updateCellDimensions {
+    self.cellsPerColumn = model.gridMatrix.getColumns;
+    self.cellsPerRow =  model.gridMatrix.getRows;
+    
+    self.cellDimension = [self computeCellDimensions];
+}
+
+
+
+
 - (void)updateGridViewColumns:(NSInteger)oldNrOfCols newNrOfCols:(NSInteger)newNrOfCols oldNrOfRows:(NSInteger)oldNrOfRows {
     if(newNrOfCols == oldNrOfCols) {
         return;
@@ -540,18 +559,22 @@ NSTimer* humidTimer;
     return cell;
 }
 
+
+
 #pragma mark - UICollectionViewDelegate
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)collectionView:(UICollectionView *)cv didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger row = indexPath.row;
-    NSInteger column = indexPath.section;
-    [self.gridView deselectItemAtIndexPath:indexPath animated:NO];
-    [NSException raise:@"Model not initialized properly" format:@"Model grid matrix not initialized properly when trying to display grid"];
+    UICollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor blackColor];
+    NSLog(@"DEBUG: TOUCH!");
+    [cv reloadData];
     // TODO: Select Item
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     // TODO: Deselect item
 }
+
+
 
 #pragma mark – UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -563,6 +586,7 @@ NSTimer* humidTimer;
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(self.cellSpacing, self.cellSpacing, self.cellSpacing, self.cellSpacing);
 }
+
 
 //=============================================================================================
 //=============================================================================================

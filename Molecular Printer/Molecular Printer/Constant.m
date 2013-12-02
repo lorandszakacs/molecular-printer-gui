@@ -19,7 +19,7 @@ double const INITIALHEIGHT = 40.0;
 double const INITIALSPOTRADIUS = 15.0;
 
 int const GRID_DISPLAY_HEIGHT = 400;
-int const GRID_DISPLAY_WIDTH = 700;
+int const GRID_DISPLAY_WIDTH = 400;
 int const GRID_DISPLAY_SPACE = 5;
 
 int const STATUSIDLE = 0;
