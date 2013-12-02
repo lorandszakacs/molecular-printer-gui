@@ -270,26 +270,27 @@ NSTimer* humidTimer;
     [grid mark:9 :1];
     
     
-    [self updateCellDimensions];//use this when implemented
-    
-    [model setGridMatrix:grid];
-    
-    rowSlider.value = rowStepper.value = model.getGridMatrix.getRows;
-    columnSlider.value = columnStepper.value = model.getGridMatrix.getColumns;
-    NSString *newText = [[NSString alloc] initWithFormat:@"%d",
-                         model.getGridMatrix.getColumns];
-    columnLabel.text = newText;
-    newText = [[NSString alloc] initWithFormat:@"%d",
-               model.getGridMatrix.getRows];
-    rowLabel.text = newText;
-    
-    
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        rowSlider.value = rowStepper.value = model.getGridMatrix.getRows;
+        columnSlider.value = columnStepper.value = model.getGridMatrix.getColumns;
+        NSString *newText = [[NSString alloc] initWithFormat:@"%d",
+                             model.getGridMatrix.getColumns];
+        columnLabel.text = newText;
+        newText = [[NSString alloc] initWithFormat:@"%d",
+                   model.getGridMatrix.getRows];
+        rowLabel.text = newText;
+        
+        [self updateCellDimensions];
+        [model setGridMatrix:grid];
+        
+        [self.gridView reloadData];
+    });
     
     if(_imageLoaderPopover!=nil){
         [_imageLoaderPopover dismissPopoverAnimated:YES];
         _imageLoaderPopover = nil;
     }
+   
     
 }
 - (IBAction)LoadImageButtonPushed:(id)sender {
@@ -326,6 +327,7 @@ NSTimer* humidTimer;
 //imageLoadDelegate
 - (void)ImageLoaderButtonPushed{
     GridMatrix* grid = [[GridMatrix alloc] initGridMatrix:10 :10];
+
     for(int i=0;i<10;i++){
         for(int j=0;j<10;j++){
             if(i==j)
@@ -335,10 +337,8 @@ NSTimer* humidTimer;
         }
     }
     
-    
-    [self updateCellDimensions];//use this when implemented
-    
     [model setGridMatrix:grid];
+    [self updateCellDimensions];
     
     rowSlider.value = rowStepper.value = model.getGridMatrix.getRows;
     columnSlider.value = columnStepper.value = model.getGridMatrix.getColumns;
@@ -349,13 +349,12 @@ NSTimer* humidTimer;
                          model.getGridMatrix.getRows];
     rowLabel.text = newText;
     
-    
-    
 
     if(_imageLoaderPopover!=nil){
         [_imageLoaderPopover dismissPopoverAnimated:YES];
         _imageLoaderPopover = nil;
     }
+    
 }
 
 -(void)imageSaveSelected{
