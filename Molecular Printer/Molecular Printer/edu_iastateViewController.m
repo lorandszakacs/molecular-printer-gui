@@ -303,6 +303,7 @@ NSInteger cellsPerColumn;
 -(void)selectedDevice:(MicroControllerInterface *)device{
     deviceConnectedLabel.text = [device getID];
     [model setDevice:device];
+    _ConnectedDeviceImage.image = [UIImage imageNamed:@"Arduino.png"];
     
     if(_deviceSelectionPopover!=nil){
         [_deviceSelectionPopover dismissPopoverAnimated:YES];
