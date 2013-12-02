@@ -272,7 +272,6 @@ NSTimer* humidTimer;
 
 //Image save/load
 -(void)ImageLoaderButtonPushed2{
-    NSLog(@"GRIDLOG: ImageLoaderButtonPushed  2222");
     GridMatrix* grid = [[GridMatrix alloc] initGridMatrix:10 :10];
     for(int i=0;i<10;i++){
         for(int j=0;j<10;j++){
@@ -345,7 +344,6 @@ NSTimer* humidTimer;
 }
 //imageLoadDelegate
 - (void)ImageLoaderButtonPushed{
-    NSLog(@"GRIDLOG: ImageLoaderButtonPushed");
     GridMatrix* grid = [[GridMatrix alloc] initGridMatrix:10 :10];
     for(int i=0;i<10;i++){
         for(int j=0;j<10;j++){
