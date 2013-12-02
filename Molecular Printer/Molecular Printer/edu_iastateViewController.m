@@ -253,6 +253,7 @@ NSTimer* humidTimer;
 
 //Image save/load
 -(void)ImageLoaderButtonPushed2{
+    NSLog(@"GRIDLOG: ImageLoaderButtonPushed  2222");
     GridMatrix* grid = [[GridMatrix alloc] initGridMatrix:10 :10];
     for(int i=0;i<10;i++){
         for(int j=0;j<10;j++){
@@ -262,13 +263,6 @@ NSTimer* humidTimer;
                 [grid mark:i :j];
         }
     }
-    [grid mark:1 :0];
-    [grid mark:0 :1];
-    [grid mark:4 :0];
-    [grid mark:5 :0];
-    [grid mark:8 :0];
-    [grid mark:9 :1];
-    
     
     dispatch_async(dispatch_get_main_queue(), ^{
         rowSlider.value = rowStepper.value = model.getGridMatrix.getRows;
@@ -279,9 +273,9 @@ NSTimer* humidTimer;
         newText = [[NSString alloc] initWithFormat:@"%d",
                    model.getGridMatrix.getRows];
         rowLabel.text = newText;
-        
-        [self updateCellDimensions];
+
         [model setGridMatrix:grid];
+        [self updateCellDimensions];
         
         [self.gridView reloadData];
     });
@@ -326,8 +320,8 @@ NSTimer* humidTimer;
 }
 //imageLoadDelegate
 - (void)ImageLoaderButtonPushed{
+    NSLog(@"GRIDLOG: ImageLoaderButtonPushed");
     GridMatrix* grid = [[GridMatrix alloc] initGridMatrix:10 :10];
-
     for(int i=0;i<10;i++){
         for(int j=0;j<10;j++){
             if(i==j)
@@ -337,24 +331,27 @@ NSTimer* humidTimer;
         }
     }
     
-    [model setGridMatrix:grid];
-    [self updateCellDimensions];
-    
-    rowSlider.value = rowStepper.value = model.getGridMatrix.getRows;
-    columnSlider.value = columnStepper.value = model.getGridMatrix.getColumns;
-    NSString *newText = [[NSString alloc] initWithFormat:@"%d",
-                         model.getGridMatrix.getColumns];
-    columnLabel.text = newText;
-    newText = [[NSString alloc] initWithFormat:@"%d",
-                         model.getGridMatrix.getRows];
-    rowLabel.text = newText;
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        rowSlider.value = rowStepper.value = model.getGridMatrix.getRows;
+        columnSlider.value = columnStepper.value = model.getGridMatrix.getColumns;
+        NSString *newText = [[NSString alloc] initWithFormat:@"%d",
+                             model.getGridMatrix.getColumns];
+        columnLabel.text = newText;
+        newText = [[NSString alloc] initWithFormat:@"%d",
+                   model.getGridMatrix.getRows];
+        rowLabel.text = newText;
 
+        [model setGridMatrix:grid];
+        [self updateCellDimensions];
+
+        
+        [self.gridView reloadData];
+    });
+    
     if(_imageLoaderPopover!=nil){
         [_imageLoaderPopover dismissPopoverAnimated:YES];
         _imageLoaderPopover = nil;
     }
-    
 }
 
 -(void)imageSaveSelected{
@@ -468,7 +465,7 @@ NSTimer* humidTimer;
         return;
     } else {
         //Create new matrix;
-        NSLog(@"GRIDLOG: ROWS=%d->%d ;;;;  COL=%d->%d", oldNrOfRows, oldNrOfRows, oldNrOfCols, newNrOfCols);
+//        NSLog(@"GRIDLOG: ROWS=%d->%d ;;;;  COL=%d->%d", oldNrOfRows, oldNrOfRows, oldNrOfCols, newNrOfCols);
         dispatch_async(dispatch_get_main_queue(), ^{
             GridMatrix *newMat = [model.gridMatrix newMatrix:oldNrOfRows :newNrOfCols];
             [model setGridMatrix:newMat];
@@ -509,7 +506,7 @@ NSTimer* humidTimer;
         return;
     } else {
         //Create new matrix;
-        NSLog(@"GRIDLOG: ROWS=%d->%d ;;;;  COL=%d->%d", oldNrOfRows, newNrOfRows, oldNrOfCols, oldNrOfCols);
+//        NSLog(@"GRIDLOG: ROWS=%d->%d ;;;;  COL=%d->%d", oldNrOfRows, newNrOfRows, oldNrOfCols, oldNrOfCols);
         dispatch_async(dispatch_get_main_queue(), ^{
             GridMatrix *newMat = [model.gridMatrix newMatrix:newNrOfRows :oldNrOfCols];
             [model setGridMatrix:newMat];
@@ -539,7 +536,7 @@ NSTimer* humidTimer;
     GridMatrix *mat = model.gridMatrix;
     if(mat != nil){
         NSInteger total = self.cellsPerRow * self.cellsPerColumn;
-        NSLog(@"GRIDLOG:numberOfItemsInSection;;;; amount of items =%d", total);
+//        NSLog(@"GRIDLOG:numberOfItemsInSection;;;; amount of items =%d", total);
         return total;
     } else {
         [NSException raise:@"Model not initialized properly" format:@"Model grid matrix not initialized properly when trying to display grid"];
@@ -579,7 +576,7 @@ NSTimer* humidTimer;
     //array[0] will always be 0 since we have only one section.
     NSInteger linearIndex = array[1];
 
-    NSLog(@"DEBUG: TOUCH index=%d!", linearIndex);
+//    NSLog(@"DEBUG: TOUCH index=%d!", linearIndex);
     [model.gridMatrix flip:linearIndex];
     [cv reloadData];
 
