@@ -2,7 +2,7 @@
 //  GridCell.h
 //  Molecular Printer
 //
-//  Created by Lorand Szakacs on 12/1/13.
+//  Created by Lorand Szakacs on 12/2/13.
 //  Copyright (c) 2013 Lorand Szakacs. All rights reserved.
 //
 

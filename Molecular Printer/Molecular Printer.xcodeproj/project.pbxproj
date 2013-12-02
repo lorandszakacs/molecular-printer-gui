@@ -41,6 +41,7 @@
 		5846E04718087B480003DFFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5846E04518087B480003DFFB /* InfoPlist.strings */; };
 		5846E04918087B480003DFFB /* Molecular_PrinterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5846E04818087B480003DFFB /* Molecular_PrinterTests.m */; };
 		5846E05318087BD20003DFFB /* Application.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5846E05218087BD20003DFFB /* Application.xib */; };
+		58639E54184C5F930007BD3F /* GridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58639E53184C5F930007BD3F /* GridCell.m */; };
 		FF2F4BCB184B55BF00D2D9EA /* SaveConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4BC9184B55BF00D2D9EA /* SaveConfigViewController.m */; };
 		FF2F4BCC184B55BF00D2D9EA /* SaveConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF2F4BCA184B55BF00D2D9EA /* SaveConfigViewController.xib */; };
 		FF2F4BCF184B770D00D2D9EA /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = FF2F4BCE184B770D00D2D9EA /* Configuration.m */; };
@@ -210,6 +211,8 @@
 		5846E04618087B480003DFFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5846E04818087B480003DFFB /* Molecular_PrinterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Molecular_PrinterTests.m; sourceTree = "<group>"; };
 		5846E05218087BD20003DFFB /* Application.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Application.xib; sourceTree = "<group>"; };
+		58639E52184C5F930007BD3F /* GridCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridCell.h; sourceTree = "<group>"; };
+		58639E53184C5F930007BD3F /* GridCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridCell.m; sourceTree = "<group>"; };
 		FF2F4BC8184B55BF00D2D9EA /* SaveConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SaveConfigViewController.h; path = ../SaveConfigViewController.h; sourceTree = "<group>"; };
 		FF2F4BC9184B55BF00D2D9EA /* SaveConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SaveConfigViewController.m; path = ../SaveConfigViewController.m; sourceTree = "<group>"; };
 		FF2F4BCA184B55BF00D2D9EA /* SaveConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SaveConfigViewController.xib; path = ../SaveConfigViewController.xib; sourceTree = "<group>"; };
@@ -409,6 +412,8 @@
 				5846E03518087B480003DFFB /* Images.xcassets */,
 				5846E02118087B480003DFFB /* Supporting Files */,
 				5846E05218087BD20003DFFB /* Application.xib */,
+				58639E52184C5F930007BD3F /* GridCell.h */,
+				58639E53184C5F930007BD3F /* GridCell.m */,
 			);
 			path = "Molecular Printer";
 			sourceTree = "<group>";
@@ -848,6 +853,7 @@
 				3187ADF9184C3AE700FED9EE /* ImageLoaderViewController2.m in Sources */,
 				FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */,
 				5846E02718087B480003DFFB /* main.m in Sources */,
+				58639E54184C5F930007BD3F /* GridCell.m in Sources */,
 				FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */,
 				FFFE0B6318400B9300063CC7 /* MPGModel.m in Sources */,
 				3187ADF2184C2FA600FED9EE /* ImageSaverViewController.m in Sources */,
