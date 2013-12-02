@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImageSaverViewController : UIViewController
+
+@protocol ImageSaveSelected <NSObject>
+-(void)imageSaveSelected;
+@end
+@interface ImageSaverViewController :UIViewController<UITextFieldDelegate>{
+    
+}
+@property (strong, nonatomic) IBOutlet UITextField *inputTextField;
+- (IBAction)inputEnd:(id)sender;
+- (IBAction)saveButtonPushed:(id)sender;
+@property (weak) id<ImageSaveSelected> delegate;
 
 @end

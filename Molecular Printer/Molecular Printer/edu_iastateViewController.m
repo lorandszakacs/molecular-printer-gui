@@ -311,19 +311,75 @@ NSInteger cellsPerColumn;
 }
 
 //Image save/load
-- (IBAction)LoadImageButtonPushed:(id)sender {
-    if(_imageLoaderViewController == nil){
-        _imageLoaderViewController = [[ImageLoaderViewController alloc] init];
-        _imageLoaderViewController.contentSizeForViewInPopover = CGSizeMake(330, 196);//hard coded:calculated from position of views.
-        _imageLoaderViewController.delegate = self;
+-(void)ImageLoaderButtonPushed2{
+    GridMatrix* grid = [[GridMatrix alloc] initGridMatrix:10 :10];
+    for(int i=0;i<10;i++){
+        for(int j=0;j<10;j++){
+            if(i==j)
+                [grid mark:i :j];
+            if(i+j==9)
+                [grid mark:i :j];
+        }
     }
+    [grid mark:1 :0];
+    [grid mark:0 :1];
+    [grid mark:4 :0];
+    [grid mark:5 :0];
+    [grid mark:8 :0];
+    [grid mark:9 :1];
     
-    if(_imageLoaderPopover ==nil){
-        _imageLoaderPopover = [[UIPopoverController alloc] initWithContentViewController:_imageLoaderViewController];
-        [_imageLoaderPopover presentPopoverFromRect:_loadImageButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
-    }else{
+    
+    [self updateCellDimensions];//use this when implemented
+    
+    [model setGridMatrix:grid];
+    
+    rowSlider.value = rowStepper.value = model.getGridMatrix.getHeight;
+    columnSlider.value = columnStepper.value = model.getGridMatrix.getWidth;
+    NSString *newText = [[NSString alloc] initWithFormat:@"%d",
+                         model.getGridMatrix.getWidth];
+    columnLabel.text = newText;
+    newText = [[NSString alloc] initWithFormat:@"%d",
+               model.getGridMatrix.getHeight];
+    rowLabel.text = newText;
+    
+    
+    
+    
+    if(_imageLoaderPopover!=nil){
         [_imageLoaderPopover dismissPopoverAnimated:YES];
         _imageLoaderPopover = nil;
+    }
+    
+}
+- (IBAction)LoadImageButtonPushed:(id)sender {
+    if(!_saved){
+        if(_imageLoaderViewController == nil){
+            _imageLoaderViewController = [[ImageLoaderViewController alloc] init];
+            _imageLoaderViewController.contentSizeForViewInPopover = CGSizeMake(330, 196);//hard coded:calculated from position of views.
+            _imageLoaderViewController.delegate = self;
+        }
+        
+        if(_imageLoaderPopover ==nil){
+            _imageLoaderPopover = [[UIPopoverController alloc] initWithContentViewController:_imageLoaderViewController];
+            [_imageLoaderPopover presentPopoverFromRect:_loadImageButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+        }else{
+            [_imageLoaderPopover dismissPopoverAnimated:YES];
+            _imageLoaderPopover = nil;
+        }
+    }else{
+        if(_imageLoaderViewController2 == nil){
+            _imageLoaderViewController2 = [[ImageLoaderViewController2 alloc] init];
+//            _imageLoaderViewController2.contentSizeForViewInPopover = CGSizeMake(330, 196);//hard coded:calculated from position of views.
+            _imageLoaderViewController2.delegate = self;
+        }
+        
+        if(_imageLoaderPopover ==nil){
+            _imageLoaderPopover = [[UIPopoverController alloc] initWithContentViewController:_imageLoaderViewController2];
+            [_imageLoaderPopover presentPopoverFromRect:_loadImageButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+        }else{
+            [_imageLoaderPopover dismissPopoverAnimated:YES];
+            _imageLoaderPopover = nil;
+        }
     }
 }
 //imageLoadDelegate
@@ -361,6 +417,30 @@ NSInteger cellsPerColumn;
     }
 }
 
+-(void)imageSaveSelected{
+    if(_imageSaverPopover != nil){
+        [_imageSaverPopover dismissPopoverAnimated:YES];
+        _imageSaverPopover = nil;
+        _imageSaverViewController =nil;
+    }
+    _saved = YES;
+}
+
+- (IBAction)SaveImageButtonPushed:(id)sender {
+    if(_imageSaverViewController == nil){
+        _imageSaverViewController = [[ImageSaverViewController alloc] init];
+        _imageSaverViewController.contentSizeForViewInPopover = CGSizeMake(187, 196);//hard coded:calculated from position of views.
+        _imageSaverViewController.delegate = self;
+    }
+    
+    if(_imageSaverPopover ==nil){
+        _imageSaverPopover = [[UIPopoverController alloc] initWithContentViewController: _imageSaverViewController];
+        [_imageSaverPopover presentPopoverFromRect: _saveImageButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+    }else{
+        [_imageSaverPopover dismissPopoverAnimated:YES];
+        _imageSaverPopover = nil;
+    }
+}
 //Config S/L
 - (IBAction)configSaveButtonPushed:(id)sender {
     if(_saveConfigController == nil){
@@ -514,6 +594,7 @@ NSInteger cellsPerColumn;
     NSString *newText = [NSString stringWithFormat: @"%1.1fµm", [model.getSpot getRadius]];
     spotLabel.text = newText;
 }
+
 
 
 @end

@@ -131,9 +131,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2bM-wT-0eY" kind="popover" popoverAnchorView="m3J-TN-ksx" id="8vO-9S-P7w">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <action selector="SaveImageButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RHp-cM-28q"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Device connected:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9k2-d7-iLM">
@@ -380,6 +378,7 @@
                         <outlet property="rowLabel" destination="job-UM-vNj" id="EyK-uz-Zzl"/>
                         <outlet property="rowSlider" destination="KKz-9D-NOV" id="GAQ-cc-lp0"/>
                         <outlet property="rowStepper" destination="D0W-fn-j6h" id="LL4-bw-yFC"/>
+                        <outlet property="saveImageButton" destination="m3J-TN-ksx" id="2ch-4F-Zc9"/>
                         <outlet property="spotLabel" destination="fLu-xy-cES" id="2gJ-ky-QFb"/>
                         <outlet property="spotSlider" destination="BRf-yb-Ufj" id="NOB-d0-e1D"/>
                         <outlet property="spotStepper" destination="pMK-2j-eL9" id="LLy-9E-6Yx"/>
