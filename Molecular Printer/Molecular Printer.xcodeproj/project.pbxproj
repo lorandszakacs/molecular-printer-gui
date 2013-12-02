@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3187ADE9184C17F200FED9EE /* ImageLoaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3187ADE7184C17F200FED9EE /* ImageLoaderViewController.m */; };
+		3187ADEA184C17F200FED9EE /* ImageLoaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3187ADE8184C17F200FED9EE /* ImageLoaderViewController.xib */; };
+		3187ADED184C1ACD00FED9EE /* test-image01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187ADEB184C1ACD00FED9EE /* test-image01.png */; };
+		3187ADEE184C1ACD00FED9EE /* test-image02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187ADEC184C1ACD00FED9EE /* test-image02.png */; };
 		5846E01B18087B480003DFFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5846E01A18087B480003DFFB /* Foundation.framework */; };
 		5846E01D18087B480003DFFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5846E01C18087B480003DFFB /* CoreGraphics.framework */; };
 		5846E01F18087B480003DFFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5846E01E18087B480003DFFB /* UIKit.framework */; };
@@ -151,6 +155,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3187ADE6184C17F200FED9EE /* ImageLoaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoaderViewController.h; sourceTree = "<group>"; };
+		3187ADE7184C17F200FED9EE /* ImageLoaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoaderViewController.m; sourceTree = "<group>"; };
+		3187ADE8184C17F200FED9EE /* ImageLoaderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageLoaderViewController.xib; sourceTree = "<group>"; };
+		3187ADEB184C1ACD00FED9EE /* test-image01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test-image01.png"; sourceTree = SOURCE_ROOT; };
+		3187ADEC184C1ACD00FED9EE /* test-image02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "test-image02.png"; sourceTree = SOURCE_ROOT; };
 		5846E01718087B480003DFFB /* Molecular Printer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Molecular Printer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5846E01A18087B480003DFFB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5846E01C18087B480003DFFB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -378,6 +387,8 @@
 		5846E02118087B480003DFFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3187ADEB184C1ACD00FED9EE /* test-image01.png */,
+				3187ADEC184C1ACD00FED9EE /* test-image02.png */,
 				FFFE0DCE18452AD600063CC7 /* Arduino.png */,
 				FFFE0C3918448B2C00063CC7 /* HumidityImages */,
 				FFFE0B38183ADCB700063CC7 /* Constant.h */,
@@ -445,6 +456,9 @@
 				FF8B292E184BECEE0094A88F /* PrintWaitViewController.h */,
 				FF8B292F184BECEE0094A88F /* PrintWaitViewController.m */,
 				FF8B2930184BECEE0094A88F /* PrintWaitViewController.xib */,
+				3187ADE6184C17F200FED9EE /* ImageLoaderViewController.h */,
+				3187ADE7184C17F200FED9EE /* ImageLoaderViewController.m */,
+				3187ADE8184C17F200FED9EE /* ImageLoaderViewController.xib */,
 			);
 			name = MPGController;
 			sourceTree = "<group>";
@@ -641,6 +655,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3187ADEA184C17F200FED9EE /* ImageLoaderViewController.xib in Resources */,
 				FFFE0D9C18448F2300063CC7 /* humidity51.png in Resources */,
 				FF8B2932184BECEE0094A88F /* PrintWaitViewController.xib in Resources */,
 				FF2F4BDC184B9A9100D2D9EA /* LoadConfigViewController.xib in Resources */,
@@ -667,6 +682,7 @@
 				FFFE0DA918448F2300063CC7 /* humidity64.png in Resources */,
 				FFFE0D9618448F2300063CC7 /* humidity45.png in Resources */,
 				FFFE0D6F18448F2300063CC7 /* humidity6.png in Resources */,
+				3187ADEE184C1ACD00FED9EE /* test-image02.png in Resources */,
 				FFFE0D7B18448F2300063CC7 /* humidity18.png in Resources */,
 				FFFE0DCD18448F2400063CC7 /* humidity100.png in Resources */,
 				FFFE0DCB18448F2400063CC7 /* humidity98.png in Resources */,
@@ -740,6 +756,7 @@
 				FFFE0D7C18448F2300063CC7 /* humidity19.png in Resources */,
 				FFFE0D7E18448F2300063CC7 /* humidity21.png in Resources */,
 				FFFE0DC618448F2400063CC7 /* humidity93.png in Resources */,
+				3187ADED184C1ACD00FED9EE /* test-image01.png in Resources */,
 				FFFE0DAB18448F2300063CC7 /* humidity66.png in Resources */,
 				FFFE0DB318448F2300063CC7 /* humidity74.png in Resources */,
 				FFFE0D9A18448F2300063CC7 /* humidity49.png in Resources */,
@@ -772,6 +789,7 @@
 				FFFE0B6B1842EEB600063CC7 /* deviceSelectionViewController.m in Sources */,
 				FF2F4BCB184B55BF00D2D9EA /* SaveConfigViewController.m in Sources */,
 				FF8B2931184BECEE0094A88F /* PrintWaitViewController.m in Sources */,
+				3187ADE9184C17F200FED9EE /* ImageLoaderViewController.m in Sources */,
 				FFFE0B5F184008BD00063CC7 /* MicroControllerInterface.m in Sources */,
 				5846E02718087B480003DFFB /* main.m in Sources */,
 				FFFE0B5C184005F600063CC7 /* GridMatrix.m in Sources */,

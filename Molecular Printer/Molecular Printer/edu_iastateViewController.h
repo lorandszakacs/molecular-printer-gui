@@ -12,6 +12,7 @@
 #import "SaveConfigViewController.h"
 #import "LoadConfigViewController.h"
 #import "PrintWaitViewController.h"
+#import "ImageLoaderViewController.h"
 
 @interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected, ConfigSelected, ConfigSaveSelected>{
     UILabel         *tempLabel;
@@ -90,6 +91,7 @@
 
 //device selection button
 @property (retain, nonatomic) IBOutlet UILabel *deviceConnectedLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *ConnectedDeviceImage;
 @property (strong) DeviceSelectionViewController* deviceSelection;
 @property (strong, nonatomic) IBOutlet UIButton *deviceSelectButton;
 @property (strong) UIPopoverController* deviceSelectionPopover;
@@ -97,6 +99,12 @@
 
 //printing actions
 - (IBAction)PrintButtonPushed:(id)sender;
+@property (strong)ImageLoaderViewController* imageLoaderViewController;
+@property (strong) UIPopoverController* imageLoaderPopover;
+
+//Image save/load
+- (IBAction)LoadImageButtonPushed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *loadImageButton;
 
 
 //Config save/load

@@ -134,6 +134,9 @@
                                 <state key="normal" title="Load Image">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="LoadImageButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HXh-aF-UvB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3J-TN-ksx">
                                 <rect key="frame" x="293" y="949" width="81" height="30"/>
@@ -148,20 +151,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Device connected:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9k2-d7-iLM">
-                                <rect key="frame" x="466" y="845" width="143" height="21"/>
+                                <rect key="frame" x="461" y="873" width="143" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="None" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uas-ej-LDB">
-                                <rect key="frame" x="516" y="885" width="68" height="21"/>
+                                <rect key="frame" x="511" y="913" width="68" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4e-K0-98a">
-                                <rect key="frame" x="565" y="914" width="54" height="30"/>
+                                <rect key="frame" x="560" y="942" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Change">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -352,6 +355,10 @@
                                     <action selector="configLoadButtonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HCn-yP-oDT"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vTU-od-gob">
+                                <rect key="frame" x="425" y="897" width="73" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -363,6 +370,7 @@
                     <connections>
                         <outlet property="ConfigLoadButton" destination="hRr-VC-khj" id="hbX-xv-F28"/>
                         <outlet property="ConfigSaveButton" destination="Na3-U6-gvr" id="UzG-LH-csJ"/>
+                        <outlet property="ConnectedDeviceImage" destination="vTU-od-gob" id="qd4-J7-LRu"/>
                         <outlet property="columnLabel" destination="ewT-en-BpP" id="PRk-Yz-vlK"/>
                         <outlet property="columnSlider" destination="Nj2-r2-lks" id="gFm-ss-gXS"/>
                         <outlet property="columnStepper" destination="847-cy-3In" id="2dt-GV-Cij"/>
@@ -375,6 +383,7 @@
                         <outlet property="humidImageView" destination="w1M-uG-1Yv" id="iOo-ve-6V3"/>
                         <outlet property="humidLabel" destination="VLY-rX-Sx7" id="KWA-IA-JKj"/>
                         <outlet property="humidSlider" destination="VFi-05-wpu" id="lfp-au-Z0C"/>
+                        <outlet property="loadImageButton" destination="j5f-2g-iRe" id="2Zb-VT-03o"/>
                         <outlet property="rowLabel" destination="job-UM-vNj" id="EyK-uz-Zzl"/>
                         <outlet property="rowSlider" destination="KKz-9D-NOV" id="GAQ-cc-lp0"/>
                         <outlet property="rowStepper" destination="D0W-fn-j6h" id="LL4-bw-yFC"/>

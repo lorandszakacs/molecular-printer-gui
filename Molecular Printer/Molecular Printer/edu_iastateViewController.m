@@ -194,8 +194,6 @@ NSTimer* humidTimer;
 
 //Printing actions
 - (IBAction)PrintButtonPushed:(id)sender {
-    model.gridMatrix = [[GridMatrix alloc] initGridMatrix:5 :5];
-    [model.gridMatrix mark:2 :2];
     GridMatrix* grid = model.getGridMatrix;
     for(int i=0;i<model.getGridMatrix.getHeight;i++){
         for(int j=0;j<model.getGridMatrix.getWidth;j++){
@@ -231,6 +229,23 @@ NSTimer* humidTimer;
     if(_deviceSelectionPopover!=nil){
         [_deviceSelectionPopover dismissPopoverAnimated:YES];
         _deviceSelectionPopover = nil;
+    }
+}
+
+//Image save/load
+- (IBAction)LoadImageButtonPushed:(id)sender {
+    if(_imageLoaderViewController == nil){
+        _imageLoaderViewController = [[ImageLoaderViewController alloc] init];
+        _imageLoaderViewController.contentSizeForViewInPopover = CGSizeMake(330, 196);//hard coded:calculated from position of views.
+        _imageLoaderViewController.delegate = self;
+    }
+    
+    if(_imageLoaderPopover ==nil){
+        _imageLoaderPopover = [[UIPopoverController alloc] initWithContentViewController:_imageLoaderViewController];
+        [_imageLoaderPopover presentPopoverFromRect:_loadImageButton.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+    }else{
+        [_imageLoaderPopover dismissPopoverAnimated:YES];
+        _imageLoaderPopover = nil;
     }
 }
 
@@ -318,5 +333,6 @@ NSTimer* humidTimer;
     NSString *newText = [NSString stringWithFormat: @"%1.1fµm", [model.getSpot getRadius]];
     spotLabel.text = newText;
 }
+
 
 @end

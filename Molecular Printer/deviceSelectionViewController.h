@@ -10,7 +10,7 @@
 #import "MicroControllerInterface.h"
 
 @protocol DeviceSelected <NSObject>
--(void)selectedDevice:(MicroControllerInterface*)device;
+-(void)selectedDevice:(MicroControllerInterface*) device;
 @end
 
 @interface DeviceSelectionViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>
