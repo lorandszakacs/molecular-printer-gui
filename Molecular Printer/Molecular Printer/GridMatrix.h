@@ -12,13 +12,13 @@
 #define Data_GridMatrix_h
 @interface GridMatrix : NSObject
 @property (retain)NSMutableArray* matrix;
-@property (getter = getWidth, readonly)NSInteger width;
-@property (getter = getHeight, readonly)NSInteger height;
+@property (getter = getColumns, readonly)NSInteger columns;
+@property (getter = getRows, readonly)NSInteger rows;
 -(BOOL)isMarked:(NSInteger)row :(NSInteger)column;
 -(BOOL)mark:(NSInteger)row :(NSInteger)column;
 -(BOOL)unmark:(NSInteger)row :(NSInteger)column;
 -(BOOL)flip:(NSInteger)row :(NSInteger)column;
--(id)initGridMatrix:(NSInteger)width :(NSInteger)height;
+-(id)initGridMatrix:(NSInteger)rows :(NSInteger)columns;
 
 //methods that use linear index
 -(BOOL)isMarked:(NSInteger)x;

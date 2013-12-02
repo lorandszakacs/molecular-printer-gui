@@ -16,6 +16,12 @@
 
 @interface edu_iastateViewController ()
 @property(nonatomic, weak) IBOutlet UICollectionView *gridView;
+
+@property(atomic) NSInteger cellDimension;
+@property(atomic) NSInteger cellSpacing;
+@property(atomic) NSInteger cellsPerRow;
+@property(atomic) NSInteger cellsPerColumn;
+
 -(void) changeValueSlider:(UISlider*)slider :(UILabel*)label :(UIStepper*)stepper;
 @end
 
@@ -48,11 +54,7 @@ NSTimer* humidTimer;
 @synthesize ConfigSaveButton;
 @synthesize ConfigLoadButton;
 
-NSInteger cellDimension;
-NSInteger cellSpacing;
 
-NSInteger cellsPerRow;
-NSInteger cellsPerColumn;
 
 
 
@@ -73,15 +75,18 @@ NSInteger cellsPerColumn;
     spotLabel.text = [[NSString alloc] initWithFormat:@"%1.1fµm", INITIALSPOTRADIUS];
     
     rowSlider.value = INITIALROWS;
+    //TODO: Should get from model;
+    rowSlider.maximumValue = 10;
     rowLabel.text = [[NSString alloc] initWithFormat:@"%d", INITIALROWS];
     columnSlider.value = INITIALCOLUMNS;
+    columnSlider.maximumValue = 10;
     columnLabel.text = [[NSString alloc] initWithFormat:@"%d", INITIALCOLUMNS];
     
     //display constants
-    cellsPerRow = INITIALROWS;
-    cellsPerColumn = INITIALCOLUMNS;
-    cellSpacing = GRID_DISPLAY_SPACE;
-    cellDimension = [self computeCellDimensions];
+    self.cellsPerRow = INITIALROWS;
+    self.cellsPerColumn = INITIALCOLUMNS;
+    self.cellSpacing = GRID_DISPLAY_SPACE;
+    self.cellDimension = [self computeCellDimensions];
     
     //update from device
     tempTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateTemp) userInfo:nil repeats:YES];
@@ -91,8 +96,8 @@ NSInteger cellsPerColumn;
     [self.gridView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"GridCell"];
 }
 -(NSInteger)computeCellDimensions{
-    NSInteger maxVertical = GRID_DISPLAY_HEIGHT/(cellsPerRow + cellSpacing);
-    NSInteger maxHorizontal = GRID_DISPLAY_WIDTH/(cellsPerColumn + cellSpacing);
+    NSInteger maxVertical = GRID_DISPLAY_HEIGHT/(self.cellsPerRow + self.cellSpacing);
+    NSInteger maxHorizontal = GRID_DISPLAY_WIDTH/(self.cellsPerColumn + self.cellSpacing);
     if(maxVertical > maxHorizontal)
         return maxVertical;
     else
@@ -152,17 +157,31 @@ NSInteger cellsPerColumn;
 
 
 - (IBAction)rowSliderChanged:(id)sender {
-    [self changeValueSlider:rowSlider :rowLabel :rowStepper];
-    [self updateCellDimensions];
+    NSInteger newNrOfRows = floor(rowSlider.value);
+    NSInteger oldNrOfCols = [model.gridMatrix getColumns];
+    NSInteger oldNrOfRows = [model.gridMatrix getRows];
 
-//    NSInteger newNrOfRows = rowSlider.value;
-//    NSInteger maxNumOfRows = model.device.getNumberOfPrintableRows;
-//    if(newNrOfRows > maxNumOfRows) {
-//        //TODO: display error;
-//        return;
-//    } else {
-//
-//    }
+    //this is necessary because the slider changes by float values.
+    if(newNrOfRows == oldNrOfRows) {
+        return;
+    }
+    [self changeValueSlider:rowSlider :rowLabel :rowStepper];
+    
+    NSInteger maxNumOfRows = model.device.getNumberOfPrintableRows;
+    if((model.device != nil) && (newNrOfRows > maxNumOfRows)) {
+    NSLog(@"GRIDLOG: maxnumber of rows exceeded: newRows=%d / maxrows=%d", newNrOfRows, maxNumOfRows);
+        //TODO: display error;
+        return;
+    } else {
+        //Create new matrix;
+        NSLog(@"GRIDLOG: ROWS=%d->%d ;;;;  COL=%d->%d", oldNrOfRows, newNrOfRows, oldNrOfCols, oldNrOfCols);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            GridMatrix *newMat = [model.gridMatrix newMatrix:newNrOfRows :oldNrOfCols];
+            [model setGridMatrix:newMat];
+            [self updateCellDimensions];
+            [self.gridView reloadData];
+        });
+    }
 }
 
 - (IBAction) rowStepperChanged:(id)sender {
@@ -253,16 +272,10 @@ NSInteger cellsPerColumn;
  *  updating cell height/width when the rows/columns sliders change.
  */
 -(void) updateCellDimensions {
+    self.cellsPerColumn = model.gridMatrix.getColumns;
+    self.cellsPerRow =  model.gridMatrix.getRows;
     
-//    if(MAXIMAGEWIDTH/value<[model.getPitch getWidth]){
-//        [model setPitch:[[Pitch alloc] initPitch:[] :<#(double)#> :<#(LengthUnit)#>
-//        widthSlider.value = IMAGEWIDTH/value;
-//        widthStepper.value = MAXIMAGEWIDTH/value;
-//        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",widthSlider.value];
-//        widthLabel.text =newText;
-//    }
-//    widthSlider.maximumValue = IMAGEWIDTH/value;
-//    widthStepper.maximumValue = IMAGEWIDTH/value;
+    self.cellDimension = [self computeCellDimensions];
 }
 
 -(void) updateSpotSize:(float)value{
@@ -273,8 +286,8 @@ NSInteger cellsPerColumn;
 //Printing actions
 - (IBAction)PrintButtonPushed:(id)sender {
     GridMatrix* grid = model.getGridMatrix;
-    for(int i=0;i<model.getGridMatrix.getHeight;i++){
-        for(int j=0;j<model.getGridMatrix.getWidth;j++){
+    for(int i=0;i<model.getGridMatrix.getRows;i++){
+        for(int j=0;j<model.getGridMatrix.getColumns;j++){
                 if([grid isMarked:i :j])
                     [model.device print:i :j];
         }
@@ -334,13 +347,13 @@ NSInteger cellsPerColumn;
     
     [model setGridMatrix:grid];
     
-    rowSlider.value = rowStepper.value = model.getGridMatrix.getHeight;
-    columnSlider.value = columnStepper.value = model.getGridMatrix.getWidth;
+    rowSlider.value = rowStepper.value = model.getGridMatrix.getRows;
+    columnSlider.value = columnStepper.value = model.getGridMatrix.getColumns;
     NSString *newText = [[NSString alloc] initWithFormat:@"%d",
-                         model.getGridMatrix.getWidth];
+                         model.getGridMatrix.getColumns];
     columnLabel.text = newText;
     newText = [[NSString alloc] initWithFormat:@"%d",
-               model.getGridMatrix.getHeight];
+               model.getGridMatrix.getRows];
     rowLabel.text = newText;
     
     
@@ -400,13 +413,13 @@ NSInteger cellsPerColumn;
     
     [model setGridMatrix:grid];
     
-    rowSlider.value = rowStepper.value = model.getGridMatrix.getHeight;
-    columnSlider.value = columnStepper.value = model.getGridMatrix.getWidth;
+    rowSlider.value = rowStepper.value = model.getGridMatrix.getRows;
+    columnSlider.value = columnStepper.value = model.getGridMatrix.getColumns;
     NSString *newText = [[NSString alloc] initWithFormat:@"%d",
-                         model.getGridMatrix.getWidth];
+                         model.getGridMatrix.getColumns];
     columnLabel.text = newText;
     newText = [[NSString alloc] initWithFormat:@"%d",
-                         model.getGridMatrix.getHeight];
+                         model.getGridMatrix.getRows];
     rowLabel.text = newText;
     
     
@@ -463,31 +476,36 @@ NSInteger cellsPerColumn;
 //    Grid View
 //====================
 #pragma mark - UICollectionView Datasource
-// 1
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     GridMatrix *mat = model.gridMatrix;
     if(mat != nil){
-        NSInteger total = mat.getHeight * mat.getWidth;
+        NSInteger total = self.cellsPerRow * self.cellsPerColumn;
+        NSLog(@"GRIDLOG:numberOfItemsInSection;;;; amount of items =%d", total);
         return total;
     } else {
         [NSException raise:@"Model not initialized properly" format:@"Model grid matrix not initialized properly when trying to display grid"];
     }
     return 1;
 }
-// 2
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
-//    GridMatrix *mat = model.gridMatrix;
-//    if(mat != nil){
-//        return mat.getHeight;
-//    } else {
-//        return rowSlider.value;
-//    }
+    //this number is always 1.
     return 1;
 }
-// 3
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+
     GridCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
+    NSUInteger array[[indexPath length]];
+    [indexPath getIndexes: array];
+    //array[0] will always be 0 since we have only one section.
+    NSInteger linearIndex = array[1];
+    NSLog(@"GRIDLOG:cellForItemAtIndexPath=%d",linearIndex);
+    
+    if([model.gridMatrix isMarked:linearIndex] == NO){
+        cell.backgroundColor = [UIColor whiteColor];
+    } else {
+        cell.backgroundColor = [UIColor blackColor];
+    }
     return cell;
 }
 // 4
@@ -503,6 +521,7 @@ NSInteger cellsPerColumn;
     NSInteger row = indexPath.row;
     NSInteger column = indexPath.section;
     [self.gridView deselectItemAtIndexPath:indexPath animated:NO];
+    [NSException raise:@"Model not initialized properly" format:@"Model grid matrix not initialized properly when trying to display grid"];
     // TODO: Select Item
 }
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -510,21 +529,14 @@ NSInteger cellsPerColumn;
 }
 
 #pragma mark – UICollectionViewDelegateFlowLayout
-
-// 1
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    NSString *searchTerm = self.searches[indexPath.section]; FlickrPhoto *photo =
-//    self.searchResults[searchTerm][indexPath.row];
-    // 2
-    CGSize retval = CGSizeMake(cellDimension, cellDimension);
-//    retval.height += 35; retval.width += 35; return retval;
+    CGSize retval = CGSizeMake(self.cellDimension, self.cellDimension);
     return retval;
 }
 
-// 3
 - (UIEdgeInsets)collectionView:
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(cellSpacing, cellSpacing, cellSpacing, cellSpacing);
+    return UIEdgeInsetsMake(self.cellSpacing, self.cellSpacing, self.cellSpacing, self.cellSpacing);
 }
 
 - (IBAction)configLoadButtonPushed:(id)sender {
