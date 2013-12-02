@@ -135,61 +135,6 @@ NSTimer* humidTimer;
     [model.device setDesiredHumidity:model.getHumidity];
 }
 
-- (IBAction)columnSliderChanged:(id)sender {
-    [self changeValueSlider:columnSlider :columnLabel :columnStepper];
-    [self updateCellDimensions];
-
-//    NSInteger newNrOfCols = rowSlider.value;
-//    NSInteger maxNumOfCols = model.device.getNumberOfPrintableColumns;
-//    if(newNrOfCols > maxNumOfCols) {
-//        //TODO: display error;
-//        return;
-//    } else {
-//
-//    }
-}
-
-- (IBAction) columnStepperChanged:(id)sender {
-    //TODO: update like the slider counterpart
-    [self changeValueStepper:columnSlider :columnLabel :columnStepper];
-    [self updateCellDimensions];
-}
-
-
-- (IBAction)rowSliderChanged:(id)sender {
-    NSInteger newNrOfRows = floor(rowSlider.value);
-    NSInteger oldNrOfCols = [model.gridMatrix getColumns];
-    NSInteger oldNrOfRows = [model.gridMatrix getRows];
-
-    //this is necessary because the slider changes by float values.
-    if(newNrOfRows == oldNrOfRows) {
-        return;
-    }
-    [self changeValueSlider:rowSlider :rowLabel :rowStepper];
-    
-    NSInteger maxNumOfRows = model.device.getNumberOfPrintableRows;
-    if((model.device != nil) && (newNrOfRows > maxNumOfRows)) {
-    NSLog(@"GRIDLOG: maxnumber of rows exceeded: newRows=%d / maxrows=%d", newNrOfRows, maxNumOfRows);
-        //TODO: display error;
-        return;
-    } else {
-        //Create new matrix;
-        NSLog(@"GRIDLOG: ROWS=%d->%d ;;;;  COL=%d->%d", oldNrOfRows, newNrOfRows, oldNrOfCols, oldNrOfCols);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            GridMatrix *newMat = [model.gridMatrix newMatrix:newNrOfRows :oldNrOfCols];
-            [model setGridMatrix:newMat];
-            [self updateCellDimensions];
-            [self.gridView reloadData];
-        });
-    }
-}
-
-- (IBAction) rowStepperChanged:(id)sender {
-    //TODO: update like the slider counterpart
-    [self changeValueStepper:rowSlider :rowLabel :rowStepper];
-        [self updateCellDimensions];
-}
-
 - (IBAction)widthSliderChanged:(id)sender {
     [self changeValueSlider:widthSlider :widthLabel :widthStepper];
     [model setPitch:[[Pitch alloc] initPitch:widthSlider.value :[model.getPitch getHeight] :[model.getPitch getUnit]]];
@@ -483,6 +428,85 @@ NSTimer* humidTimer;
 //=============================================================================================
 //=============================================================================================
 //=============================================================================================
+- (void)updateGridViewColumns:(NSInteger)oldNrOfCols newNrOfCols:(NSInteger)newNrOfCols oldNrOfRows:(NSInteger)oldNrOfRows {
+    if(newNrOfCols == oldNrOfCols) {
+        return;
+    }
+    [self changeValueSlider:columnSlider :columnLabel :columnStepper];
+    
+    NSInteger maxNumOfCols = model.device.getNumberOfPrintableColumns;
+    if((model.device != nil) && (newNrOfCols > maxNumOfCols)) {
+        NSLog(@"GRIDLOG: maxnumber of cols exceeded: newRows=%d / maxrows=%d", newNrOfCols, maxNumOfCols);
+        //TODO: display error;
+        return;
+    } else {
+        //Create new matrix;
+        NSLog(@"GRIDLOG: ROWS=%d->%d ;;;;  COL=%d->%d", oldNrOfRows, oldNrOfRows, oldNrOfCols, newNrOfCols);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            GridMatrix *newMat = [model.gridMatrix newMatrix:oldNrOfRows :newNrOfCols];
+            [model setGridMatrix:newMat];
+            [self updateCellDimensions];
+            [self.gridView reloadData];
+        });
+    }
+}
+
+- (IBAction)columnSliderChanged:(id)sender {
+    
+    [self updateCellDimensions];
+    
+    NSInteger newNrOfCols = floor(columnSlider.value);
+    NSInteger oldNrOfCols = [model.gridMatrix getColumns];
+    NSInteger oldNrOfRows = [model.gridMatrix getRows];
+    
+    [self updateGridViewColumns:oldNrOfCols newNrOfCols:newNrOfCols oldNrOfRows:oldNrOfRows];
+}
+
+- (IBAction) columnStepperChanged:(id)sender {
+    //TODO: update like the slider counterpart
+    [self changeValueStepper:columnSlider :columnLabel :columnStepper];
+    [self updateCellDimensions];
+}
+
+- (void)updateGridViewRows:(NSInteger)oldNrOfRows newNrOfRows:(NSInteger)newNrOfRows oldNrOfCols:(NSInteger)oldNrOfCols {
+    //this is necessary because the slider changes by float values.
+    if(newNrOfRows == oldNrOfRows) {
+        return;
+    }
+    [self changeValueSlider:rowSlider :rowLabel :rowStepper];
+    
+    NSInteger maxNumOfRows = model.device.getNumberOfPrintableRows;
+    if((model.device != nil) && (newNrOfRows > maxNumOfRows)) {
+        NSLog(@"GRIDLOG: maxnumber of rows exceeded: newRows=%d / maxrows=%d", newNrOfRows, maxNumOfRows);
+        //TODO: display error;
+        return;
+    } else {
+        //Create new matrix;
+        NSLog(@"GRIDLOG: ROWS=%d->%d ;;;;  COL=%d->%d", oldNrOfRows, newNrOfRows, oldNrOfCols, oldNrOfCols);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            GridMatrix *newMat = [model.gridMatrix newMatrix:newNrOfRows :oldNrOfCols];
+            [model setGridMatrix:newMat];
+            [self updateCellDimensions];
+            [self.gridView reloadData];
+        });
+    }
+}
+
+- (IBAction)rowSliderChanged:(id)sender {
+    NSInteger newNrOfRows = floor(rowSlider.value);
+    NSInteger oldNrOfCols = [model.gridMatrix getColumns];
+    NSInteger oldNrOfRows = [model.gridMatrix getRows];
+    
+    [self updateGridViewRows:oldNrOfRows newNrOfRows:newNrOfRows oldNrOfCols:oldNrOfCols];
+}
+
+- (IBAction) rowStepperChanged:(id)sender {
+    //TODO: update like the slider counterpart
+    [self changeValueStepper:rowSlider :rowLabel :rowStepper];
+    [self updateCellDimensions];
+}
+
+
 #pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     GridMatrix *mat = model.gridMatrix;
