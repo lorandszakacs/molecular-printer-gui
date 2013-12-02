@@ -16,6 +16,14 @@
 		3187ADF5184C31D700FED9EE /* test-image03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187ADF4184C31D700FED9EE /* test-image03.png */; };
 		3187ADF9184C3AE700FED9EE /* ImageLoaderViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3187ADF7184C3AE700FED9EE /* ImageLoaderViewController2.m */; };
 		3187ADFA184C3AE700FED9EE /* ImageLoaderViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3187ADF8184C3AE700FED9EE /* ImageLoaderViewController2.xib */; };
+		3187AE02184C4BD200FED9EE /* Load_Images.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187ADFB184C4BD200FED9EE /* Load_Images.png */; };
+		3187AE03184C4BD200FED9EE /* Load_Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187ADFC184C4BD200FED9EE /* Load_Settings.png */; };
+		3187AE04184C4BD200FED9EE /* Printer-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187ADFD184C4BD200FED9EE /* Printer-32.png */; };
+		3187AE05184C4BD200FED9EE /* Printer-pause-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187ADFE184C4BD200FED9EE /* Printer-pause-32.png */; };
+		3187AE06184C4BD200FED9EE /* Printer-stop-32.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187ADFF184C4BD200FED9EE /* Printer-stop-32.png */; };
+		3187AE07184C4BD200FED9EE /* Save_Images.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187AE00184C4BD200FED9EE /* Save_Images.png */; };
+		3187AE08184C4BD200FED9EE /* Save_Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187AE01184C4BD200FED9EE /* Save_Settings.png */; };
+		3187AE0A184C4D3B00FED9EE /* Switch_Device.png in Resources */ = {isa = PBXBuildFile; fileRef = 3187AE09184C4D3B00FED9EE /* Switch_Device.png */; };
 		58130C19184BBAB7009AA04A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		5846E01B18087B480003DFFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5846E01A18087B480003DFFB /* Foundation.framework */; };
 		5846E01D18087B480003DFFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5846E01C18087B480003DFFB /* CoreGraphics.framework */; };
@@ -173,6 +181,14 @@
 		3187ADF6184C3AE700FED9EE /* ImageLoaderViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageLoaderViewController2.h; sourceTree = "<group>"; };
 		3187ADF7184C3AE700FED9EE /* ImageLoaderViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageLoaderViewController2.m; sourceTree = "<group>"; };
 		3187ADF8184C3AE700FED9EE /* ImageLoaderViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageLoaderViewController2.xib; sourceTree = "<group>"; };
+		3187ADFB184C4BD200FED9EE /* Load_Images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Load_Images.png; sourceTree = SOURCE_ROOT; };
+		3187ADFC184C4BD200FED9EE /* Load_Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Load_Settings.png; sourceTree = SOURCE_ROOT; };
+		3187ADFD184C4BD200FED9EE /* Printer-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Printer-32.png"; sourceTree = SOURCE_ROOT; };
+		3187ADFE184C4BD200FED9EE /* Printer-pause-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Printer-pause-32.png"; sourceTree = SOURCE_ROOT; };
+		3187ADFF184C4BD200FED9EE /* Printer-stop-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Printer-stop-32.png"; sourceTree = SOURCE_ROOT; };
+		3187AE00184C4BD200FED9EE /* Save_Images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Save_Images.png; sourceTree = SOURCE_ROOT; };
+		3187AE01184C4BD200FED9EE /* Save_Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Save_Settings.png; sourceTree = SOURCE_ROOT; };
+		3187AE09184C4D3B00FED9EE /* Switch_Device.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Switch_Device.png; sourceTree = SOURCE_ROOT; };
 		5846E01718087B480003DFFB /* Molecular Printer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Molecular Printer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5846E01A18087B480003DFFB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5846E01C18087B480003DFFB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -400,6 +416,14 @@
 		5846E02118087B480003DFFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3187AE09184C4D3B00FED9EE /* Switch_Device.png */,
+				3187ADFB184C4BD200FED9EE /* Load_Images.png */,
+				3187ADFC184C4BD200FED9EE /* Load_Settings.png */,
+				3187ADFD184C4BD200FED9EE /* Printer-32.png */,
+				3187ADFE184C4BD200FED9EE /* Printer-pause-32.png */,
+				3187ADFF184C4BD200FED9EE /* Printer-stop-32.png */,
+				3187AE00184C4BD200FED9EE /* Save_Images.png */,
+				3187AE01184C4BD200FED9EE /* Save_Settings.png */,
 				3187ADF4184C31D700FED9EE /* test-image03.png */,
 				3187ADEB184C1ACD00FED9EE /* test-image01.png */,
 				3187ADEC184C1ACD00FED9EE /* test-image02.png */,
@@ -675,6 +699,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3187AE05184C4BD200FED9EE /* Printer-pause-32.png in Resources */,
 				3187ADEA184C17F200FED9EE /* ImageLoaderViewController.xib in Resources */,
 				FFFE0D9C18448F2300063CC7 /* humidity51.png in Resources */,
 				FF8B2932184BECEE0094A88F /* PrintWaitViewController.xib in Resources */,
@@ -683,11 +708,13 @@
 				FFFE0D7F18448F2300063CC7 /* humidity22.png in Resources */,
 				FFFE0D7418448F2300063CC7 /* humidity11.png in Resources */,
 				FFFE0DC418448F2400063CC7 /* humidity91.png in Resources */,
+				3187AE08184C4BD200FED9EE /* Save_Settings.png in Resources */,
 				FFFE0DB718448F2300063CC7 /* humidity78.png in Resources */,
 				FFFE0D9218448F2300063CC7 /* humidity41.png in Resources */,
 				FFFE0D6D18448F2300063CC7 /* humidity4.png in Resources */,
 				FFFE0D6E18448F2300063CC7 /* humidity5.png in Resources */,
 				FFFE0D9F18448F2300063CC7 /* humidity54.png in Resources */,
+				3187AE07184C4BD200FED9EE /* Save_Images.png in Resources */,
 				FFFE0DBB18448F2300063CC7 /* humidity82.png in Resources */,
 				FFFE0D9D18448F2300063CC7 /* humidity52.png in Resources */,
 				FFFE0D8018448F2300063CC7 /* humidity23.png in Resources */,
@@ -737,8 +764,10 @@
 				FFFE0D8A18448F2300063CC7 /* humidity33.png in Resources */,
 				FFFE0D7118448F2300063CC7 /* humidity8.png in Resources */,
 				FFFE0D9B18448F2300063CC7 /* humidity50.png in Resources */,
+				3187AE04184C4BD200FED9EE /* Printer-32.png in Resources */,
 				FFFE0D7718448F2300063CC7 /* humidity14.png in Resources */,
 				FFFE0DC518448F2400063CC7 /* humidity92.png in Resources */,
+				3187AE02184C4BD200FED9EE /* Load_Images.png in Resources */,
 				FFFE0D8F18448F2300063CC7 /* humidity38.png in Resources */,
 				FFFE0DB618448F2300063CC7 /* humidity77.png in Resources */,
 				FF2F4BCC184B55BF00D2D9EA /* SaveConfigViewController.xib in Resources */,
@@ -759,6 +788,7 @@
 				FFFE0DC118448F2400063CC7 /* humidity88.png in Resources */,
 				FFFE0D7518448F2300063CC7 /* humidity12.png in Resources */,
 				FFFE0DA518448F2300063CC7 /* humidity60.png in Resources */,
+				3187AE0A184C4D3B00FED9EE /* Switch_Device.png in Resources */,
 				5846E02E18087B480003DFFB /* Main_iPhone.storyboard in Resources */,
 				FFFE0DC818448F2400063CC7 /* humidity95.png in Resources */,
 				FFFE0DC318448F2400063CC7 /* humidity90.png in Resources */,
@@ -772,12 +802,14 @@
 				FFFE0D6A18448F2300063CC7 /* humidity1.png in Resources */,
 				FFFE0D9E18448F2300063CC7 /* humidity53.png in Resources */,
 				FFFE0D8818448F2300063CC7 /* humidity31.png in Resources */,
+				3187AE03184C4BD200FED9EE /* Load_Settings.png in Resources */,
 				FFFE0DB118448F2300063CC7 /* humidity72.png in Resources */,
 				3187ADFA184C3AE700FED9EE /* ImageLoaderViewController2.xib in Resources */,
 				FFFE0D6C18448F2300063CC7 /* humidity3.png in Resources */,
 				FFFE0D7C18448F2300063CC7 /* humidity19.png in Resources */,
 				FFFE0D7E18448F2300063CC7 /* humidity21.png in Resources */,
 				FFFE0DC618448F2400063CC7 /* humidity93.png in Resources */,
+				3187AE06184C4BD200FED9EE /* Printer-stop-32.png in Resources */,
 				3187ADED184C1ACD00FED9EE /* test-image01.png in Resources */,
 				FFFE0DAB18448F2300063CC7 /* humidity66.png in Resources */,
 				3187ADF5184C31D700FED9EE /* test-image03.png in Resources */,
