@@ -23,11 +23,7 @@
     return self;
 }
 -(void)print{
-    NSInteger* grid = [NSInteger al]
-    NSInteger* grid[_matrix.getWidth*_matrix.getHeight];
-    for(int i=0;i<_matrix.getWidth*_matrix.getHeight;i++){
-        grid[i] = &_matrix.matrix[i];
-    }
+
 }
 
 -(id)initPrint:(GridMatrix*) matrix{

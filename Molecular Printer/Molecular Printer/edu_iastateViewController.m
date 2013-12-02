@@ -194,6 +194,8 @@ NSTimer* humidTimer;
 
 //Printing actions
 - (IBAction)PrintButtonPushed:(id)sender {
+    model.gridMatrix = [[GridMatrix alloc] initGridMatrix:5 :5];
+    [model.gridMatrix mark:2 :2];
     GridMatrix* grid = model.getGridMatrix;
     for(int i=0;i<model.getGridMatrix.getHeight;i++){
         for(int j=0;j<model.getGridMatrix.getWidth;j++){

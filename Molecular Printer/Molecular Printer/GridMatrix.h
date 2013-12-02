@@ -11,7 +11,7 @@
 #ifndef Data_GridMatrix_h
 #define Data_GridMatrix_h
 @interface GridMatrix : NSObject
-@property ()NSInteger* matrix;
+@property (retain)NSMutableArray* matrix;
 @property (getter = getWidth, readonly)NSInteger width;
 @property (getter = getHeight, readonly)NSInteger height;
 -(BOOL)isMarked:(NSInteger)x :(NSInteger)y;
