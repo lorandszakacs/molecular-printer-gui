@@ -472,9 +472,17 @@ NSTimer* humidTimer;
     }
 }
 
-//====================
-//    Grid View
-//====================
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
+//
+//                                          Grid View
+//
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
 #pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     GridMatrix *mat = model.gridMatrix;
@@ -499,7 +507,6 @@ NSTimer* humidTimer;
     [indexPath getIndexes: array];
     //array[0] will always be 0 since we have only one section.
     NSInteger linearIndex = array[1];
-    NSLog(@"GRIDLOG:cellForItemAtIndexPath=%d",linearIndex);
     
     if([model.gridMatrix isMarked:linearIndex] == NO){
         cell.backgroundColor = [UIColor whiteColor];
@@ -508,12 +515,6 @@ NSTimer* humidTimer;
     }
     return cell;
 }
-// 4
-/*- (UICollectionReusableView *)collectionView:
- (UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
- {
- return [[UICollectionReusableView alloc] init];
- }*/
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
@@ -538,6 +539,18 @@ NSTimer* humidTimer;
 (UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(self.cellSpacing, self.cellSpacing, self.cellSpacing, self.cellSpacing);
 }
+
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
+//
+//                                      END Grid View
+//
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
+//=============================================================================================
 
 - (IBAction)configLoadButtonPushed:(id)sender {
     if(_loadConfigController == nil){
