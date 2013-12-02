@@ -93,8 +93,8 @@ int status;
 -(Humidity*)getHumidity{
     return humidity;
 }
--(NSInteger)print:(NSInteger)x :(NSInteger)y{
-    status = STATUSPRINTING;
+-(NSInteger)print:(NSInteger)x :(NSInteger)y{    
+//    status = STATUSPRINTING;
     NSLog(@"Printing at (%d, %d)\nPitch Width:%f\nPitch Height:%f\nSpot size:%f", x, y, pitch.getWidth, pitch.getHeight, s.getRadius);
     return 1;
 }

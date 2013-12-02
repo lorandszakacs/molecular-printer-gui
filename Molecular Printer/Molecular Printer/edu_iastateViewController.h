@@ -12,9 +12,11 @@
 #import "SaveConfigViewController.h"
 #import "LoadConfigViewController.h"
 #import "PrintWaitViewController.h"
+#import "ImageLoaderViewController.h"
+#import "ImageLoaderViewController2.h"
+#import "ImageSaverViewController.h"
 
-@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected,ConfigSelected, ConfigSaveSelected,
-                                                        UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
+@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected,ConfigSelected, ConfigSaveSelected, ImageLoad, ImageSaveSelected, ImageLoad2, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
     UILabel         *tempLabel;
     UILabel         *deviceTempLabel;
     UILabel         *humidLabel;
@@ -91,6 +93,7 @@
 
 //device selection button
 @property (retain, nonatomic) IBOutlet UILabel *deviceConnectedLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *ConnectedDeviceImage;
 @property (strong) DeviceSelectionViewController* deviceSelection;
 @property (strong, nonatomic) IBOutlet UIButton *deviceSelectButton;
 @property (strong) UIPopoverController* deviceSelectionPopover;
@@ -99,6 +102,18 @@
 //printing actions
 - (IBAction)PrintButtonPushed:(id)sender;
 
+
+//Image save/load
+@property (strong)ImageLoaderViewController* imageLoaderViewController;
+@property (strong)ImageLoaderViewController2* imageLoaderViewController2;
+@property (strong) UIPopoverController* imageLoaderPopover;
+@property (strong)ImageSaverViewController* imageSaverViewController;
+@property (strong) UIPopoverController* imageSaverPopover;
+- (IBAction)LoadImageButtonPushed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *loadImageButton;
+- (IBAction)SaveImageButtonPushed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *saveImageButton;
+@property BOOL saved;
 
 //Config save/load
 - (IBAction)configSaveButtonPushed:(id)sender;
