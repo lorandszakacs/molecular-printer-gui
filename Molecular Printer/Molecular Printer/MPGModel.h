@@ -15,7 +15,7 @@
 #define MPGModel_h
 
 @interface MPGModel : NSObject
-@property (retain, getter = getGridMatrix, setter = setGridMatrix:)GridMatrix* gridMatrix;
+@property (atomic, retain, getter = getGridMatrix, setter = setGridMatrix:)GridMatrix* gridMatrix;
 @property (retain, getter = getTemperature)Temperature* temperature;
 @property (retain, getter = getHumidity)Humidity* humidity;
 @property (retain, getter = getSpot)Spot* spot;

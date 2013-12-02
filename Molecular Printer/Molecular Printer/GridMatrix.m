@@ -9,13 +9,13 @@
 #import "GridMatrix.h"
 
 @implementation GridMatrix
--(id)initGridMatrix:(NSInteger)width :(NSInteger)height{
+-(id)initGridMatrix:(NSInteger)rows :(NSInteger)columns{
     self = [super init];
-    _width = width;
-    _height = height;
+    _rows = rows;
+    _columns = columns;
     NSMutableArray *matrix = [[NSMutableArray alloc] init];
 //    NSInteger matrix[width*height];
-    for(NSInteger i=0;i<width*height;i++){
+    for(NSInteger i = 0; i < rows * columns; i++){
         [matrix setObject:[NSNumber numberWithInt:0] atIndexedSubscript:i];
     }
     _matrix = matrix;
@@ -23,7 +23,7 @@
 }
 
 -(BOOL)checkXY:(NSInteger)row :(NSInteger)column{
-    if(row < 0 || column <0 || row >= _height || column >=_width)
+    if(row < 0 || column <0 || row >= _rows || column >=_columns)
         return NO;
     return YES;
 }
@@ -32,7 +32,6 @@
     if([self checkXY:row :column] == NO)
         [NSException raise:@"Invalid value for GridMatrix::isMarked" format:@"Position (%d, %d) is invalid", row, column];
     NSInteger lIndex = [self linearIndex: row:column];
-//    NSLog(@"%dsaydasyd",_matrix[y*_width+x]);
     if([[_matrix objectAtIndex: lIndex]integerValue] == 1)
         return YES;
     return NO;
@@ -94,21 +93,36 @@
     return [self flip: row: column];
 }
 
--(GridMatrix *)newMatrix:(NSInteger)newHeight :(NSInteger)newWidth{
-    //TODO:implement this
-    return self;
+-(GridMatrix *)newMatrix:(NSInteger)newHeight :(NSInteger)newWidth {
+    GridMatrix *temp = [[GridMatrix alloc]initGridMatrix:newHeight :newWidth];
+    NSInteger heightLimit;
+    NSInteger widthLimit;
+    
+    if(newHeight < _rows ) heightLimit = newHeight; else heightLimit = _rows;
+    if(newWidth < _columns) widthLimit = newWidth; else widthLimit = _columns;
+    
+    for (NSInteger row=0; row < heightLimit ;row++) {
+        for (NSInteger col=0; col < widthLimit ;col++) {
+            BOOL oldVal = [self isMarked:row :col];
+            if (oldVal == YES) {
+                [temp mark:row:col];
+        }
+        }
+    }
+    [temp mark:3:3];
+    return temp;
 }
 
 -(NSInteger) linearIndex: (NSInteger)row :(NSInteger)column{
-    return row * _width + column;
+    return row * _columns + column;
 }
 
 -(NSInteger) column: (NSInteger)linIndex {
-    return linIndex % _width;
+    return linIndex % _columns;
 }
 
 -(NSInteger) row: (NSInteger)linIndex {
-    return floor(linIndex / _width);
+    return floor(linIndex / _columns);
 }
 
 
