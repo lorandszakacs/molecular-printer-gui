@@ -8,20 +8,25 @@
 
 #import "Constant.h"
 
-double const MAXIMAGEWIDTH = 4000;
-double const MAXIMAGEHEIGHT = 4000;
+double const MAXIMAGEWIDTH = 200;
+double const MAXIMAGEHEIGHT = 200;
 double const INITIALTEMP = 21.0;
 const double INITIALHUMIDITY = 60.0;
-int const INITIALCOLUMNS = 1;
-int const INITIALROWS = 1;
-double const INITIALWIDTH = 4000.0;
-double const INITIALHEIGHT = 3000.0;
+int const INITIALCOLUMNS = 7;
+int const INITIALROWS = 5;
+double const INITIALWIDTH = 40.0;
+double const INITIALHEIGHT = 40.0;
 double const INITIALSPOTRADIUS = 15.0;
+
+int const GRID_DISPLAY_HEIGHT = 400;
+int const GRID_DISPLAY_WIDTH = 700;
+int const GRID_DISPLAY_SPACE = 5;
 
 int const STATUSIDLE = 0;
 int const STATUSPRINTING = 1;
 int const STATUSPAUSED = 2;
 int const STATUSERROR = -1;
+
 
 
 

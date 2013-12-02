@@ -17,6 +17,8 @@
 -(NSString*)getID;
 -(double)getSurfaceHeight;
 -(double)getSurfaceWidth;
+-(NSInteger)getNumberOfPrintableRows;
+-(NSInteger)getNumberOfPrintableColumns;
 -(NSInteger)setPitch:(Pitch*)pitch;
 -(NSInteger)setDesiredTemperature:(Temperature*)temp;
 -(NSInteger)setDesiredHumidity:(Humidity*)humid;

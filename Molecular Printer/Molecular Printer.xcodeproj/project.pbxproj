@@ -380,6 +380,8 @@
 				5846E03518087B480003DFFB /* Images.xcassets */,
 				5846E02118087B480003DFFB /* Supporting Files */,
 				5846E05218087BD20003DFFB /* Application.xib */,
+				58130C17184BBAB7009AA04A /* GridCell.h */,
+				58130C18184BBAB7009AA04A /* GridCell.m */,
 			);
 			path = "Molecular Printer";
 			sourceTree = "<group>";
@@ -796,6 +798,7 @@
 				FFFE0B6318400B9300063CC7 /* MPGModel.m in Sources */,
 				FF2F4BDB184B9A9100D2D9EA /* LoadConfigViewController.m in Sources */,
 				FFFE0B59183FFF4100063CC7 /* PhysicalUnits.m in Sources */,
+				58130C19184BBAB7009AA04A /* GridCell.m in Sources */,
 				5846E02B18087B480003DFFB /* edu_iastateAppDelegate.m in Sources */,
 				5846E03418087B480003DFFB /* edu_iastateViewController.m in Sources */,
 				FFFE0B651841F22F00063CC7 /* Constant.m in Sources */,

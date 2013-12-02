@@ -11,9 +11,11 @@
 #import "MPGModel.h"
 #import "PhysicalUnits.h"
 #import "Constant.h"
+#import "GridCell.h"
 
 
 @interface edu_iastateViewController ()
+@property(nonatomic, weak) IBOutlet UICollectionView *gridView;
 -(void) changeValueSlider:(UISlider*)slider :(UILabel*)label :(UIStepper*)stepper;
 @end
 
@@ -46,6 +48,14 @@ NSTimer* humidTimer;
 @synthesize ConfigSaveButton;
 @synthesize ConfigLoadButton;
 
+NSInteger cellDimension;
+NSInteger cellSpacing;
+
+NSInteger cellsPerRow;
+NSInteger cellsPerColumn;
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -62,10 +72,33 @@ NSTimer* humidTimer;
     spotSlider.value = spotStepper.value = INITIALSPOTRADIUS;
     spotLabel.text = [[NSString alloc] initWithFormat:@"%1.1fµm", INITIALSPOTRADIUS];
     
+    rowSlider.value = INITIALROWS;
+    rowLabel.text = [[NSString alloc] initWithFormat:@"%d", INITIALROWS];
+    columnSlider.value = INITIALCOLUMNS;
+    columnLabel.text = [[NSString alloc] initWithFormat:@"%d", INITIALCOLUMNS];
+    
+    //display constants
+    cellsPerRow = INITIALROWS;
+    cellsPerColumn = INITIALCOLUMNS;
+    cellSpacing = GRID_DISPLAY_SPACE;
+    cellDimension = [self computeCellDimensions];
+    
     //update from device
     tempTimer = [NSTimer scheduledTimerWithTimeInterval:0.25 target:self selector:@selector(updateTemp) userInfo:nil repeats:YES];
     humidTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateHumidity) userInfo:nil repeats:YES];
+    
+    //grid view
+    [self.gridView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"GridCell"];
 }
+-(NSInteger)computeCellDimensions{
+    NSInteger maxVertical = GRID_DISPLAY_HEIGHT/(cellsPerRow + cellSpacing);
+    NSInteger maxHorizontal = GRID_DISPLAY_WIDTH/(cellsPerColumn + cellSpacing);
+    if(maxVertical > maxHorizontal)
+        return maxVertical;
+    else
+        return maxHorizontal;
+}
+
 -(void)updateTemp{
     deviceTempLabel.text = [[NSString alloc] initWithFormat:@"%1.1f", [model.device.getTemperature getValue]];
 }
@@ -99,19 +132,43 @@ NSTimer* humidTimer;
 
 - (IBAction)columnSliderChanged:(id)sender {
     [self changeValueSlider:columnSlider :columnLabel :columnStepper];
+    [self updateCellDimensions];
+
+//    NSInteger newNrOfCols = rowSlider.value;
+//    NSInteger maxNumOfCols = model.device.getNumberOfPrintableColumns;
+//    if(newNrOfCols > maxNumOfCols) {
+//        //TODO: display error;
+//        return;
+//    } else {
+//
+//    }
 }
 
 - (IBAction) columnStepperChanged:(id)sender {
+    //TODO: update like the slider counterpart
     [self changeValueStepper:columnSlider :columnLabel :columnStepper];
+    [self updateCellDimensions];
 }
 
 
 - (IBAction)rowSliderChanged:(id)sender {
-        [self changeValueSlider:rowSlider :rowLabel :rowStepper];
+    [self changeValueSlider:rowSlider :rowLabel :rowStepper];
+    [self updateCellDimensions];
+
+//    NSInteger newNrOfRows = rowSlider.value;
+//    NSInteger maxNumOfRows = model.device.getNumberOfPrintableRows;
+//    if(newNrOfRows > maxNumOfRows) {
+//        //TODO: display error;
+//        return;
+//    } else {
+//
+//    }
 }
 
 - (IBAction) rowStepperChanged:(id)sender {
+    //TODO: update like the slider counterpart
     [self changeValueStepper:rowSlider :rowLabel :rowStepper];
+        [self updateCellDimensions];
 }
 
 - (IBAction)widthSliderChanged:(id)sender {
@@ -192,6 +249,27 @@ NSTimer* humidTimer;
     slider.value = stepper.value;
 }
 
+/*
+ *  updating cell height/width when the rows/columns sliders change.
+ */
+-(void) updateCellDimensions {
+    
+//    if(MAXIMAGEWIDTH/value<[model.getPitch getWidth]){
+//        [model setPitch:[[Pitch alloc] initPitch:[] :<#(double)#> :<#(LengthUnit)#>
+//        widthSlider.value = IMAGEWIDTH/value;
+//        widthStepper.value = MAXIMAGEWIDTH/value;
+//        NSString *newText = [NSString stringWithFormat: @"%1.1fµm",widthSlider.value];
+//        widthLabel.text =newText;
+//    }
+//    widthSlider.maximumValue = IMAGEWIDTH/value;
+//    widthStepper.maximumValue = IMAGEWIDTH/value;
+}
+
+-(void) updateSpotSize:(float)value{
+    //TODO:adjust spot size accordingly to changes to pitches
+}
+
+
 //Printing actions
 - (IBAction)PrintButtonPushed:(id)sender {
     GridMatrix* grid = model.getGridMatrix;
@@ -265,6 +343,75 @@ NSTimer* humidTimer;
         _saveConfigPopover = nil;
     }
 }
+
+//====================
+//    Grid View
+//====================
+#pragma mark - UICollectionView Datasource
+// 1
+- (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
+    GridMatrix *mat = model.gridMatrix;
+    if(mat != nil){
+        NSInteger total = mat.getHeight * mat.getWidth;
+        return total;
+    } else {
+        [NSException raise:@"Model not initialized properly" format:@"Model grid matrix not initialized properly when trying to display grid"];
+    }
+    return 1;
+}
+// 2
+- (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
+//    GridMatrix *mat = model.gridMatrix;
+//    if(mat != nil){
+//        return mat.getHeight;
+//    } else {
+//        return rowSlider.value;
+//    }
+    return 1;
+}
+// 3
+- (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    GridCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
+    return cell;
+}
+// 4
+/*- (UICollectionReusableView *)collectionView:
+ (UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+ {
+ return [[UICollectionReusableView alloc] init];
+ }*/
+
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = indexPath.row;
+    NSInteger column = indexPath.section;
+    [self.gridView deselectItemAtIndexPath:indexPath animated:NO];
+    // TODO: Select Item
+}
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    // TODO: Deselect item
+}
+
+#pragma mark – UICollectionViewDelegateFlowLayout
+
+// 1
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    NSString *searchTerm = self.searches[indexPath.section]; FlickrPhoto *photo =
+//    self.searchResults[searchTerm][indexPath.row];
+    // 2
+    CGSize retval = CGSizeMake(cellDimension, cellDimension);
+//    retval.height += 35; retval.width += 35; return retval;
+    return retval;
+}
+
+// 3
+- (UIEdgeInsets)collectionView:
+(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(cellSpacing, cellSpacing, cellSpacing, cellSpacing);
+}
+
 - (IBAction)configLoadButtonPushed:(id)sender {
     if(_loadConfigController == nil){
         _loadConfigController = [[LoadConfigViewController alloc] init];

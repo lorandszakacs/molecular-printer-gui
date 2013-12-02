@@ -19,5 +19,7 @@
 -(BOOL)unmark:(NSInteger)x :(NSInteger)y;
 -(BOOL)flip:(NSInteger)x :(NSInteger)y;
 -(id)initGridMatrix:(NSInteger)width :(NSInteger)height;
+
+-(GridMatrix*)newMatrix: (NSInteger)newHeight :(NSInteger)newWidth;
 @end
 #endif

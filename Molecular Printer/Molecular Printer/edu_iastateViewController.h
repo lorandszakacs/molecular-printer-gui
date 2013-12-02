@@ -14,7 +14,8 @@
 #import "PrintWaitViewController.h"
 #import "ImageLoaderViewController.h"
 
-@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected, ConfigSelected, ConfigSaveSelected>{
+@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected,ConfigSelected, ConfigSaveSelected,
+                                                        UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
     UILabel         *tempLabel;
     UILabel         *deviceTempLabel;
     UILabel         *humidLabel;
@@ -114,6 +115,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *ConfigLoadButton;
 @property (strong) SaveConfigViewController* saveConfigController;
 @property (strong) UIPopoverController* saveConfigPopover;
+
+
 @property (strong) LoadConfigViewController* loadConfigController;
 @property (strong) UIPopoverController* loadConfigPopover;
 @end

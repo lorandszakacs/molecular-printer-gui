@@ -98,4 +98,14 @@ int status;
     NSLog(@"Printing at (%d, %d)\nPitch Width:%f\nPitch Height:%f\nSpot size:%f", x, y, pitch.getWidth, pitch.getHeight, s.getRadius);
     return 1;
 }
+
+-(NSInteger)getNumberOfPrintableColumns {
+    //this should be computed as a function of spot-size, pitch and other things.
+    return 10;
+}
+
+-(NSInteger)getNumberOfPrintableRows {
+    //this should be computed as a function of spot-size, pitch and other things.
+    return 10;
+}
 @end

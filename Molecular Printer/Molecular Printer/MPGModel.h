@@ -21,7 +21,9 @@
 @property (retain, getter = getSpot)Spot* spot;
 @property (retain, getter = getPitch)Pitch* pitch;
 @property (getter = getState)NSInteger state;
-@property ()MicroControllerInterface* device;
+@property (getter = getDevice, setter = setDevice:)MicroControllerInterface* device;
+
+-(void)updateMatrix:(NSInteger)newRows :(NSInteger)newColumns;
 @end
 
 #endif
