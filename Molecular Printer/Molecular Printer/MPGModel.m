@@ -17,7 +17,7 @@
     [self setTemperature:[[Temperature alloc] initTemperature:INITIALTEMP :CELSIUS]];
     [self setSpot:[[Spot alloc] initSpot:INITIALSPOTRADIUS :MICROMETER]];
     [self setPitch:[[Pitch alloc] initPitch:INITIALWIDTH :INITIALHEIGHT :MICROMETER]];
-    [self setGridMatrix:[[GridMatrix alloc]initGridMatrix:INITIALROWS :INITIALCOLUMNS]];
+    [self setGridMatrix:[[GridMatrix alloc]initGridMatrix:INITIALCOLUMNS :INITIALROWS]];
     [self setState:0];
     return self;
 }

@@ -22,53 +22,94 @@
     return self;
 }
 
--(BOOL)checkXY:(NSInteger)x :(NSInteger)y{
-    if(x<0||y<0||x>=_width||y>=_height)
+-(BOOL)checkXY:(NSInteger)row :(NSInteger)column{
+    if(row < 0 || column <0 || row >= _height || column >=_width)
         return NO;
     return YES;
 }
 
--(BOOL)isMarked:(NSInteger)x :(NSInteger)y{
-    if([self checkXY:x :y] == NO)
-    [NSException raise:@"Invalid value for GridMatrix::isMarked" format:@"Position (%d, %d) is invalid", x, y];
+-(BOOL)isMarked:(NSInteger)row :(NSInteger)column{
+    if([self checkXY:row :column] == NO)
+        [NSException raise:@"Invalid value for GridMatrix::isMarked" format:@"Position (%d, %d) is invalid", row, column];
+    NSInteger lIndex = [self linearIndex: row:column];
 //    NSLog(@"%dsaydasyd",_matrix[y*_width+x]);
-    if([[_matrix objectAtIndex:(y*_width+x)]integerValue]==1)
+    if([[_matrix objectAtIndex: lIndex]integerValue] == 1)
         return YES;
     return NO;
 }
 
 //return YES if value of cell is changed.
--(BOOL)mark:(NSInteger)x :(NSInteger)y{
-    if([self checkXY:x :y] == NO)
-        [NSException raise:@"Invalid value for GridMatrix::mark" format:@"Position (%d, %d) is invalid", x, y];
-    if([[_matrix objectAtIndex:(y*_width+x)]integerValue]==1)
+-(BOOL)mark:(NSInteger)row :(NSInteger)column{
+    NSInteger lIndex = [self linearIndex: row:column];
+    if([self checkXY:row :column] == NO)
+        [NSException raise:@"Invalid value for GridMatrix::mark" format:@"Position (%d, %d) is invalid", row, column];
+    if([[_matrix objectAtIndex:(lIndex)]integerValue] == 1)
         return NO;
-    [_matrix setObject:[NSNumber numberWithInt:1] atIndexedSubscript:y*_width+x];
+    [_matrix setObject:[NSNumber numberWithInt:1] atIndexedSubscript:lIndex];
     return YES;
 }
 
--(BOOL)unmark:(NSInteger)x :(NSInteger)y{
-    if([self checkXY:x :y] == NO)
-        [NSException raise:@"Invalid value for GridMatrix::mark" format:@"Position (%d, %d) is invalid", x, y];
-    if([[_matrix objectAtIndex:(y*_width+x)]integerValue]==0)
+-(BOOL)unmark:(NSInteger)row :(NSInteger)column{
+    NSInteger lIndex = [self linearIndex: row:column];
+    if([self checkXY:row :column] == NO)
+        [NSException raise:@"Invalid value for GridMatrix::mark" format:@"Position (%d, %d) is invalid", row, column];
+    if([[_matrix objectAtIndex:(lIndex)]integerValue]==0)
         return NO;
-    [_matrix setObject:[NSNumber numberWithInt:0] atIndexedSubscript:y*_width+x];
+    [_matrix setObject:[NSNumber numberWithInt:0] atIndexedSubscript:lIndex];
     return YES;
 }
 
--(BOOL)flip:(NSInteger)x :(NSInteger)y{
-    if([self checkXY:x :y] == NO)
-        [NSException raise:@"Invalid value for GridMatrix::mark" format:@"Position (%d, %d) is invalid", x, y];
-    if([[_matrix objectAtIndex:(y*_width+x)]integerValue] ==0){
-        [_matrix setObject:[NSNumber numberWithInt:1] atIndexedSubscript:y*_width+x];
+-(BOOL)flip:(NSInteger)row :(NSInteger)column{
+    NSInteger lIndex = [self linearIndex: row:column];
+    if([self checkXY:row :column] == NO)
+        [NSException raise:@"Invalid value for GridMatrix::mark" format:@"Position (%d, %d) is invalid", row, column];
+    if([[_matrix objectAtIndex:(lIndex)]integerValue] ==0){
+        [_matrix setObject:[NSNumber numberWithInt:1] atIndexedSubscript:lIndex];
     }else
-        [_matrix setObject:[NSNumber numberWithInt:0] atIndexedSubscript:y*_width+x];
+        [_matrix setObject:[NSNumber numberWithInt:0] atIndexedSubscript:lIndex];
     return YES;
+}
+
+-(BOOL)isMarked:(NSInteger)x {
+    int row = [self row:x];
+    int column = [self column:x];
+    return [self isMarked: row: column];
+}
+
+-(BOOL)mark:(NSInteger)x {
+    int row = [self row:x];
+    int column = [self column:x];
+    return [self mark: row: column];
+}
+
+-(BOOL)unmark:(NSInteger)x {
+    int row = [self row:x];
+    int column = [self column:x];
+    return [self unmark: row: column];
+}
+
+-(BOOL)flip:(NSInteger)x {
+    int row = [self row:x];
+    int column = [self column:x];
+    return [self flip: row: column];
 }
 
 -(GridMatrix *)newMatrix:(NSInteger)newHeight :(NSInteger)newWidth{
     //TODO:implement this
     return self;
 }
+
+-(NSInteger) linearIndex: (NSInteger)row :(NSInteger)column{
+    return row * _width + column;
+}
+
+-(NSInteger) column: (NSInteger)linIndex {
+    return linIndex % _width;
+}
+
+-(NSInteger) row: (NSInteger)linIndex {
+    return floor(linIndex / _width);
+}
+
 
 @end
