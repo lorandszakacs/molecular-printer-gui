@@ -10,8 +10,10 @@
 #import "MPGModel.h"
 #import "deviceSelectionViewController.h"
 #import "SaveConfigViewController.h"
+#import "LoadConfigViewController.h"
+#import "PrintWaitViewController.h"
 
-@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected,
+@interface edu_iastateViewController : UIViewController<UITextFieldDelegate, DeviceSelected,ConfigSelected, ConfigSaveSelected,
                                                         UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>{
     UILabel         *tempLabel;
     UILabel         *deviceTempLabel;
@@ -94,11 +96,19 @@
 @property (strong) UIPopoverController* deviceSelectionPopover;
 - (IBAction)deviceButton:(id)sender;
 
+//printing actions
+- (IBAction)PrintButtonPushed:(id)sender;
+
+
 //Config save/load
 - (IBAction)configSaveButtonPushed:(id)sender;
+- (IBAction)configLoadButtonPushed:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *ConfigSaveButton;
+@property (strong, nonatomic) IBOutlet UIButton *ConfigLoadButton;
 @property (strong) SaveConfigViewController* saveConfigController;
 @property (strong) UIPopoverController* saveConfigPopover;
 
 
+@property (strong) LoadConfigViewController* loadConfigController;
+@property (strong) UIPopoverController* loadConfigPopover;
 @end

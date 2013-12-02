@@ -13,9 +13,11 @@
     self = [super init];
     _width = width;
     _height = height;
-    NSInteger matrix[width*height];
-    for(NSInteger i=0;i<width*height;i++)
-        matrix[i]=0;
+    NSMutableArray *matrix = [[NSMutableArray alloc] init];
+//    NSInteger matrix[width*height];
+    for(NSInteger i=0;i<width*height;i++){
+        [matrix setObject:[NSNumber numberWithInt:0] atIndexedSubscript:i];
+    }
     _matrix = matrix;
     return self;
 }
@@ -29,35 +31,38 @@
 -(BOOL)isMarked:(NSInteger)x :(NSInteger)y{
     if([self checkXY:x :y] == NO)
     [NSException raise:@"Invalid value for GridMatrix::isMarked" format:@"Position (%d, %d) is invalid", x, y];
-    return _matrix[y*_width+x]==1;
+//    NSLog(@"%dsaydasyd",_matrix[y*_width+x]);
+    if([[_matrix objectAtIndex:(y*_width+x)]integerValue]==1)
+        return YES;
+    return NO;
 }
 
 //return YES if value of cell is changed.
 -(BOOL)mark:(NSInteger)x :(NSInteger)y{
     if([self checkXY:x :y] == NO)
         [NSException raise:@"Invalid value for GridMatrix::mark" format:@"Position (%d, %d) is invalid", x, y];
-    if(_matrix[y*_width+x]==1)
+    if([[_matrix objectAtIndex:(y*_width+x)]integerValue]==1)
         return NO;
-    _matrix[y*_width+x] = 1;
+    [_matrix setObject:[NSNumber numberWithInt:1] atIndexedSubscript:y*_width+x];
     return YES;
 }
 
 -(BOOL)unmark:(NSInteger)x :(NSInteger)y{
     if([self checkXY:x :y] == NO)
         [NSException raise:@"Invalid value for GridMatrix::mark" format:@"Position (%d, %d) is invalid", x, y];
-    if(_matrix[y*_width+x]==0)
+    if([[_matrix objectAtIndex:(y*_width+x)]integerValue]==0)
         return NO;
-    _matrix[y*_width+x] = 0;
+    [_matrix setObject:[NSNumber numberWithInt:0] atIndexedSubscript:y*_width+x];
     return YES;
 }
 
 -(BOOL)flip:(NSInteger)x :(NSInteger)y{
     if([self checkXY:x :y] == NO)
         [NSException raise:@"Invalid value for GridMatrix::mark" format:@"Position (%d, %d) is invalid", x, y];
-    if(_matrix[y*_width+x]==0){
-        _matrix[y*_width+x] = 1;
+    if([[_matrix objectAtIndex:(y*_width+x)]integerValue] ==0){
+        [_matrix setObject:[NSNumber numberWithInt:1] atIndexedSubscript:y*_width+x];
     }else
-        _matrix[y*_width+x] = 0;
+        [_matrix setObject:[NSNumber numberWithInt:0] atIndexedSubscript:y*_width+x];
     return YES;
 }
 

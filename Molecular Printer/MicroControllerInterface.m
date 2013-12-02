@@ -21,6 +21,7 @@ Humidity* desiredHumidity;
 Spot* s;
 NSTimer* tempTimer;
 NSTimer* humidTimer;
+int status;
 -(id)init{
     self = [super init];
     pitch = [[Pitch alloc] initPitch:0 :0 :MICROMETER];
@@ -29,6 +30,7 @@ NSTimer* humidTimer;
     humidity = [[Humidity alloc] initHumidity:60.0];
     desiredHumidity = [[Humidity alloc] initHumidity:60.0];
     s = [[Spot alloc] initSpot:15.0 :MICROMETER];
+    status = STATUSIDLE;
     return self;
 }
 
@@ -83,7 +85,7 @@ NSTimer* humidTimer;
     return (NSInteger)[NSNumber numberWithInt:1];
 }
 -(NSInteger)pollStatus{
-    return 0;//0 is idle for now
+    return status;//0 is idle for now
 }
 -(Temperature*)getTemperature{
     return temp;
@@ -92,8 +94,9 @@ NSTimer* humidTimer;
     return humidity;
 }
 -(NSInteger)print:(NSInteger)x :(NSInteger)y{
-    //change status, let this consume time
-    return 0;
+    status = STATUSPRINTING;
+    NSLog(@"Printing at (%d, %d)\nPitch Width:%f\nPitch Height:%f\nSpot size:%f", x, y, pitch.getWidth, pitch.getHeight, s.getRadius);
+    return 1;
 }
 
 -(NSInteger)getNumberOfPrintableColumns {

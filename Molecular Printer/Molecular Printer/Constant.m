@@ -22,5 +22,11 @@ int const GRID_DISPLAY_HEIGHT = 400;
 int const GRID_DISPLAY_WIDTH = 700;
 int const GRID_DISPLAY_SPACE = 5;
 
+int const STATUSIDLE = 0;
+int const STATUSPRINTING = 1;
+int const STATUSPAUSED = 2;
+int const STATUSERROR = -1;
+
+
 
 

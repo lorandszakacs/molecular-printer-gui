@@ -13,34 +13,38 @@
 #define kTitleKey   @"Title"
 #define kTempKey    @"Temperature"
 #define kHumidKey   @"Humidity"
-#define kPitchKey   @"Pitch"
+#define kWidthKey   @"Width"
+#define kHeightKey   @"Height"
 #define kSpotKey    @"Spot"
 
 @implementation Configuration
 
 -(void) encodeWithCoder:(NSCoder *)encoder{
     [encoder encodeObject:_title forKey:kTitleKey];
-    [encoder encodeObject:_temp forKey:kTempKey];
-    [encoder encodeObject:_humid forKey:kHumidKey];
-    [encoder encodeObject:_pitch forKey:kPitchKey];
-    [encoder encodeObject:_spot forKey:kSpotKey];
+    [encoder encodeFloat:_temp forKey:kTempKey];
+    [encoder encodeFloat:_humid forKey:kHumidKey];
+    [encoder encodeFloat:_width forKey:kWidthKey];
+    [encoder encodeFloat:_height forKey:kHeightKey];
+    [encoder encodeFloat:_spot forKey:kSpotKey];
 }
 
 -(id)initWithCoder:(NSCoder *)decoder{
     NSString *title = [decoder decodeObjectForKey:kTitleKey];
-    Temperature *temp = [decoder decodeObjectForKey:kTempKey];
-    Humidity *humid = [decoder decodeObjectForKey:kHumidKey];
-    Pitch *pitch = [decoder decodeObjectForKey:kPitchKey];
-    Spot *spot = [decoder decodeObjectForKey:kSpotKey];
-    return [self initConfig:title :temp :humid :pitch :spot];
+    float temp = [decoder decodeFloatForKey:kTempKey];
+    float humid = [decoder decodeFloatForKey:kHumidKey];
+    float width = [decoder decodeFloatForKey:kWidthKey];
+    float height = [decoder decodeFloatForKey:kHeightKey];
+    float spot = [decoder decodeFloatForKey:kSpotKey];
+    return [self initConfig:title :temp :humid :width :height :spot];
 }
 
--(id)initConfig:(NSString *)title :(Temperature *)temp :(Humidity *)humid :(Pitch *)pitch :(Spot *)spot{
+-(id)initConfig:(NSString*)title :(float) temp :(float) humid :(float)width :(float)height :(float)spot{
     self = [super init];
     self.title = title;
     self.temp = temp;
     self.humid = humid;
-    self.pitch = pitch;
+    self.width = width;
+    self.height = height;
     self.spot = spot;
     return self;
 }

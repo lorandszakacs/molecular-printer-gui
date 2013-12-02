@@ -21,4 +21,10 @@ extern const double INITIALSPOTRADIUS;
 extern const int GRID_DISPLAY_HEIGHT;
 extern const int GRID_DISPLAY_WIDTH;
 extern int const GRID_DISPLAY_SPACE;
+
+extern const int STATUSIDLE;
+extern const int STATUSPRINTING;
+extern const int STATUSPAUSED;
+extern const int STATUSERROR;
+
 #endif
